@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <TargetPlatformVersion>10.0</TargetPlatformVersion>
+    <UseWPF>true</UseWPF>
+    <NeutralLanguage>en</NeutralLanguage>
+    <Company>RapidDev</Company>
+    <Authors>RapidDev</Authors>
+    <Description>Radiograph.Core contains the application logic responsible for computer monitoring.</Description>
+    <Copyright>© 2021 rapiddev</Copyright>
+    <PackageProjectUrl>https://rdev.cc/</PackageProjectUrl>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Deterministic>False</Deterministic>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Fonts\Lato-Bold.ttf" />
+    <None Remove="Fonts\Lato-Regular.ttf" />
+    <None Remove="Fonts\micon_nb.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\Lato-Bold.ttf" />
+    <Resource Include="Fonts\Lato-Regular.ttf" />
+    <Resource Include="Fonts\micon_nb.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Fonts\License - Lato.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>License - Lato.txt</TargetPath>
+    </None>
+    <None Update="Fonts\License - Micon.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>License - Micon.txt</TargetPath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controls\" />
+  </ItemGroup>
+
+</Project>

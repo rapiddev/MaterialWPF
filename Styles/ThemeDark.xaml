@@ -1,0 +1,28 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:MaterialWPF.Styles">
+
+    <SolidColorBrush x:Key="ThemeColor" Color="#222222" />
+    <SolidColorBrush
+        x:Key="ThemeTransparentColor"
+        Opacity=".8"
+        Color="#222222" />
+    <SolidColorBrush x:Key="ThemeNavigation" Color="#1d1d1d" />
+    <SolidColorBrush x:Key="ThemeForeground" Color="White" />
+    <SolidColorBrush x:Key="ThemeDarkForeground" Color="#999999" />
+    <SolidColorBrush x:Key="ThemeBorder" Color="#3f3f41" />
+    <SolidColorBrush x:Key="ThemeElement" Color="#393939" />
+    <SolidColorBrush x:Key="ThemeElementSelected" Color="#3f3f41" />
+    <SolidColorBrush x:Key="ThemeElementHover" Color="#292929" />
+
+    <SolidColorBrush x:Key="PaletteBlue" Color="#303f9f" />
+    <SolidColorBrush x:Key="PaletteGray" Color="#bdbdbd" />
+    <SolidColorBrush x:Key="PaletteGreen" Color="#00897b" />
+    <SolidColorBrush x:Key="PaletteAmber" Color="#ffa000" />
+    <SolidColorBrush x:Key="PaletteRed" Color="#c62828" />
+    <SolidColorBrush x:Key="PalettePurple" Color="#673ab7" />
+
+    <SolidColorBrush x:Key="DefaultAccent" Color="#51c066" />
+
+</ResourceDictionary>
