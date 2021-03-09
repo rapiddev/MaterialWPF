@@ -67,7 +67,14 @@ Customize the WPF window in the style of modern Windows applications
 </Window>
 ```
 
+### How can I help improve it?
+The MaterialWPF team welcomes feedback and contributions!<br/>
+If you have any suggestions or improvements, don't hesitate to create an issue.
+
 ### Third party solutions
 - Micon Icons by the Mehdi HosseinZade<br/>[https://github.com/xtoolkit/Micon](https://github.com/xtoolkit/Micon)
 - Lato by the Łukasz Dziedzic<br/>[https://www.latofonts.com/team/](https://www.latofonts.com/team/)
 - TreeGridUX by the David Anson<br/>[https://dlaa.me/blog/post/9898803](https://dlaa.me/blog/post/9898803)
+
+### License
+MaterialWPF is free and open source software licensed under MPL 2.0. You can use it in private and commercial projects. Keep in mind that you must include a copy of the license in your project.
