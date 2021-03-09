@@ -1,3 +1,4 @@
+![Screenshot](https://github.com/rapiddev/MaterialWPF/blob/master/.github/screenshot-1.jpg?raw=true)
 # MaterialWPF
 [Created with ![heart](http://i.imgur.com/oXJmdtz.gif) in Poland by RapidDev](https://rdev.cc/)<br />
 Customize the WPF window in the style of modern Windows applications
@@ -65,3 +66,8 @@ Customize the WPF window in the style of modern Windows applications
     </Grid>
 </Window>
 ```
+
+### Third party solutions
+- Micon Icons by the Mehdi HosseinZade<br/>[https://github.com/xtoolkit/Micon](https://github.com/xtoolkit/Micon)
+- Lato by the Łukasz Dziedzic<br/>[https://www.latofonts.com/team/](https://www.latofonts.com/team/)
+- TreeGridUX by the David Anson<br/>[https://dlaa.me/blog/post/9898803](https://dlaa.me/blog/post/9898803)
