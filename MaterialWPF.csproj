@@ -7,7 +7,7 @@
     <NeutralLanguage>en</NeutralLanguage>
     <Company>RapidDev</Company>
     <Authors>RapidDev</Authors>
-    <Description>Radiograph.Core contains the application logic responsible for computer monitoring.</Description>
+    <Description>MaterialWPF</Description>
     <Copyright>© 2021 rapiddev</Copyright>
     <PackageProjectUrl>https://rdev.cc/</PackageProjectUrl>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
