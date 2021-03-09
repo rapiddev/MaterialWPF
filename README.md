@@ -21,7 +21,7 @@ Customize the WPF window in the style of modern Windows applications
 **(without logic)**
 ```c#
 <Window
-    xmlns:controls="clr-namespace:MaterialWPF.Controls;assembly=MaterialWPF"
+    xmlns:materialwpf="clr-namespace:MaterialWPF.Controls;assembly=MaterialWPF"
     MaxWidth="{Binding Source={x:Static SystemParameters.WorkArea}, Path=Width}"
     MaxHeight="{Binding Source={x:Static SystemParameters.WorkArea}, Path=Height}"
     Style="{StaticResource MaterialWindow}"
@@ -46,7 +46,7 @@ Customize the WPF window in the style of modern Windows applications
         </Grid.RowDefinitions>
 
         <!--  Navigation  -->
-        <controls:Navigation
+        <materialwpf:Navigation
             x:Name="rootNavigation"
             Grid.Row="0"
             Grid.RowSpan="2"
@@ -61,7 +61,7 @@ Customize the WPF window in the style of modern Windows applications
         </Grid>
 
         <!--  Window buttons  -->
-        <controls:WindowNavigation Grid.Row="0" Grid.Column="1" />
+        <materialwpf:WindowNavigation Grid.Row="0" Grid.Column="1" />
     </Grid>
 </Window>
 ```
