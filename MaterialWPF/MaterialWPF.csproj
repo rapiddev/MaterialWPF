@@ -23,6 +23,7 @@
     <None Remove="Directory.Build.props" />
     <None Remove="Fonts\Lato-Bold.ttf" />
     <None Remove="Fonts\Lato-Regular.ttf" />
+    <None Remove="Fonts\micon.ttf" />
     <None Remove="Fonts\micon_nb.ttf" />
     <None Remove="README.md" />
     <None Include="..\LICENSE">
@@ -34,7 +35,7 @@
   <ItemGroup>
     <Resource Include="Fonts\Lato-Bold.ttf" />
     <Resource Include="Fonts\Lato-Regular.ttf" />
-    <Resource Include="Fonts\micon_nb.ttf" />
+    <Resource Include="Fonts\micon.ttf" />
   </ItemGroup>
 
   <ItemGroup>

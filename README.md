@@ -5,6 +5,13 @@ A simple and uncomplicated way to make your application written in WPF keep up w
 [![GitHub license](https://img.shields.io/github/license/rapiddev/MaterialWPF)](https://github.com/rapiddev/MaterialWPF/blob/master/LICENSE) [![NET](https://img.shields.io/badge/.NET-5.0.0-red)](https://github.com/rapiddev/MaterialWPF/blob/master/MaterialWPF.csproj) [![Nuget](https://img.shields.io/nuget/v/MaterialWPF)](https://www.nuget.org/packages/MaterialWPF/) [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/MaterialWPF?label=nuget-pre)](https://www.nuget.org/packages/MaterialWPF/) [![Nuget](https://img.shields.io/nuget/dt/MaterialWPF?label=nuget-downloads)](https://www.nuget.org/packages/MaterialWPF/)
 
 
+## What's included?
+| Name| .NET | Build Status |
+| --- | --- | --- | 
+| **MaterialWPF** <br /> Library that allows you to use all features in your own application | .NET 5.0.3 | [![Build status](https://github.com/rapiddev/MaterialWPF/workflows/CI/badge.svg)](https://github.com/rapiddev/MaterialWPF/actions) | 
+| **MaterialWPF.TestApp** <br /> An application written in WPF .NET 5.0.0 where you can test the features. | .NET 5.0.3 | [![Build status](https://github.com/rapiddev/MaterialWPF/workflows/CI/badge.svg)](https://github.com/rapiddev/MaterialWPF/actions) | 
+
+
 ## Custom controls
 | Control | Namespace | Description |
 | --- | --- | --- | 

@@ -7,8 +7,8 @@
     xmlns:materialwpf="clr-namespace:MaterialWPF.Controls;assembly=MaterialWPF"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Material WPF - Test App"
-    Width="800"
-    Height="450"
+    Width="1160"
+    Height="612"
     Style="{StaticResource MaterialNavigationWindow}"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
