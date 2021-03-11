@@ -8,9 +8,9 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/MaterialWPF;component/Styles/Sub/Base.xaml" />
-        <ResourceDictionary Source="/MaterialWPF;component/Styles/Sub/Controls.xaml" />
-        <ResourceDictionary Source="/MaterialWPF;component/Styles/Sub/Navigation.xaml" />
+        <ResourceDictionary Source="/MaterialWPF;component/Styles/Sub/BaseControls.xaml" />
+        <ResourceDictionary Source="/MaterialWPF;component/Styles/Sub/CustomControls.xaml" />
+        <ResourceDictionary Source="/MaterialWPF;component/Styles/Sub/CustomNavigation.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>
