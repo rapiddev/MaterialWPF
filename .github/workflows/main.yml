@@ -47,7 +47,7 @@ jobs:
       - name: Publish to NuGet
         uses: rohith/publish-nuget@v2
         with:
-          PROJECT_FILE_PATH: MaterialWPF.csproj
+          PROJECT_FILE_PATH: MaterialWPF/MaterialWPF.csproj
           VERSION_FILE_PATH: Directory.Build.props
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
           INCLUDE_SYMBOLS: false

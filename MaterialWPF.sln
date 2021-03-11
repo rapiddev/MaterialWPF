@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaterialWPF", "MaterialWPF.csproj", "{9C6D3355-E1B2-43E3-A067-971DB9E75F99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaterialWPF", "MaterialWPF\MaterialWPF.csproj", "{9C6D3355-E1B2-43E3-A067-971DB9E75F99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaterialWPF.TestApp", "MaterialWPF.TestApp\MaterialWPF.TestApp.csproj", "{A85F8899-0E24-413F-99B6-1BEE885D72B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{9C6D3355-E1B2-43E3-A067-971DB9E75F99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C6D3355-E1B2-43E3-A067-971DB9E75F99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C6D3355-E1B2-43E3-A067-971DB9E75F99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A85F8899-0E24-413F-99B6-1BEE885D72B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A85F8899-0E24-413F-99B6-1BEE885D72B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A85F8899-0E24-413F-99B6-1BEE885D72B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A85F8899-0E24-413F-99B6-1BEE885D72B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
