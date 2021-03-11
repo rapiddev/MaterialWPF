@@ -24,5 +24,13 @@ namespace MaterialWPF.TestApp
         {
             InitializeComponent();
         }
+
+        private void FrameOnNavigating(object sender, NavigatingCancelEventArgs e)
+        {
+            if (e.Content == null)
+                return;
+
+            rootFrame.NavigationService.RemoveBackEntry();
+        }
     }
 }

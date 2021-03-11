@@ -7,7 +7,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/MaterialWPF;component/Styles/ThemeLight.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialWPF;component/Styles/ThemeDark.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialWPF;component/Styles/Material.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

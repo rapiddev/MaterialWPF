@@ -11,6 +11,7 @@
     <FontFamily x:Key="Micon">pack://application:,,,/MaterialWPF;component/Fonts/#micon_nb</FontFamily>
     <FontFamily x:Key="DefaultFont">pack://application:,,,/MaterialWPF;component/Fonts/#Lato</FontFamily>
 
+
     <SolidColorBrush x:Key="ThemeColor" Color="#222222" />
     <SolidColorBrush
         x:Key="ThemeTransparentColor"

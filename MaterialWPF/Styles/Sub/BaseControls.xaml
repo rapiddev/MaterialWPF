@@ -1,19 +1,54 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <!--  Defaults  -->
-    <Style x:Key="MaterialWindow" TargetType="{x:Type Window}">
-        <Setter Property="FontFamily" Value="{StaticResource DefaultFont}" />
-        <Setter Property="Foreground" Value="{StaticResource ThemeForeground}" />
-        <Setter Property="Background" Value="{StaticResource ThemeColor}" />
-    </Style>
-    <Style x:Key="MaterialPage" TargetType="{x:Type Page}">
-        <Setter Property="FontSize" Value="13" />
-        <Setter Property="Foreground" Value="{StaticResource ThemeForeground}" />
+    <Style x:Key="MaterialFrameworkElement" TargetType="{x:Type FrameworkElement}">
+        <Setter Property="Control.FontFamily" Value="{StaticResource DefaultFont}" />
+        <Setter Property="Control.FontSize" Value="13" />
+        <Setter Property="Control.Foreground" Value="{StaticResource ThemeForeground}" />
+        <Setter Property="Control.Background" Value="{StaticResource ThemeColor}" />
+
         <Setter Property="TextElement.FontWeight" Value="Regular" />
         <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
         <Setter Property="TextOptions.TextRenderingMode" Value="Auto" />
-        <Setter Property="FontFamily" Value="{StaticResource DefaultFont}" />
     </Style>
+
+    <!--
+    <Style BasedOn="{StaticResource MaterialFrameworkElement}" TargetType="{x:Type Window}">
+        <Setter Property="Background" Value="Red" />
+    </Style>-->
+
+    <Style
+        x:Key="MaterialNavigationWindow"
+        BasedOn="{StaticResource MaterialFrameworkElement}"
+        TargetType="{x:Type Window}">
+        <Setter Property="WindowStyle" Value="None" />
+        <Setter Property="ResizeMode" Value="CanResize" />
+        <Setter Property="MaxHeight" Value="{Binding Source={x:Static SystemParameters.WorkArea}, Path=Height}" />
+        <Setter Property="MaxWidth" Value="{Binding Source={x:Static SystemParameters.WorkArea}, Path=Width}" />
+        <Setter Property="MinHeight" Value="450" />
+        <Setter Property="MinWidth" Value="850" />
+
+        <Setter Property="WindowChrome.WindowChrome">
+            <Setter.Value>
+                <WindowChrome
+                    CaptionHeight="0"
+                    CornerRadius="0"
+                    GlassFrameThickness="0"
+                    ResizeBorderThickness="6"
+                    UseAeroCaptionButtons="False" />
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <Style
+        x:Key="MaterialWindow"
+        BasedOn="{StaticResource MaterialFrameworkElement}"
+        TargetType="{x:Type Window}" />
+
+    <Style
+        x:Key="MaterialPage"
+        BasedOn="{StaticResource MaterialFrameworkElement}"
+        TargetType="{x:Type Page}" />
 
     <Style x:Key="MaterialTitle" TargetType="{x:Type TextBlock}">
         <Setter Property="Foreground" Value="{StaticResource ThemeForeground}" />
