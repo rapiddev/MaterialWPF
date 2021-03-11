@@ -1,9 +1,8 @@
-![Screenshot](https://github.com/rapiddev/MaterialWPF/blob/master/.github/screenshot-1.jpg?raw=true)
 # MaterialWPF
 [Created with ![heart](http://i.imgur.com/oXJmdtz.gif) in Poland by RapidDev](https://rdev.cc/)<br />
 Customize the WPF window in the style of modern Windows applications
 
-[![GitHub license](https://img.shields.io/github/license/LibreHardwareMonitor/LibreHardwareMonitor)](https://github.com/RapidDev/MaterialWPF/blob/master/LICENSE) [![Nuget](https://img.shields.io/nuget/v/MaterialWPF)](https://www.nuget.org/packages/MaterialWPF/) [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/MaterialWPF?label=nuget-pre)](https://www.nuget.org/packages/MaterialWPF/) [![Nuget](https://img.shields.io/nuget/dt/MaterialWPF?label=nuget-downloads)](https://www.nuget.org/packages/MaterialWPF/)
+[![GitHub license](https://img.shields.io/github/license/rapiddev/MaterialWPF)](https://github.com/rapiddev/MaterialWPF/blob/master/LICENSE) [![Nuget](https://img.shields.io/nuget/v/MaterialWPF)](https://www.nuget.org/packages/MaterialWPF/) [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/MaterialWPF?label=nuget-pre)](https://www.nuget.org/packages/MaterialWPF/) [![Nuget](https://img.shields.io/nuget/dt/MaterialWPF?label=nuget-downloads)](https://www.nuget.org/packages/MaterialWPF/)
 
 ## How to implement?
 **Add resources to App.xaml**
