@@ -40,7 +40,7 @@
                                     Text="{Binding Path=Icon, Mode=OneTime}"
                                     TextAlignment="Center" />
                                 <TextBlock
-                                    MaxWidth="50"
+                                    MaxWidth="75"
                                     FontSize="10"
                                     Text="{Binding Path=Name, Mode=OneTime}"
                                     TextAlignment="Center"

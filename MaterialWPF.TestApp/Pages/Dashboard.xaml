@@ -12,6 +12,58 @@
     mc:Ignorable="d">
 
     <Grid Margin="8,0,8,8">
-        <TextBlock Text="This is Dashboard" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel
+            Grid.Row="0"
+            Grid.Column="0"
+            Margin="0,0,4,0">
+            <TextBlock
+                FontSize="24"
+                FontWeight="Bold"
+                Text="Material WPF" />
+            <TextBlock Text="A simple and uncomplicated way to make your application written in WPF keep up with modern design trends. Library changes the base elements like Window, Page or Button, and also includes additional controls like Navigation or Popup." TextWrapping="WrapWithOverflow" />
+        </StackPanel>
+
+        <StackPanel
+            Grid.Row="0"
+            Grid.Column="1"
+            Margin="4,0,0,0">
+            <TextBlock Text="GitHub Page" />
+            <TextBlock FontSize="10">
+                <Hyperlink
+                    Foreground="{StaticResource DefaultAccent}"
+                    NavigateUri="https://github.com/rapiddev/MaterialWPF"
+                    RequestNavigate="Hyperlink_RequestNavigate">
+                    https://github.com/rapiddev/MaterialWPF
+                </Hyperlink>
+            </TextBlock>
+
+            <TextBlock Margin="0,4,0,0" Text="Nuget Page" />
+            <TextBlock FontSize="10">
+                <Hyperlink
+                    Foreground="{StaticResource DefaultAccent}"
+                    NavigateUri="https://www.nuget.org/packages/MaterialWPF/"
+                    RequestNavigate="Hyperlink_RequestNavigate">
+                    https://www.nuget.org/packages/MaterialWPF/
+                </Hyperlink>
+            </TextBlock>
+        </StackPanel>
+
+        <Grid Grid.Row="2" Grid.Column="1">
+            <TextBlock
+                HorizontalAlignment="Right"
+                FontSize="10"
+                Foreground="{StaticResource ThemeDarkForeground}"
+                Text="Created by Leszek Pomianowski under MPL 2.0 License" />
+        </Grid>
     </Grid>
 </Page>
