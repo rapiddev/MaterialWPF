@@ -1,5 +1,5 @@
 # MaterialWPF
-[Created with ![heart](http://i.imgur.com/oXJmdtz.gif) in Poland by RapidDev](https://rdev.cc/)<br />
+[Created with ![heart](http://i.imgur.com/oXJmdtz.gif) in Poland by RapidDev](https://rdev.cc/)  
 Customize the WPF window in the style of modern Windows applications
 
 [![GitHub license](https://img.shields.io/github/license/rapiddev/MaterialWPF)](https://github.com/rapiddev/MaterialWPF/blob/master/LICENSE) [![Nuget](https://img.shields.io/nuget/v/MaterialWPF)](https://www.nuget.org/packages/MaterialWPF/) [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/MaterialWPF?label=nuget-pre)](https://www.nuget.org/packages/MaterialWPF/) [![Nuget](https://img.shields.io/nuget/dt/MaterialWPF?label=nuget-downloads)](https://www.nuget.org/packages/MaterialWPF/)
@@ -73,9 +73,12 @@ The MaterialWPF team welcomes feedback and contributions!<br/>
 If you have any suggestions or improvements, don't hesitate to create an issue.
 
 ## Third party solutions
-- Micon Icons by the Mehdi HosseinZade<br/>[https://github.com/xtoolkit/Micon](https://github.com/xtoolkit/Micon)
-- Lato by the Łukasz Dziedzic<br/>[https://www.latofonts.com/team/](https://www.latofonts.com/team/)
-- TreeGridUX by the David Anson<br/>[https://dlaa.me/blog/post/9898803](https://dlaa.me/blog/post/9898803)
+- Micon Icons by the Mehdi HosseinZade  
+[https://github.com/xtoolkit/Micon](https://github.com/xtoolkit/Micon)
+- Lato by the Łukasz Dziedzic  
+[https://www.latofonts.com/team/](https://www.latofonts.com/team/)
+- TreeGridUX by the David Anson  
+[https://dlaa.me/blog/post/9898803](https://dlaa.me/blog/post/9898803)
 
 ## License
 MaterialWPF is free and open source software licensed under MPL 2.0. You can use it in private and commercial projects. Keep in mind that you must include a copy of the license in your project.
