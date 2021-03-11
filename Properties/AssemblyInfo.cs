@@ -14,7 +14,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("RapidDev")]
-[assembly: AssemblyProduct("MaterialWPF.Properties")]
+[assembly: AssemblyProduct("MaterialWPF")]
 [assembly: AssemblyCopyright("Copyright © RapidDev 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
