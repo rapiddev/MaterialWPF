@@ -8,8 +8,9 @@ namespace MaterialWPF.Controls
     /// </summary>
     public partial class Icon : UserControl
     {
-        public static readonly DependencyProperty GlyphProperty = DependencyProperty.Register("Glyph", typeof(UI.MaterialIcon), typeof(MaterialWPF.Controls.Icon));
-        public static readonly DependencyProperty SizeProperty = DependencyProperty.Register("Size", typeof(double), typeof(MaterialWPF.Controls.Icon));
+        public static readonly DependencyProperty
+            GlyphProperty = DependencyProperty.Register("Glyph", typeof(UI.MaterialIcon), typeof(MaterialWPF.Controls.Icon), new PropertyMetadata(UI.MaterialIcon.Accept)),
+            SizeProperty = DependencyProperty.Register("Size", typeof(double), typeof(MaterialWPF.Controls.Icon), new PropertyMetadata((double)13));
 
         public string RawGlyph
         {
@@ -35,8 +36,7 @@ namespace MaterialWPF.Controls
         {
             get
             {
-                double? value = this.GetValue(SizeProperty) as double?;
-                return value == null ? 13 : (double)value;
+                return (double)(this.GetValue(SizeProperty) as double?);
             }
             set
             {

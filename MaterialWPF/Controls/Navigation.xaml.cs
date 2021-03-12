@@ -18,8 +18,8 @@ namespace MaterialWPF.Controls
     public partial class Navigation : UserControl
     {
         public static readonly DependencyProperty
-            MinBarWidthProperty = DependencyProperty.Register("MinBarWidth", typeof(int?), typeof(Navigation)),
-            MaxBarWidthProperty = DependencyProperty.Register("MaxBarWidth", typeof(int?), typeof(Navigation));
+            MinBarWidthProperty = DependencyProperty.Register("MinBarWidth", typeof(int?), typeof(Navigation), new PropertyMetadata(44)),
+            MaxBarWidthProperty = DependencyProperty.Register("MaxBarWidth", typeof(int?), typeof(Navigation), new PropertyMetadata(220));
 
         public ObservableCollection<NavItem> Items { get; set; }
 
@@ -64,10 +64,6 @@ namespace MaterialWPF.Controls
         public Navigation()
         {
             InitializeComponent();
-
-            MinBarWidth = 44;
-            MaxBarWidth = 220;
-            DataContext = this;
         }
 
         public void InitializeNavigation(string navigate = "", string activepage = "")

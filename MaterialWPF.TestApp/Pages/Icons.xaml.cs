@@ -14,6 +14,7 @@ namespace MaterialWPF.TestApp.Pages
         public string Code { get; set; }
         public MaterialIcon Icon { get; set; }
     }
+
     /// <summary>
     /// Interaction logic for Icons.xaml
     /// </summary>
@@ -22,7 +23,6 @@ namespace MaterialWPF.TestApp.Pages
         public Icons()
         {
             InitializeComponent();
-
             this.FillIcons();
         }
 
@@ -33,12 +33,10 @@ namespace MaterialWPF.TestApp.Pages
 
             await Task.Run(() =>
             {
-
-
                 foreach (string iconName in Enum.GetNames(typeof(UI.MaterialIcon)))
                 {
                     MaterialIcon icon = (MaterialIcon)Enum.Parse(typeof(MaterialIcon), iconName);
-                    System.Diagnostics.Debug.WriteLine(icon);
+                    //System.Diagnostics.Debug.WriteLine(icon);
 
                     icons.Add(new DisplayableIcon
                     {
@@ -46,7 +44,6 @@ namespace MaterialWPF.TestApp.Pages
                         Icon = icon
                     });
                 }
-
 
                 App.Current.Dispatcher.Invoke(() =>
                 {

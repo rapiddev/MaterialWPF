@@ -10,5 +10,6 @@
     <TextBlock
         FontSize="{Binding Size, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=1}, Mode=OneWay}"
         Style="{StaticResource MaterialIcon}"
-        Text="{Binding RawGlyph, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=1}, Mode=OneWay}" />
+        Text="{Binding RawGlyph, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=1}, Mode=OneWay}"
+        TextAlignment="Center" />
 </UserControl>

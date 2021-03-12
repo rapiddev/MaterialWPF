@@ -18,7 +18,11 @@ namespace MaterialWPF.Controls
     /// </summary>
     public partial class Popup : UserControl
     {
-        public static readonly DependencyProperty MessageProperty = DependencyProperty.Register("Message", typeof(string), typeof(Popup));
+        public static readonly DependencyProperty
+            EnabledProperty = DependencyProperty.Register("Enabled", typeof(bool), typeof(Popup), new PropertyMetadata(false)),
+            MessageProperty = DependencyProperty.Register("Message", typeof(string), typeof(Popup), new PropertyMetadata(String.Empty)),
+            HeaderProperty = DependencyProperty.Register("Header", typeof(string), typeof(Popup), new PropertyMetadata(String.Empty));
+
         public string Message
         {
             get
@@ -31,7 +35,6 @@ namespace MaterialWPF.Controls
             }
         }
 
-        public static readonly DependencyProperty HeaderProperty = DependencyProperty.Register("Header", typeof(string), typeof(Popup));
         public string Header
         {
             get
@@ -44,7 +47,6 @@ namespace MaterialWPF.Controls
             }
         }
 
-        public static readonly DependencyProperty EnabledProperty = DependencyProperty.Register("Enabled", typeof(bool), typeof(Popup));
         public bool? Enabled
         {
             get
