@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:MaterialWPF.TestApp.Pages"
+    xmlns:materialwpf="clr-namespace:MaterialWPF.Controls;assembly=MaterialWPF"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Icons"
     d:DesignHeight="450"
@@ -34,22 +35,23 @@
                             BorderBrush="{StaticResource ThemeBorder}"
                             BorderThickness="1">
                             <StackPanel Margin="8">
-                                <TextBlock
-                                    FontFamily="{StaticResource Micon}"
-                                    FontSize="25"
-                                    Text="{Binding Path=Icon, Mode=OneTime}"
-                                    TextAlignment="Center" />
+                                <materialwpf:Icon
+                                    Margin="0,0,12,0"
+                                    Glyph="{Binding Path=Icon, Mode=OneTime}"
+                                    Size="25" />
                                 <TextBlock
                                     MaxWidth="75"
                                     FontSize="10"
                                     Text="{Binding Path=Name, Mode=OneTime}"
                                     TextAlignment="Center"
                                     TextWrapping="WrapWithOverflow" />
+                                <!--
                                 <TextBlock
                                     FontSize="10"
                                     Foreground="{StaticResource ThemeDarkForeground}"
                                     Text="{Binding Path=Code, Mode=OneTime}"
                                     TextAlignment="Center" />
+                                -->
                             </StackPanel>
                         </Border>
                     </DataTemplate>

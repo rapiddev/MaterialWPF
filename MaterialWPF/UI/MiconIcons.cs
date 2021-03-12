@@ -5,9 +5,71 @@
 
 namespace MaterialWPF.UI
 {
+    public enum MaterialIcon
+    {
+        Accept,
+        Accident,
+        AccidentSolid,
+        Accounts,
+        ActionCenter,
+        ActionCenterAsterisk,
+        ActionCenterMirrored,
+        ActionCenterNotification,
+        ActionCenterNotificationMirrored,
+        ActionCenterQuiet,
+        ActionCenterQuietNotification,
+        Add,
+        AddFriend,
+        AddRemoteDevice,
+        AddSurfaceHub,
+        AddTo,
+        AdjustHologram,
+        Admin,
+        Airplane,
+        AirplaneSolid,
+        AlignCenter,
+        AlignLeft,
+        AlignRight,
+        AllApps,
+        AllAppsMirrored,
+        Annotation,
+        AppIconDefault,
+        Apps,
+        AreaChart,
+        ArrowDown8,
+        ArrowLeft8,
+        ArrowRight8,
+        ArrowUp8,
+        AspectRatio,
+        Asterisk,
+        AsteriskBadge12,
+        Attach,
+        AttachCamera,
+        Audio,
+        Back,
+        BackMirrored,
+        BackSpaceQWERTYLg,
+        BackSpaceQWERTYMd,
+        BackSpaceQWERTYSm,
+        BackToWindow,
+        BackgroundToggle,
+        Badge,
+        BandBattery0,
+        BandBattery1,
+        BandBattery2,
+        BandBattery3,
+        BandBattery4,
+        BandBattery5,
+        BandBattery6,
+        Bank,
+        BarcodeScanner,
+        Calories,
+        GridView
+    }
+
     public static class MiconIcons
     {
-        public const string
+        public static readonly string
             Accept = "\uEA01",
             Accident = "\uEA02",
             AccidentSolid = "\uEA03",
@@ -74,5 +136,13 @@ namespace MaterialWPF.UI
             Calories = "\uEAA3",
 
             GridView = "\uEBDE";
+
+        public static string ToGlyph(UI.MaterialIcon? icon)
+        {
+            if (icon == null)
+                return MiconIcons.Accept;
+
+            return typeof(MiconIcons).GetField(icon.ToString()).GetValue(null) as string;
+        }
     }
 }

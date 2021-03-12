@@ -9,15 +9,16 @@ A simple and uncomplicated way to make your application written in WPF keep up w
 | Name| .NET | Build Status |
 | --- | --- | --- | 
 | **MaterialWPF** <br /> Library that allows you to use all features in your own application | .NET 5.0.3 | [![Build status](https://github.com/rapiddev/MaterialWPF/workflows/CI/badge.svg)](https://github.com/rapiddev/MaterialWPF/actions) | 
-| **MaterialWPF.TestApp** <br /> An application written in WPF .NET 5.0.0 where you can test the features. | .NET 5.0.3 | [![Build status](https://github.com/rapiddev/MaterialWPF/workflows/CI/badge.svg)](https://github.com/rapiddev/MaterialWPF/actions) | 
+| **MaterialWPF.TestApp** <br /> An application written in WPF .NET 5 where you can test the features. | .NET 5.0.3 | [![Build status](https://github.com/rapiddev/MaterialWPF/workflows/CI/badge.svg)](https://github.com/rapiddev/MaterialWPF/actions) | 
 
 
 ## Custom controls
 | Control | Namespace | Description |
 | --- | --- | --- | 
-| **Navigation** | MaterialWPF.Controls | Simple ListView with a hamburger menu button. After assigning elements and Frame, it allows to navigate through the application. |
+| **Icon** | MaterialWPF.Controls | Prepared TextBlock with "Glyph" attribute with which you can select an icon. |
 | **Popup** | MaterialWPF.Controls | A card with a pop-up animation that can act as a notification of an action for the user. |
 | **Splash** | MaterialWPF.Controls | The tab that can be used to cover the main view of the application while loading resources, the equivalent of UWP. |
+| **Navigation** | MaterialWPF.Controls | Simple ListView with a hamburger menu button. After assigning elements and Frame, it allows to navigate through the application. |
 | **WindowNavigation** | MaterialWPF.Controls | A set of buttons that can replace the default window navigation, giving it a new, modern look. |
 
 

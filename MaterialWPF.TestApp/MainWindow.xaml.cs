@@ -1,7 +1,7 @@
-﻿using MaterialWPF.UI;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Navigation;
+using MaterialWPF.UI;
 
 namespace MaterialWPF.TestApp
 {
@@ -17,8 +17,9 @@ namespace MaterialWPF.TestApp
             rootNavigation.Frame = rootFrame;
             rootNavigation.Items = new ObservableCollection<NavItem>
             {
-                new NavItem { Icon = MiconIcons.GridView, Name = "Dashboard", Tag = "dashboard", Type = typeof(Pages.Dashboard)},
-                new NavItem { Icon = MiconIcons.Calories, Name = "Icons", Tag = "icons", Type = typeof(Pages.Icons)}
+                new NavItem { Icon = MaterialIcon.GridView, Name = "Dashboard", Tag = "dashboard", Type = typeof(Pages.Dashboard)},
+                new NavItem { Icon = MaterialIcon.Calories, Name = "Icons", Tag = "icons", Type = typeof(Pages.Icons)},
+                new NavItem { Icon = MaterialIcon.AdjustHologram, Name = "Controls", Tag = "controls", Type = typeof(Pages.Controls)}
             };
 
             rootNavigation.Navigate("dashboard");

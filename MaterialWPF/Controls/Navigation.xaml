@@ -46,7 +46,7 @@
 
                         <StackPanel Margin="0,12" Orientation="Horizontal">
                             <Grid Width="{Binding MinBarWidth, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=1}, Mode=OneWay}" Height="18">
-                                <TextBlock FontFamily="{StaticResource Micon}" Text="{Binding Icon, Mode=OneTime}">
+                                <TextBlock FontFamily="{StaticResource Micon}" Text="{Binding RawIcon, Mode=OneTime}">
                                     <TextBlock.Style>
                                         <Style BasedOn="{StaticResource NavIcon}" TargetType="TextBlock">
                                             <Style.Triggers>
