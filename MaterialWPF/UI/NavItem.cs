@@ -17,7 +17,7 @@ namespace MaterialWPF.UI
         public string Tag { get; set; }
         public UI.MaterialIcon Icon { get; set; }
 
-        public string RawIcon => UI.MiconIcons.ToGlyph(Icon);
+        public string RawIcon => UI.MiconIcons.ToString(Icon);
 
         private bool _isActive = false;
 

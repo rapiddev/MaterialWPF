@@ -16,7 +16,7 @@ namespace MaterialWPF.Controls
         {
             get
             {
-                return UI.MiconIcons.ToGlyph((UI.MaterialIcon)(this.GetValue(GlyphProperty) as UI.MaterialIcon?));
+                return UI.MiconIcons.ToString((UI.MaterialIcon)(this.GetValue(GlyphProperty) as UI.MaterialIcon?));
             }
         }
         

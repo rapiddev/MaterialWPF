@@ -41,7 +41,8 @@ namespace MaterialWPF.TestApp.Pages
                     icons.Add(new DisplayableIcon
                     {
                         Name = iconName,
-                        Icon = icon
+                        Icon = icon,
+                        Code = ((int)MiconIcons.ToGlyph(icon)).ToString("X4")
                     });
                 }
 

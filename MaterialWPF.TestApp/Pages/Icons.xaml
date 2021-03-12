@@ -34,11 +34,8 @@
                             Margin="2"
                             BorderBrush="{StaticResource ThemeBorder}"
                             BorderThickness="1">
-                            <StackPanel Margin="8" HorizontalAlignment="Center">
-                                <materialwpf:Icon
-                                    HorizontalAlignment="Center"
-                                    Glyph="{Binding Path=Icon, Mode=OneTime}"
-                                    Size="25" />
+                            <StackPanel Margin="8">
+                                <materialwpf:Icon Glyph="{Binding Path=Icon, Mode=OneTime}" Size="25" />
                                 <TextBlock
                                     MaxWidth="75"
                                     Margin="0,6,0,0"
@@ -46,13 +43,11 @@
                                     Text="{Binding Path=Name, Mode=OneTime}"
                                     TextAlignment="Center"
                                     TextWrapping="WrapWithOverflow" />
-                                <!--
                                 <TextBlock
                                     FontSize="10"
                                     Foreground="{StaticResource ThemeDarkForeground}"
                                     Text="{Binding Path=Code, Mode=OneTime}"
                                     TextAlignment="Center" />
-                                -->
                             </StackPanel>
                         </Border>
                     </DataTemplate>
