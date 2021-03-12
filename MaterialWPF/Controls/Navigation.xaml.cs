@@ -21,32 +21,50 @@ namespace MaterialWPF.Controls
             MinBarWidthProperty = DependencyProperty.Register("MinBarWidth", typeof(int?), typeof(Navigation), new PropertyMetadata(44)),
             MaxBarWidthProperty = DependencyProperty.Register("MaxBarWidth", typeof(int?), typeof(Navigation), new PropertyMetadata(220));
 
+        /// <summary>
+        /// Gets or sets the list of <see cref="NavItem"/> that will be displayed on the menu.
+        /// </summary>
         public ObservableCollection<NavItem> Items { get; set; }
 
+        /// <summary>
+        /// Gets or sets the minimum width of the collapsed menu.
+        /// </summary>
         public int MinBarWidth
         {
             get => (int)(this.GetValue(MinBarWidthProperty) as int?);
             set => this.SetValue(MinBarWidthProperty, value);
         }
 
+        /// <summary>
+        /// Gets or sets the maximum width of the expanded menu.
+        /// </summary>
         public int MaxBarWidth
         {
             get => (int)(this.GetValue(MaxBarWidthProperty) as int?);
             set => this.SetValue(MaxBarWidthProperty, value);
         }
 
+        /// <summary>
+        /// Gets or sets absolute Namespace in the application files where the <see cref="System.Windows.Controls.Page"/> are located. <c>eg.: MyApp.Views.Pages</c>
+        /// </summary>
         public string Catalog
         {
             get { return this._pagesFolder; }
             set { this._pagesFolder = value; }
         }
 
+        /// <summary>
+        /// Gets or sets the <see cref="System.Windows.Controls.Frame"/> in which the <see cref="System.Windows.Controls.Page"/> will be loaded after navigation.
+        /// </summary>
         public Frame Frame
         {
             get { return this._rootFrame; }
             set { this._rootFrame = value; }
         }
 
+        /// <summary>
+        /// Gets currently active <see cref="System.Windows.Controls.Page"/> tag.
+        /// </summary>
         public string PageNow => this._currentPage;
 
         protected DoubleAnimation _navExpander;
@@ -80,6 +98,9 @@ namespace MaterialWPF.Controls
                         this.Items[i].IsActive = true;
         }
 
+        /// <summary>
+        /// Loads a <see cref="System.Windows.Controls.Page"/> instance into <see cref="Navigation.Frame"/> based on the <see cref="NavItem.Tag"/>.
+        /// </summary>
         public void Navigate(string pageTypeName, bool refresh = false)
         {
             if (this.Items == null || this._rootFrame == null)
@@ -125,7 +146,7 @@ namespace MaterialWPF.Controls
             this._currentPage = pageTypeName;
         }
 
-        private void ExpandNavigation()
+        private void ToggleNavigation()
         {
             if (this._navExpander == null)
                 this._navExpander = new DoubleAnimation()
@@ -143,7 +164,7 @@ namespace MaterialWPF.Controls
 
         private void Button_Hamburger(object sender, RoutedEventArgs e)
         {
-            this.ExpandNavigation();
+            this.ToggleNavigation();
         }
 
         private void Button_NavItem(object sender, RoutedEventArgs e)

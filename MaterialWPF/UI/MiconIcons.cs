@@ -5,6 +5,10 @@
 
 namespace MaterialWPF.UI
 {
+    /// <summary>
+    /// List of all available icons
+    /// <para>May be converted to <see langword="char"/> using <see cref="MiconIcons.ToGlyph(MaterialIcon?)"/> or to <see langword="string"/> using <see cref="MiconIcons.ToString(MaterialIcon?)"/></para>
+    /// </summary>
     public enum MaterialIcon
     {
         Accept,
@@ -137,6 +141,9 @@ namespace MaterialWPF.UI
 
             GridView = '\uEBDE';
 
+        /// <summary>
+        /// Converts <see cref="MaterialIcon"/> to <see langword="char"/> based on the ID, if <see langword="null"/> or error, returns <see cref="MiconIcons.Accept"/>
+        /// </summary>
         public static char ToGlyph(UI.MaterialIcon? icon)
         {
             if (icon == null)
@@ -149,7 +156,10 @@ namespace MaterialWPF.UI
             else
                 return (char)character;
         }
-        
+
+        /// <summary>
+        /// Converts <see cref="MaterialIcon"/> to <see langword="string"/> based on the ID, if <see langword="null"/> or error, returns <see cref="MiconIcons.Accept"/>
+        /// </summary>
         public static string ToString(UI.MaterialIcon? icon)
         {
             return MiconIcons.ToGlyph(icon).ToString();
