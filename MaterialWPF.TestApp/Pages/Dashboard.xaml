@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:MaterialWPF.TestApp.Pages"
+    xmlns:materialwpf="clr-namespace:MaterialWPF.Controls;assembly=MaterialWPF"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Dashboard"
     d:DesignHeight="450"
@@ -31,6 +32,25 @@
                 FontWeight="Bold"
                 Text="Material WPF" />
             <TextBlock Text="A simple and uncomplicated way to make your application written in WPF keep up with modern design trends. Library changes the base elements like Window, Page or Button, and also includes additional controls like Navigation or Popup." TextWrapping="WrapWithOverflow" />
+
+            <Grid Margin="0,12,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <materialwpf:MaterialButton
+                    x:Name="buttonIcons"
+                    Grid.Column="0"
+                    Margin="0,0,4,0"
+                    Glyph="Calories"
+                    Text="Icons" />
+                <materialwpf:MaterialButton
+                    x:Name="buttonControls"
+                    Grid.Column="1"
+                    Margin="4,0,0,0"
+                    Glyph="AspectRatio"
+                    Text="Controls" />
+            </Grid>
         </StackPanel>
 
         <StackPanel
@@ -38,24 +58,16 @@
             Grid.Column="1"
             Margin="4,0,0,0">
             <TextBlock Text="GitHub Page" />
-            <TextBlock FontSize="10">
-                <Hyperlink
-                    Foreground="{StaticResource DefaultAccent}"
-                    NavigateUri="https://github.com/rapiddev/MaterialWPF"
-                    RequestNavigate="Hyperlink_RequestNavigate">
-                    https://github.com/rapiddev/MaterialWPF
-                </Hyperlink>
-            </TextBlock>
+            <materialwpf:MaterialHyperlink
+                Size="10"
+                Text="https://github.com/rapiddev/MaterialWPF"
+                Url="https://github.com/rapiddev/MaterialWPF" />
 
             <TextBlock Margin="0,4,0,0" Text="Nuget Page" />
-            <TextBlock FontSize="10">
-                <Hyperlink
-                    Foreground="{StaticResource DefaultAccent}"
-                    NavigateUri="https://www.nuget.org/packages/MaterialWPF/"
-                    RequestNavigate="Hyperlink_RequestNavigate">
-                    https://www.nuget.org/packages/MaterialWPF/
-                </Hyperlink>
-            </TextBlock>
+            <materialwpf:MaterialHyperlink
+                Size="10"
+                Text="https://www.nuget.org/packages/MaterialWPF/"
+                Url="https://www.nuget.org/packages/MaterialWPF/" />
         </StackPanel>
 
         <Grid Grid.Row="2" Grid.Column="1">

@@ -26,7 +26,10 @@
             </Grid.RowDefinitions>
 
             <!--  Column headers  -->
-            <TreeViewItem Grid.Row="0" BorderThickness="1">
+            <TreeViewItem
+                Grid.Row="0"
+                BorderThickness="1"
+                Style="{StaticResource MaterialTreeListTreeViewItem}">
                 <TreeViewItem.Header>
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -60,62 +63,8 @@
                 Grid.Row="1"
                 BorderBrush="Gray"
                 BorderThickness="0,1,0,0"
-                ItemsSource="{Binding SubItems}">
-                <TreeView.ItemTemplate>
-
-                    <!--  Level 0 template leaves space for 2 child "Toggle" levels  -->
-                    <HierarchicalDataTemplate ItemsSource="{Binding SubItems}">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition SharedSizeGroup="Task" />
-                                <ColumnDefinition SharedSizeGroup="Toggle" />
-                                <ColumnDefinition SharedSizeGroup="Toggle" />
-                                <ColumnDefinition SharedSizeGroup="Duration" />
-                                <ColumnDefinition SharedSizeGroup="Notes" />
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Text="{Binding Task}" />
-                            <TextBlock Grid.Column="3" Text="{Binding Duration}" />
-                            <TextBlock Grid.Column="4" Text="{Binding Notes}" />
-                        </Grid>
-
-                        <!--  Level 1 template leaves space for 1 child "Toggle" level  -->
-                        <HierarchicalDataTemplate.ItemTemplate>
-                            <HierarchicalDataTemplate ItemsSource="{Binding SubItems}">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition SharedSizeGroup="Task" />
-                                        <ColumnDefinition />
-                                        <ColumnDefinition SharedSizeGroup="Toggle" />
-                                        <ColumnDefinition SharedSizeGroup="Duration" />
-                                        <ColumnDefinition SharedSizeGroup="Notes" />
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Text="{Binding Task}" />
-                                    <TextBlock Grid.Column="3" Text="{Binding Duration}" />
-                                    <TextBlock Grid.Column="4" Text="{Binding Notes}" />
-                                </Grid>
-
-                                <!--  Level 2 template has no children  -->
-                                <HierarchicalDataTemplate.ItemTemplate>
-                                    <HierarchicalDataTemplate ItemsSource="{Binding SubItems}">
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition SharedSizeGroup="Task" />
-                                                <ColumnDefinition />
-                                                <ColumnDefinition />
-                                                <ColumnDefinition SharedSizeGroup="Duration" />
-                                                <ColumnDefinition SharedSizeGroup="Notes" />
-                                            </Grid.ColumnDefinitions>
-                                            <TextBlock Grid.Column="0" Text="{Binding Task}" />
-                                            <TextBlock Grid.Column="3" Text="{Binding Duration}" />
-                                            <TextBlock Grid.Column="4" Text="{Binding Notes}" />
-                                        </Grid>
-                                    </HierarchicalDataTemplate>
-                                </HierarchicalDataTemplate.ItemTemplate>
-                            </HierarchicalDataTemplate>
-                        </HierarchicalDataTemplate.ItemTemplate>
-                    </HierarchicalDataTemplate>
-                </TreeView.ItemTemplate>
-            </TreeView>
+                ItemsSource="{Binding SubItems}"
+                Style="{StaticResource MaterialTreeListTreeView}" />
         </Grid>
     </Grid>
 </UserControl>

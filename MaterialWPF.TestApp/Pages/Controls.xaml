@@ -15,12 +15,12 @@
     <Grid Margin="8,0,8,8">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
             <Grid
-                Grid.Row="1"
+                Grid.Row="0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top">
                 <StackPanel Orientation="Horizontal">

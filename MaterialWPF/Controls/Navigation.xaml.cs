@@ -63,6 +63,7 @@ namespace MaterialWPF.Controls
             set
             {
                 this._rootFrame = value;
+
                 this._rootFrame.NavigationUIVisibility = NavigationUIVisibility.Hidden;
                 this._rootFrame.Navigating += FrameOnNavigating;
             }
@@ -102,14 +103,6 @@ namespace MaterialWPF.Controls
                 for (int i = 0; i < this.Items.Count; i++)
                     if (this.Items[i].Tag == activepage)
                         this.Items[i].IsActive = true;
-        }
-
-        private void FrameOnNavigating(object sender, NavigatingCancelEventArgs e)
-        {
-            if (e.Content == null)
-                return;
-
-            this._rootFrame.NavigationService.RemoveBackEntry();
         }
 
         /// <summary>
@@ -174,6 +167,14 @@ namespace MaterialWPF.Controls
 
             navigationList.BeginAnimation(ItemsControl.WidthProperty, this._navExpander);
             this._navExpanded = !this._navExpanded;
+        }
+
+        private void FrameOnNavigating(object sender, NavigatingCancelEventArgs e)
+        {
+            if (e.Content == null)
+                return;
+
+            this._rootFrame.NavigationService.RemoveBackEntry();
         }
 
         private void Button_Hamburger(object sender, RoutedEventArgs e)

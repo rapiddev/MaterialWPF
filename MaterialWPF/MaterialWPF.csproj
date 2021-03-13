@@ -2,20 +2,32 @@
 
   <PropertyGroup>
     <TargetFrameworks>net5.0-windows</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
     <TargetPlatformVersion>10.0</TargetPlatformVersion>
     <UseWPF>true</UseWPF>
     <NeutralLanguage>en</NeutralLanguage>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Deterministic>false</Deterministic>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Pack>true</Pack>
+    <AssemblyName>MaterialWPF</AssemblyName>
+    <RootNamespace>MaterialWPF</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>$(AssemblyName)</PackageId>
+    <PackageVersion>$(Version)</PackageVersion>
+    <PackageLicense>https://github.com/rapiddev/MaterialWPF/blob/master/LICENSE</PackageLicense>
+    <PackageLicenseExpression>MPL-2.0</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <RepositoryUrl>https://github.com/rapiddev/MaterialWPF</RepositoryUrl>
     <Company>RapidDev</Company>
     <Authors>RapidDev</Authors>
     <Description>MaterialWPF</Description>
     <Copyright>© 2021 rapiddev</Copyright>
     <PackageProjectUrl>https://rdev.cc/</PackageProjectUrl>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <Deterministic>False</Deterministic>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <RepositoryUrl>https://github.com/rapiddev/MaterialWPF</RepositoryUrl>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Description>A simple and uncomplicated way to make your application written in WPF keep up with modern design trends. Library changes the base elements like Window, Page or Button, and also includes additional controls like Navigation or Popup.</Description>
   </PropertyGroup>
 
   <ItemGroup>

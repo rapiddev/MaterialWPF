@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Navigation;
 
 namespace MaterialWPF.TestApp.Pages
@@ -11,20 +12,24 @@ namespace MaterialWPF.TestApp.Pages
         public Dashboard()
         {
             InitializeComponent();
+
+            buttonIcons.Control.Click += Button_Icons;
+            buttonControls.Control.Click += Button_Controls;
         }
 
-        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        private void Navigate(string tag)
         {
-            /*Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
-            */
+            (App.Current.MainWindow as MainWindow).rootNavigation.Navigate(tag);
+        }
 
-            System.Diagnostics.ProcessStartInfo sInfo = new System.Diagnostics.ProcessStartInfo(e.Uri.AbsoluteUri)
-            {
-                UseShellExecute = true,
-            };
-            System.Diagnostics.Process.Start(sInfo);
+        private void Button_Icons(object sender, RoutedEventArgs e)
+        {
+            this.Navigate("icons");
+        }
 
-            e.Handled = true;
+        private void Button_Controls(object sender, RoutedEventArgs e)
+        {
+            this.Navigate("controls");
         }
     }
 }

@@ -1,4 +1,84 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:controls="clr-namespace:MaterialWPF.Controls" />
+    xmlns:controls="clr-namespace:MaterialWPF.Controls">
+
+    <!--  TreeList  -->
+    <Style
+        x:Key="MaterialTreeListTreeView"
+        BasedOn="{StaticResource {x:Type TreeView}}"
+        TargetType="{x:Type TreeView}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{StaticResource ThemeForeground}" />
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <HierarchicalDataTemplate ItemsSource="{Binding SubItems}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition SharedSizeGroup="Task" />
+                            <ColumnDefinition SharedSizeGroup="Toggle" />
+                            <ColumnDefinition SharedSizeGroup="Toggle" />
+                            <ColumnDefinition SharedSizeGroup="Duration" />
+                            <ColumnDefinition SharedSizeGroup="Notes" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding Task}" />
+                        <TextBlock Grid.Column="3" Text="{Binding Duration}" />
+                        <TextBlock Grid.Column="4" Text="{Binding Notes}" />
+                    </Grid>
+
+                    <!--  Level 1 template leaves space for 1 child "Toggle" level  -->
+                    <HierarchicalDataTemplate.ItemTemplate>
+                        <HierarchicalDataTemplate ItemsSource="{Binding SubItems}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition SharedSizeGroup="Task" />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition SharedSizeGroup="Toggle" />
+                                    <ColumnDefinition SharedSizeGroup="Duration" />
+                                    <ColumnDefinition SharedSizeGroup="Notes" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="{Binding Task}" />
+                                <TextBlock Grid.Column="3" Text="{Binding Duration}" />
+                                <TextBlock Grid.Column="4" Text="{Binding Notes}" />
+                            </Grid>
+
+                            <!--  Level 2 template has no children  -->
+                            <HierarchicalDataTemplate.ItemTemplate>
+                                <HierarchicalDataTemplate ItemsSource="{Binding SubItems}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition SharedSizeGroup="Task" />
+                                            <ColumnDefinition />
+                                            <ColumnDefinition />
+                                            <ColumnDefinition SharedSizeGroup="Duration" />
+                                            <ColumnDefinition SharedSizeGroup="Notes" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="{Binding Task}" />
+                                        <TextBlock Grid.Column="3" Text="{Binding Duration}" />
+                                        <TextBlock Grid.Column="4" Text="{Binding Notes}" />
+                                    </Grid>
+                                </HierarchicalDataTemplate>
+                            </HierarchicalDataTemplate.ItemTemplate>
+                        </HierarchicalDataTemplate>
+                    </HierarchicalDataTemplate.ItemTemplate>
+                </HierarchicalDataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Resources>
+            <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                <Setter Property="Foreground" Value="{StaticResource ThemeForeground}" />
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <Style
+        x:Key="MaterialTreeListTreeViewItem"
+        BasedOn="{StaticResource {x:Type TreeViewItem}}"
+        TargetType="{x:Type TreeViewItem}">
+        <Setter Property="Background" Value="{StaticResource ThemeElement}" />
+        <Setter Property="Foreground" Value="{StaticResource ThemeForeground}" />
+    </Style>
+
+
+
+</ResourceDictionary>
