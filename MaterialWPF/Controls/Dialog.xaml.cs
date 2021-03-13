@@ -81,5 +81,11 @@ namespace MaterialWPF.Controls
 
             this._status = true;
         }
+
+        private void ButtonClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Visibility = Visibility.Hidden;
+            this._status = false;
+        }
     }
 }

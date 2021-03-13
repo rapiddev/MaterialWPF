@@ -34,6 +34,7 @@
                                         <Button
                                             Grid.Column="0"
                                             Margin="0,0,4,0"
+                                            Click="ButtonClose_Click"
                                             Style="{StaticResource MaterialButton}">
                                             <StackPanel Orientation="Horizontal">
                                                 <TextBlock
