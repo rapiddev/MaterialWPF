@@ -5,6 +5,7 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <StartupObject>MaterialWPF.TestApp.App</StartupObject>
+    <ApplicationIcon>material_wpf.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>

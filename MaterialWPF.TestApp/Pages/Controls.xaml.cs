@@ -23,11 +23,21 @@ namespace MaterialWPF.TestApp.Pages
         public Controls()
         {
             InitializeComponent();
+
+            buttonShowPopup.Control.Click += Button_PopUp;
+            buttonShowDialog.Control.Click += Button_Dialog;
         }
 
         private void Button_PopUp(object sender, RoutedEventArgs e)
         {
+            popupMain.Header = "Wow that's amazing!";
+            popupMain.Message = "This popup contains a message, you can change it or something ...";
+            popupMain.Show();
+        }
 
+        private void Button_Dialog(object sender, RoutedEventArgs e)
+        {
+            dialogMain.Show();
         }
     }
 }

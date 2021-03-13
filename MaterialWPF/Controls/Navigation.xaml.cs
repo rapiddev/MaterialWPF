@@ -169,7 +169,7 @@ namespace MaterialWPF.Controls
 
         private void Button_NavItem(object sender, RoutedEventArgs e)
         {
-            this.Navigate((sender as Button).Tag.ToString());
+            this.Navigate((sender as System.Windows.Controls.Button).Tag.ToString());
         }
     }
 }

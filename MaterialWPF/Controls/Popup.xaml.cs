@@ -70,7 +70,7 @@ namespace MaterialWPF.Controls
             }
         }
 
-        private int? _timeout;
+        private int? _timeout = 3000;
         public int? Timeout
         {
             get

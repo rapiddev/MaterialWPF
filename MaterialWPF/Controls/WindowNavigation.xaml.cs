@@ -21,7 +21,7 @@ namespace MaterialWPF.Controls
 
         private void AppBarButton(object sender, RoutedEventArgs e)
         {
-            switch ((sender as Button).Tag.ToString())
+            switch ((sender as System.Windows.Controls.Button).Tag.ToString())
             {
                 case "minimize":
                     Application.Current.MainWindow.WindowState = WindowState.Minimized;
