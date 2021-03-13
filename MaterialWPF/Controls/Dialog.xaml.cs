@@ -22,6 +22,7 @@ namespace MaterialWPF.Controls
     public partial class Dialog : UserControl
     {
         private bool _status = false;
+        private Action _action = null;
 
         public static readonly DependencyProperty
             EnabledProperty = DependencyProperty.Register("Enabled", typeof(bool), typeof(Dialog), new PropertyMetadata(false));
@@ -46,6 +47,14 @@ namespace MaterialWPF.Controls
                     this.Visibility = Visibility.Hidden;
                     this._status = false;
                 }
+            }
+        }
+
+        public Action Action
+        {
+            set
+            {
+                this._action = value;
             }
         }
 
@@ -86,6 +95,12 @@ namespace MaterialWPF.Controls
         {
             this.Visibility = Visibility.Hidden;
             this._status = false;
+        }
+
+        private void ButtonAction_Click(object sender, RoutedEventArgs e)
+        {
+            if (this._action != null)
+                this._action();
         }
     }
 }

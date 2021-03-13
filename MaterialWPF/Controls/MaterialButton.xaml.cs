@@ -1,29 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace MaterialWPF.Controls
 {
     /// <summary>
     /// Interaction logic for Button.xaml
     /// </summary>
-    public partial class Button : UserControl
+    public partial class MaterialButton : UserControl
     {
         public static readonly DependencyProperty
-            GlyphProperty = DependencyProperty.Register("Glyph", typeof(UI.MaterialIcon), typeof(MaterialWPF.Controls.Button), new PropertyMetadata(UI.MaterialIcon.Accept)),
-            SizeProperty = DependencyProperty.Register("Size", typeof(double), typeof(MaterialWPF.Controls.Button), new PropertyMetadata((double)13)),
-            TextProperty = DependencyProperty.Register("Text", typeof(string), typeof(MaterialWPF.Controls.Button), new PropertyMetadata(string.Empty));
+            GlyphProperty = DependencyProperty.Register("Glyph", typeof(UI.MaterialIcon), typeof(MaterialWPF.Controls.MaterialButton), new PropertyMetadata(UI.MaterialIcon.Accept)),
+            SizeProperty = DependencyProperty.Register("Size", typeof(double), typeof(MaterialWPF.Controls.MaterialButton), new PropertyMetadata((double)13)),
+            TextProperty = DependencyProperty.Register("Text", typeof(string), typeof(MaterialWPF.Controls.MaterialButton), new PropertyMetadata(string.Empty));
 
         public System.Windows.Controls.Button Control => rootButton;
 
@@ -71,7 +59,7 @@ namespace MaterialWPF.Controls
             }
         }
 
-        public Button()
+        public MaterialButton()
         {
             InitializeComponent();
         }

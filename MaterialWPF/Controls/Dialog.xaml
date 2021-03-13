@@ -30,7 +30,11 @@
                                         <RowDefinition Height="Auto" />
                                     </Grid.RowDefinitions>
                                     <ContentPresenter Grid.Row="0" Content="{TemplateBinding Content}" />
-                                    <StackPanel Grid.Row="1" Margin="0,6,0,0">
+                                    <Grid Grid.Row="1" Margin="0,6,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
                                         <Button
                                             Grid.Column="0"
                                             Margin="0,0,4,0"
@@ -44,7 +48,20 @@
                                                 <TextBlock VerticalAlignment="Center" Text="Close" />
                                             </StackPanel>
                                         </Button>
-                                    </StackPanel>
+                                        <Button
+                                            Grid.Column="1"
+                                            Margin="4,0,0,0"
+                                            Click="ButtonAction_Click"
+                                            Style="{StaticResource MaterialButton}">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock
+                                                    Margin="0,0,12,0"
+                                                    Style="{StaticResource MaterialIcon}"
+                                                    Text="&#xEA01;" />
+                                                <TextBlock VerticalAlignment="Center" Text="Action button" />
+                                            </StackPanel>
+                                        </Button>
+                                    </Grid>
                                 </Grid>
                             </Border>
                         </Grid>

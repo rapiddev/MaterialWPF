@@ -31,7 +31,7 @@ namespace MaterialWPF.TestApp.Pages
         private void Button_PopUp(object sender, RoutedEventArgs e)
         {
             popupMain.Header = "Wow that's amazing!";
-            popupMain.Message = "This popup contains a message, you can change it or something ...";
+            popupMain.Message = "This popup contains a message, you can change it or something...";
             popupMain.Show();
         }
 

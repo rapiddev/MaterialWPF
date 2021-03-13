@@ -24,16 +24,16 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top">
                 <StackPanel Orientation="Horizontal">
-                    <materialwpf:Button
+                    <materialwpf:MaterialButton
                         x:Name="buttonShowPopup"
                         Margin="0,0,12,0"
                         Glyph="ActionCenterNotification"
                         Text="Show popup" />
 
-                    <materialwpf:Button
+                    <materialwpf:MaterialButton
                         x:Name="buttonShowDialog"
                         Margin="0,0,12,0"
-                        Glyph="ActionCenterNotification"
+                        Glyph="ActionCenter"
                         Text="Show dialog" />
                 </StackPanel>
             </Grid>
@@ -42,7 +42,8 @@
         <materialwpf:Popup x:Name="popupMain" />
         <materialwpf:Dialog x:Name="dialogMain">
             <StackPanel>
-                <TextBlock Text="This is dialog!" />
+                <TextBlock FontSize="18" Text="This is dialog!" />
+                <TextBlock Text="You can post or write something here. It's a new control, so it's not working great" TextWrapping="WrapWithOverflow" />
             </StackPanel>
         </materialwpf:Dialog>
     </Grid>
