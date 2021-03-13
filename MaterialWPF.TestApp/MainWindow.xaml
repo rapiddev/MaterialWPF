@@ -32,10 +32,7 @@
 
         <!--  Content Frame  -->
         <Grid Grid.Row="1" Grid.Column="1">
-            <Frame
-                x:Name="rootFrame"
-                Navigating="FrameOnNavigating"
-                NavigationUIVisibility="Hidden" />
+            <Frame x:Name="rootFrame" />
         </Grid>
 
         <!--  Window buttons  -->

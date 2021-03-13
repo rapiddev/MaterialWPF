@@ -9,6 +9,7 @@ using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
+using System.Windows.Navigation;
 
 namespace MaterialWPF.Controls
 {
@@ -59,7 +60,12 @@ namespace MaterialWPF.Controls
         public Frame Frame
         {
             get { return this._rootFrame; }
-            set { this._rootFrame = value; }
+            set
+            {
+                this._rootFrame = value;
+                this._rootFrame.NavigationUIVisibility = NavigationUIVisibility.Hidden;
+                this._rootFrame.Navigating += FrameOnNavigating;
+            }
         }
 
         /// <summary>
@@ -96,6 +102,14 @@ namespace MaterialWPF.Controls
                 for (int i = 0; i < this.Items.Count; i++)
                     if (this.Items[i].Tag == activepage)
                         this.Items[i].IsActive = true;
+        }
+
+        private void FrameOnNavigating(object sender, NavigatingCancelEventArgs e)
+        {
+            if (e.Content == null)
+                return;
+
+            this._rootFrame.NavigationService.RemoveBackEntry();
         }
 
         /// <summary>

@@ -18,9 +18,9 @@ namespace MaterialWPF.TestApp.Pages
     /// <summary>
     /// Interaction logic for TreeView.xaml
     /// </summary>
-    public partial class TreeView : Page
+    public partial class TreeList : Page
     {
-        public TreeView()
+        public TreeList()
         {
             InitializeComponent();
         }
