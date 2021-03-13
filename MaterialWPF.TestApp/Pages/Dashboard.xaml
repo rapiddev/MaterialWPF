@@ -12,25 +12,31 @@
     Style="{StaticResource MaterialPage}"
     mc:Ignorable="d">
 
-    <Grid Margin="8,0,8,8">
+    <Grid Margin="30,0,30,30">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <StackPanel
+        <TextBlock
             Grid.Row="0"
             Grid.Column="0"
+            Margin="0,0,0,12"
+            FontSize="24"
+            FontWeight="Bold"
+            Text="Material WPF" />
+
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="0"
             Margin="0,0,4,0">
-            <TextBlock
-                FontSize="24"
-                FontWeight="Bold"
-                Text="Material WPF" />
+
             <TextBlock Text="A simple and uncomplicated way to make your application written in WPF keep up with modern design trends. Library changes the base elements like Window, Page or Button, and also includes additional controls like Navigation or Popup." TextWrapping="WrapWithOverflow" />
 
             <Grid Margin="0,12,0,0">
@@ -54,7 +60,7 @@
         </StackPanel>
 
         <StackPanel
-            Grid.Row="0"
+            Grid.Row="1"
             Grid.Column="1"
             Margin="4,0,0,0">
             <TextBlock Text="GitHub Page" />
@@ -70,7 +76,7 @@
                 Url="https://www.nuget.org/packages/MaterialWPF/" />
         </StackPanel>
 
-        <Grid Grid.Row="2" Grid.Column="1">
+        <Grid Grid.Row="3" Grid.Column="1">
             <TextBlock
                 HorizontalAlignment="Right"
                 FontSize="10"

@@ -12,34 +12,41 @@
     Style="{StaticResource MaterialPage}"
     mc:Ignorable="d">
 
-    <Grid Margin="8,0,8,8">
-        <Grid>
+    <Grid>
+        <Grid Margin="30,0,30,30">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <Grid
-                Grid.Row="0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top">
-                <StackPanel Orientation="Horizontal">
-                    <materialwpf:MaterialButton
-                        x:Name="buttonShowPopup"
-                        Margin="0,0,12,0"
-                        Glyph="ActionCenterNotification"
-                        Text="Show popup" />
-
-                    <materialwpf:MaterialButton
-                        x:Name="buttonShowDialog"
-                        Margin="0,0,12,0"
-                        Glyph="ActionCenter"
-                        Text="Show dialog" />
-                </StackPanel>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <materialwpf:MaterialButton
+                    x:Name="buttonShowPopup"
+                    Grid.Column="0"
+                    Margin="0,0,4,0"
+                    Glyph="ActionCenter"
+                    Text="Show popup" />
+                <materialwpf:MaterialButton
+                    x:Name="buttonShowDialog"
+                    Grid.Column="1"
+                    Margin="4,0,4,0"
+                    Glyph="AspectRatio"
+                    Text="Show dialog" />
+                <materialwpf:MaterialButton
+                    x:Name="buttonSendToast"
+                    Grid.Column="2"
+                    Margin="4,0,0,0"
+                    Glyph="ActionCenterNotification"
+                    Text="Send toast" />
             </Grid>
         </Grid>
 
-        <materialwpf:Popup x:Name="popupMain" />
+        <materialwpf:Popup x:Name="popupMain" Margin="0,0,0,12" />
         <materialwpf:Dialog x:Name="dialogMain">
             <StackPanel>
                 <TextBlock FontSize="18" Text="This is dialog!" />

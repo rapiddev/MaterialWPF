@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows</TargetFramework>
+    <TargetFramework>net5.0-windows10.0.17763.0</TargetFramework>
     <UseWPF>true</UseWPF>
     <StartupObject>MaterialWPF.TestApp.App</StartupObject>
     <ApplicationIcon>material_wpf.ico</ApplicationIcon>

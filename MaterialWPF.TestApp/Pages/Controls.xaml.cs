@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace MaterialWPF.TestApp.Pages
 {
@@ -26,6 +14,7 @@ namespace MaterialWPF.TestApp.Pages
 
             buttonShowPopup.Control.Click += Button_PopUp;
             buttonShowDialog.Control.Click += Button_Dialog;
+            buttonSendToast.Control.Click += Button_Toast;
         }
 
         private void Button_PopUp(object sender, RoutedEventArgs e)
@@ -38,6 +27,16 @@ namespace MaterialWPF.TestApp.Pages
         private void Button_Dialog(object sender, RoutedEventArgs e)
         {
             dialogMain.Show();
+        }
+
+        private void Button_Toast(object sender, RoutedEventArgs e)
+        {
+            MaterialWPF.UI.Toast toast = new MaterialWPF.UI.Toast();
+
+            toast.Header = "Sample toast";
+            toast.Message = "When your application is running e.g. in the background, you can send a notification to the user to finally get up from his desk and eat something. Well, for example ...";
+
+            toast.Send();
         }
     }
 }
