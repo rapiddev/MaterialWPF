@@ -43,6 +43,20 @@ jobs:
         
       - name: Build
         run: msbuild MaterialWPF.sln -p:Configuration=Release -m
+
+      - name: Publish net50
+        uses: actions/upload-artifact@v2
+        with:
+          name: MaterialWPF-net50
+          path: |
+            bin/Release/net5.0-windows
+
+      - name: Publish nupkg
+        uses: actions/upload-artifact@v2
+        with:
+          name: MaterialWPF-nupkg
+          path: |
+            bin/Release/MaterialWPF.*.nupkg
         
       - name: Publish to NuGet
         uses: rohith/publish-nuget@v2
