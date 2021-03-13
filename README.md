@@ -16,7 +16,7 @@ A simple and uncomplicated way to make your application written in WPF keep up w
 | Control | Namespace | Description |
 | --- | --- | --- |
 | **Toast** | MaterialWPF.UI | Class with which you can send a Toast to the Windows notification center. |
-| **MiconIcons** | MaterialWPF.UI | A collection of all [MiconIcons](https://github.com/xtoolkit/Micon) font glyphs that you can use in an application. |
+| **MiconIcons** | MaterialWPF.UI | A collection of all [Micon](https://github.com/xtoolkit/Micon) font glyphs that you can use in an application. |
 | **Icon** | MaterialWPF.Controls | Prepared TextBlock with "Glyph" attribute with which you can select an icon. |
 | **Popup** | MaterialWPF.Controls | A card with a pop-up animation that can act as a notification of an action for the user. |
 | **Dialog** | MaterialWPF.Controls | A control that you can display in the middle of the application, e.g. with a "Save as" information or whatever... |

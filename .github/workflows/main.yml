@@ -56,7 +56,7 @@ jobs:
         with:
           name: MaterialWPF-net50
           path: |
-            MaterialWPF/bin/Release/net5.0-windows
+            MaterialWPF/bin/Release/net5.0-windows10.0.17763.0
 
       - name: Publish nupkg
         uses: actions/upload-artifact@v2

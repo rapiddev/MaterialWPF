@@ -35,6 +35,7 @@ namespace MaterialWPF.TestApp.Pages
 
             toast.Header = "Sample toast";
             toast.Message = "When your application is running e.g. in the background, you can send a notification to the user to finally get up from his desk and eat something. Well, for example ...";
+            toast.Footer = "Created with Material WPF";
 
             toast.Send();
         }

@@ -1,25 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Windows.UI.Notifications;
+﻿using Windows.UI.Notifications;
 using Windows.Data.Xml.Dom;
-using System.IO;
-using System.Windows;
 using System.Reflection;
 
 namespace MaterialWPF.UI
 {
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>")]
     public class Toast
     {
         private string
             _header = string.Empty,
             _message = string.Empty,
-            _assemblyTitle = string.Empty;
-
-        private XmlDocument _toastNotificationTemplate;
-        private ToastTemplateType _templateType = ToastTemplateType.ToastText02;
+            _footer = string.Empty,
+            _imagePath = string.Empty,
+            _assemblyTitle = string.Empty,
+            _xmlTemplate = string.Empty;
 
         public string Header
         {
@@ -33,24 +27,27 @@ namespace MaterialWPF.UI
             set => this._message = value;
         }
 
-        public ToastTemplateType Type
+        public string Footer
         {
-            get => this._templateType;
-            set => this._templateType = value;
+            get => this._footer;
+            set => this._footer = value;
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>")]
+        public string Image
+        {
+            get => this._imagePath;
+            set => this._imagePath = value;
+        }
+
         public void Send()
         {
             this.SetAppTitle();
             this.BuildToastTemplate();
-            /*
-            String imagePath = "file:///" + Path.GetFullPath("toastImageAndText.png");
-            XmlNodeList imageElements = toastXml.GetElementsByTagName("image");
-            imageElements[0].Attributes.GetNamedItem("src").NodeValue = imagePath;
-            */
+            
+            XmlDocument toastXmlDocument = new XmlDocument();
+            toastXmlDocument.LoadXml(this._xmlTemplate);
 
-            ToastNotification toast = new ToastNotification(this._toastNotificationTemplate);
+            ToastNotification toast = new ToastNotification(toastXmlDocument);
             ToastNotificationManager.CreateToastNotifier(this._assemblyTitle).Show(toast);
         }
 
@@ -62,17 +59,34 @@ namespace MaterialWPF.UI
                 this._assemblyTitle = title;
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>")]
         private void BuildToastTemplate()
         {
-            this._toastNotificationTemplate = ToastNotificationManager.GetTemplateContent(this._templateType);
-            XmlNodeList stringElements = this._toastNotificationTemplate.GetElementsByTagName("text");
+            //Base start
+            this._xmlTemplate = "<toast><visual>";
 
-            if (stringElements.Length > 0)
-                stringElements[0].AppendChild(this._toastNotificationTemplate.CreateTextNode(this._header));
+            //Template start
+            this._xmlTemplate += "<binding template=\"ToastText02\">";
+            
+            if (!string.IsNullOrEmpty(this._header))
+                this._xmlTemplate += "<text id =\"1\">" + this._header + "</text>";
+            if(!string.IsNullOrEmpty(this._message))
+                this._xmlTemplate += "<text id=\"2\">" + this._message + "</text>";
+            if (!string.IsNullOrEmpty(this._footer))
+                this._xmlTemplate += "<text placement=\"attribution\">" + this._footer + "</text>";
 
-            if (stringElements.Length > 1)
-                stringElements[1].AppendChild(this._toastNotificationTemplate.CreateTextNode(this._message));
+            //this._xmlTemplate += "<group><subgroup><text hint-style=\"base\">52 attendees</text><text hint-style=\"captionSubtle\">23 minute drive</text></subgroup><subgroup><text hint-style=\"captionSubtle\" hint-align=\"right\">1 Microsoft Way</text><text hint-style=\"captionSubtle\" hint-align=\"right\">Bellevue, WA 98008</text></subgroup></group>";
+            //this._xmlTemplate += "<progress title=\"Weekly playlist\" value=\"0.6\" valueStringOverride=\"15/26 songs\" status=\"Downloading...\"/>";
+            //this._xmlTemplate += "<image placement=\"hero\" hint-crop=\"circle\" src=\"https://picsum.photos/48?image=883\"/>";
+
+            //Template end
+            this._xmlTemplate += "</binding>";
+            this._xmlTemplate += "<actions></actions>";
+
+            //Sound
+            //this._xmlTemplate += "<audio src=\"ms-winsoundevent:Notification.Reminder\"/>";
+
+            //Base end
+            this._xmlTemplate += "</visual></toast>";
         }
     }
 }
