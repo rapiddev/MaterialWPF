@@ -29,6 +29,13 @@ jobs:
       - uses: microsoft/setup-msbuild@v1.0.2
       
       # Taken from LibreHardwareMonitor https://github.com/LibreHardwareMonitor/LibreHardwareMonitor/blob/master/.github/workflows/main.yml
+      - uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            buildprops:
+              - 'Directory.Build.props'
+
       - name: Update version
         if: steps.changes.outputs.buildprops == 'false'
         run: |
