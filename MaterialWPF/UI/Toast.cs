@@ -1,10 +1,12 @@
-﻿using Windows.UI.Notifications;
-using Windows.Data.Xml.Dom;
+﻿// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// Copyright (C) Leszek Pomianowski and MaterialWPF Contributors.
+// All Rights Reserved.
+
 using System.Reflection;
 
 namespace MaterialWPF.UI
 {
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>")]
     public class Toast
     {
         private string
@@ -39,16 +41,20 @@ namespace MaterialWPF.UI
             set => this._imagePath = value;
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>")]
         public void Send()
         {
             this.SetAppTitle();
             this.BuildToastTemplate();
-            
-            XmlDocument toastXmlDocument = new XmlDocument();
+
+            //Doesn't work, it needs to be fixed later
+#if NET5_W10_1809
+            Windows.Data.Xml.Dom.XmlDocument toastXmlDocument = new Windows.Data.Xml.Dom.XmlDocument();
             toastXmlDocument.LoadXml(this._xmlTemplate);
 
-            ToastNotification toast = new ToastNotification(toastXmlDocument);
-            ToastNotificationManager.CreateToastNotifier(this._assemblyTitle).Show(toast);
+            Windows.UI.Notifications.ToastNotification toast = new Windows.UI.Notifications.ToastNotification(toastXmlDocument);
+            Windows.UI.Notifications.ToastNotificationManager.CreateToastNotifier(this._assemblyTitle).Show(toast);
+#endif
         }
 
         public void SetAppTitle(string title = null)
