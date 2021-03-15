@@ -32,11 +32,12 @@
     <Copyright>© 2021 rapiddev</Copyright>
     <PackageProjectUrl>https://rdev.cc/</PackageProjectUrl>
     <Description>A simple and uncomplicated way to make your application written in WPF keep up with modern design trends. Library changes the base elements like Window, Page or Button, and also includes additional controls like Navigation or Popup.</Description>
-    <PackageIcon>material-wpf.png</PackageIcon>
+    <ApplicationIcon>material_wpf.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove=".gitignore" />
+    <None Remove="Assets\material-wpf.png" />
     <None Remove="Directory.Build.props" />
     <None Remove="Fonts\Lato-Bold.ttf" />
     <None Remove="Fonts\Lato-Regular.ttf" />
@@ -44,10 +45,6 @@
     <None Remove="Fonts\micon_nb.ttf" />
     <None Remove="README.md" />
     <None Include="..\LICENSE">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-    <None Include="material-wpf.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
