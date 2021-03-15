@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Navigation;
 
-namespace MaterialWPF.TestApp.Pages
+namespace MaterialWPF.Demo.Pages
 {
     /// <summary>
     /// Interaction logic for Dashboard.xaml

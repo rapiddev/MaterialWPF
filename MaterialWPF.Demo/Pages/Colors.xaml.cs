@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MaterialWPF.TestApp.Pages
+namespace MaterialWPF.Demo.Pages
 {
     public struct ColorDisplayable
     {

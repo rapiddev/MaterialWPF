@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Navigation;
 using MaterialWPF.UI;
 
-namespace MaterialWPF.TestApp
+namespace MaterialWPF.Demo
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

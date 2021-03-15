@@ -6,7 +6,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace MaterialWPF.TestApp.Pages
+namespace MaterialWPF.Demo.Pages
 {
     /// <summary>
     /// Interaction logic for Controls.xaml

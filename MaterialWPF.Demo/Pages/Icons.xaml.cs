@@ -7,7 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using MaterialWPF.UI;
 
-namespace MaterialWPF.TestApp.Pages
+namespace MaterialWPF.Demo.Pages
 {
     public struct DisplayableIcon
     {

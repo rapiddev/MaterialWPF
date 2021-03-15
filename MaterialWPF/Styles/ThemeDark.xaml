@@ -31,7 +31,7 @@
     <SolidColorBrush x:Key="ThemeInteractiveHover" Color="#292929" />
     <SolidColorBrush x:Key="ThemeInteractiveSelected" Color="#3f3f41" />
 
-    <SolidColorBrush x:Key="ThemeElement" Color="#393939" />
+    <SolidColorBrush x:Key="ThemeElement" Color="#1d1d1d" />
     <SolidColorBrush x:Key="ThemeElementBorder" Color="#3f3f41" />
     <SolidColorBrush x:Key="ThemeElementHover" Color="#292929" />
     <SolidColorBrush x:Key="ThemeElementSelected" Color="#3f3f41" />

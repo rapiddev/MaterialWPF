@@ -6,7 +6,7 @@
 using System;
 using System.Windows;
 
-namespace MaterialWPF.TestApp
+namespace MaterialWPF.Demo
 {
     public enum Theme
     {
@@ -19,16 +19,12 @@ namespace MaterialWPF.TestApp
     /// </summary>
     public partial class App : Application
     {
-        public System.Collections.ObjectModel.Collection<ResourceDictionary> Dictionaries
-        {
-            // You could probably get it via its name with some query logic as well.
-            get { return Resources.MergedDictionaries; }
-        }
+        public Theme CurrentTheme = Theme.Dark;
 
         public void SwitchTheme(Theme theme)
         {
             //ATTENTION! This code only works if the resources formula is the same as in App.xaml.
-            Dictionaries[0] = new ResourceDictionary() { Source = new Uri("pack://application:,,,/MaterialWPF;component/Styles/Theme" + (theme == Theme.Light ? "Light" : "Dark") + ".xaml", UriKind.RelativeOrAbsolute) };
+            Resources.MergedDictionaries[0] = new ResourceDictionary() { Source = new Uri("pack://application:,,,/MaterialWPF;component/Styles/Theme" + (theme == Theme.Light ? "Light" : "Dark") + ".xaml", UriKind.RelativeOrAbsolute) };
         }
     }
 }

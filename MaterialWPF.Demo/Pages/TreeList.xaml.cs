@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MaterialWPF.TestApp.Pages
+namespace MaterialWPF.Demo.Pages
 {
     /// <summary>
-    /// Interaction logic for Fields.xaml
+    /// Interaction logic for TreeView.xaml
     /// </summary>
-    public partial class Fields : Page
+    public partial class TreeList : Page
     {
-        public Fields()
+        public TreeList()
         {
             InitializeComponent();
         }
