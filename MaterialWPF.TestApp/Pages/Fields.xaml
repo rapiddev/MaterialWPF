@@ -44,7 +44,6 @@
             </Grid>
 
             <Label
-                Margin="0,12,0,0"
                 Padding="0,12,0,4"
                 Content="Woah! Placeholder"
                 Foreground="{StaticResource ThemeForeground}" />

@@ -12,7 +12,7 @@
     Style="{StaticResource MaterialPage}"
     mc:Ignorable="d">
 
-    <Grid Margin="30,0,30,30">
+    <Grid Margin="30,0,30,12">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
