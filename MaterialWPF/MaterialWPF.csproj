@@ -27,13 +27,13 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <RepositoryUrl>https://github.com/rapiddev/MaterialWPF</RepositoryUrl>
     <Company>RapidDev</Company>
-    <Authors>RapidDev</Authors>
+    <Authors>Leszek Pomianowski</Authors>
     <Description>MaterialWPF</Description>
     <Copyright>© 2021 rapiddev</Copyright>
     <PackageProjectUrl>https://github.com/rapiddev/MaterialWPF</PackageProjectUrl>
     <Description>A simple and uncomplicated way to make your application written in WPF keep up with modern design trends. Library changes the base elements like Window, Page or Button, and also includes additional controls like Navigation or Popup.</Description>
     <PackageIcon>material-wpf.png</PackageIcon>
-    <PackageTags>wpf material windows fluent design controls custom</PackageTags>
+    <PackageTags>wpf ui material windows fluent design controls custom metro modern xaml toolkit color design</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

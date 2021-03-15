@@ -40,15 +40,20 @@ A simple and uncomplicated way to make your application written in WPF keep up w
 
 **Add resources to App.xaml**
 ```c#
-<Application>
-    <Application.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/MaterialWPF;component/Styles/ThemeLight.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialWPF;component/Styles/Material.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Application.Resources>
+<Application
+  x:Class="YourMainNamespace.App"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:local="clr-namespace:YourMainNamespace"
+  StartupUri="MainWindow.xaml">
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/MaterialWPF;component/Styles/ThemeDark.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialWPF;component/Styles/Material.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Application.Resources>
 </Application>
 ```
 
@@ -56,48 +61,49 @@ A simple and uncomplicated way to make your application written in WPF keep up w
 **(without logic)**
 ```c#
 <Window
-    xmlns:materialwpf="clr-namespace:MaterialWPF.Controls;assembly=MaterialWPF"
-    MaxWidth="{Binding Source={x:Static SystemParameters.WorkArea}, Path=Width}"
-    MaxHeight="{Binding Source={x:Static SystemParameters.WorkArea}, Path=Height}"
-    Style="{StaticResource MaterialWindow}"
-    ResizeMode="CanResize"
-    WindowStyle="None">
-    <WindowChrome.WindowChrome>
-        <WindowChrome
-            CaptionHeight="0"
-            CornerRadius="0"
-            GlassFrameThickness="0"
-            ResizeBorderThickness="6"
-            UseAeroCaptionButtons="False" />
-    </WindowChrome.WindowChrome>
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+  x:Class="YourMainNamespace.MainWindow"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:materialwpf="clr-namespace:MaterialWPF.Controls;assembly=MaterialWPF"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  Width="1160"
+  Height="612"
+  Style="{StaticResource MaterialNavigationWindow}"
+  WindowStartupLocation="CenterScreen"
+  mc:Ignorable="d">
+  <Grid>
+    <!--  An example of splitting the window grid to make everything look nice  -->
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
 
-        <!--  Navigation  -->
-        <materialwpf:Navigation
-            x:Name="rootNavigation"
-            Grid.Row="0"
-            Grid.RowSpan="2"
-            Grid.Column="0" />
+    <!--  Navigation Control, displays buttons for navigating pages  -->
+    <materialwpf:Navigation
+      x:Name="rootNavigation"
+      Grid.Row="0"
+      Grid.RowSpan="2"
+      Grid.Column="0" />
 
-        <!--  Content Frame  -->
-        <Grid Grid.Row="1" Grid.Column="1">
-            <Frame
-                x:Name="rootFrame"
-                Navigating="FrameOnNavigating"
-                NavigationUIVisibility="Hidden" />
-        </Grid>
-
-        <!--  Window buttons  -->
-        <materialwpf:WindowNavigation Grid.Row="0" Grid.Column="1" />
+    <!--  Main content frame, instances of the Page class are loaded into it  -->
+    <Grid Grid.Row="1" Grid.Column="1">
+      <Frame x:Name="rootFrame" />
     </Grid>
+
+    <!--  Buttons for navigating the application window (minimize, maximize, close)  -->
+    <materialwpf:WindowNavigation Grid.Row="0" Grid.Column="1" />
+
+    <!--  Splash to make the app look nice on startup. You can use it while loading resources  -->
+    <materialwpf:Splash
+      x:Name="mainSplash"
+      Grid.RowSpan="2"
+      Grid.ColumnSpan="2" />
+  </Grid>
 </Window>
 ```
 
