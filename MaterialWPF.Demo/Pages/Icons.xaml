@@ -67,19 +67,19 @@
             <TextBlock
                 Margin="0,8,0,0"
                 Padding="12"
-                Background="#1e1e1e"
+                Background="{DynamicResource ThemeElement}"
                 FontSize="10">
-                <TextBlock Foreground="#808080" Text="&lt;" />
-                <TextBlock Foreground="White" Text="materialwpf:Icon" />
-                <TextBlock Foreground="#92caf4" Text=" Glyph" />
-                <TextBlock Foreground="#808080" Text="=" />
-                <TextBlock Foreground="#92caf4" Text="&quot;" />
+                <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text="&lt;" />
+                <TextBlock Foreground="{DynamicResource ThemeCodeAttribute}" Text="materialwpf:Icon" />
+                <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text=" Glyph" />
+                <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text="=" />
+                <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text="&quot;" />
                 <TextBlock
                     x:Name="textGlyph"
-                    Foreground="#d4a552"
+                    Foreground="{DynamicResource ThemeCodeName}"
                     Text="Accept" />
-                <TextBlock Foreground="#92caf4" Text="&quot;" />
-                <TextBlock Foreground="#808080" Text=" /&gt;" />
+                <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text="&quot;" />
+                <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text=" /&gt;" />
             </TextBlock>
         </Grid>
         <Grid

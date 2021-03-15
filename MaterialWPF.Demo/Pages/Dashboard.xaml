@@ -25,13 +25,14 @@
         </Grid.RowDefinitions>
 
         <Image
+            x:Name="mainBanner"
             Grid.Row="0"
             Grid.Column="0"
             MaxWidth="200"
             Margin="0,0,0,12"
             HorizontalAlignment="Left"
             RenderOptions.BitmapScalingMode="HighQuality"
-            Source="pack://application:,,,/Assets/banner.png" />
+            Source="pack://application:,,,/Assets/banner-dark.png" />
 
         <StackPanel
             Grid.Row="1"

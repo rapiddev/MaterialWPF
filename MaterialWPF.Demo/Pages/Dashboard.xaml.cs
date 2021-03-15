@@ -38,11 +38,13 @@ namespace MaterialWPF.Demo.Pages
         private void Button_ThemeLight(object sender, RoutedEventArgs e)
         {
             (System.Windows.Application.Current as App).SwitchTheme(Theme.Light);
+            mainBanner.Source = new System.Windows.Media.Imaging.BitmapImage(new System.Uri("pack://application:,,,/Assets/banner-light.png"));
         }
 
         private void Button_ThemeDark(object sender, RoutedEventArgs e)
         {
             (System.Windows.Application.Current as App).SwitchTheme(Theme.Dark);
+            mainBanner.Source = new System.Windows.Media.Imaging.BitmapImage(new System.Uri("pack://application:,,,/Assets/banner-dark.png"));
         }
     }
 }

@@ -46,18 +46,18 @@
                                 BorderThickness="1,0,1,1">
                                 <TextBlock
                                     Padding="6"
-                                    Background="#1e1e1e"
+                                    Background="{DynamicResource ThemeElement}"
                                     FontSize="10">
-                                    <TextBlock Foreground="#808080" Text="&lt;" />
-                                    <TextBlock Foreground="White" Text="Control" />
-                                    <TextBlock Foreground="#92caf4" Text=" Background" />
-                                    <TextBlock Foreground="#808080" Text="=" />
-                                    <TextBlock Foreground="#92caf4" Text="&quot;" />
-                                    <TextBlock Foreground="#bba08c" Text="{}{DynamicResource " />
-                                    <TextBlock Foreground="#d4a552" Text="{Binding ID}" />
-                                    <TextBlock Foreground="#bba08c" Text="}" />
-                                    <TextBlock Foreground="#92caf4" Text="&quot;" />
-                                    <TextBlock Foreground="#808080" Text=" /&gt;" />
+                                    <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text="&lt;" />
+                                    <TextBlock Foreground="{DynamicResource ThemeCodeAttribute}" Text="Control" />
+                                    <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text=" Background" />
+                                    <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text="=" />
+                                    <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text="&quot;" />
+                                    <TextBlock Foreground="{DynamicResource ThemeCodeSource}" Text="{}{DynamicResource " />
+                                    <TextBlock Foreground="{DynamicResource ThemeCodeName}" Text="{Binding ID}" />
+                                    <TextBlock Foreground="{DynamicResource ThemeCodeSource}" />
+                                    <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text="&quot;" />
+                                    <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text=" /&gt;" />
                                 </TextBlock>
                             </Border>
                         </Grid>
@@ -90,18 +90,18 @@
                                 BorderThickness="1,0,1,1">
                                 <TextBlock
                                     Padding="6"
-                                    Background="#1e1e1e"
+                                    Background="{DynamicResource ThemeElement}"
                                     FontSize="10">
-                                    <TextBlock Foreground="#808080" Text="&lt;" />
-                                    <TextBlock Foreground="White" Text="Control" />
-                                    <TextBlock Foreground="#92caf4" Text=" Background" />
-                                    <TextBlock Foreground="#808080" Text="=" />
-                                    <TextBlock Foreground="#92caf4" Text="&quot;" />
-                                    <TextBlock Foreground="#bba08c" Text="{}{StaticResource " />
-                                    <TextBlock Foreground="#d4a552" Text="{Binding ID}" />
-                                    <TextBlock Foreground="#bba08c" Text="}" />
-                                    <TextBlock Foreground="#92caf4" Text="&quot;" />
-                                    <TextBlock Foreground="#808080" Text=" /&gt;" />
+                                    <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text="&lt;" />
+                                    <TextBlock Foreground="{DynamicResource ThemeCodeAttribute}" Text="Control" />
+                                    <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text=" Background" />
+                                    <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text="=" />
+                                    <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text="&quot;" />
+                                    <TextBlock Foreground="{DynamicResource ThemeCodeSource}" Text="{}{DynamicResource " />
+                                    <TextBlock Foreground="{DynamicResource ThemeCodeName}" Text="{Binding ID}" />
+                                    <TextBlock Foreground="{DynamicResource ThemeCodeSource}" />
+                                    <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text="&quot;" />
+                                    <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text=" /&gt;" />
                                 </TextBlock>
                             </Border>
                         </Grid>

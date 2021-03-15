@@ -33,8 +33,8 @@ namespace MaterialWPF.Demo
         private async void Splash()
         {
             mainSplash.Version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            mainSplash.Logo = new System.Windows.Media.Imaging.BitmapImage(new System.Uri("pack://application:,,,/Assets/banner.png"));
-            mainSplash.SubTitle = "Loading a fantastic Sample App ...";
+            mainSplash.Logo = new System.Windows.Media.Imaging.BitmapImage(new System.Uri("pack://application:,,,/Assets/banner-dark.png"));
+            mainSplash.SubTitle = "Loading a fantastic demo app...";
 
             await System.Threading.Tasks.Task.Run(() =>
             {

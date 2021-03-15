@@ -33,11 +33,11 @@
                     <TextBlock
                         Margin="0,8,0,0"
                         Padding="12"
-                        Background="#1e1e1e"
+                        Background="{DynamicResource ThemeElement}"
                         FontSize="10">
-                        <TextBlock Foreground="#808080" Text="&lt;" />
-                        <TextBlock Foreground="White" Text="materialwpf:Snackbar" />
-                        <TextBlock Foreground="#808080" Text=" /&gt;" />
+                        <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text="&lt;" />
+                        <TextBlock Foreground="{DynamicResource ThemeCodeAttribute}" Text="materialwpf:Snackbar" />
+                        <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text=" /&gt;" />
                     </TextBlock>
                 </StackPanel>
 
@@ -49,11 +49,11 @@
                     <TextBlock
                         Margin="0,8,0,0"
                         Padding="12"
-                        Background="#1e1e1e"
+                        Background="{DynamicResource ThemeElement}"
                         FontSize="10">
-                        <TextBlock Foreground="#808080" Text="&lt;" />
-                        <TextBlock Foreground="White" Text="materialwpf:Dialog" />
-                        <TextBlock Foreground="#808080" Text=" /&gt;" />
+                        <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text="&lt;" />
+                        <TextBlock Foreground="{DynamicResource ThemeCodeAttribute}" Text="materialwpf:Dialog" />
+                        <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text=" /&gt;" />
                     </TextBlock>
                 </StackPanel>
 
@@ -65,12 +65,12 @@
                     <TextBlock
                         Margin="0,8,0,0"
                         Padding="12"
-                        Background="#1e1e1e"
+                        Background="{DynamicResource ThemeElement}"
                         FontSize="10">
-                        <TextBlock Foreground="#2196F3" Text="new" />
-                        <TextBlock Foreground="#9E9E9E" Text="MaterialWPF.UI." />
-                        <TextBlock Foreground="#FFC107" Text="Toast" />
-                        <TextBlock Foreground="White" Text="();" />
+                        <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text="new" />
+                        <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text="MaterialWPF.UI." />
+                        <TextBlock Foreground="{DynamicResource ThemeCodeName}" Text="Toast" />
+                        <TextBlock Foreground="{DynamicResource ThemeCodeAttribute}" Text="();" />
                     </TextBlock>
                 </StackPanel>
 

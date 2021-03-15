@@ -42,4 +42,10 @@
     <SolidColorBrush x:Key="ThemeNavigationButton" Color="#1d1d1d" />
     <SolidColorBrush x:Key="ThemeNavigationHover" Color="#292929" />
 
+    <SolidColorBrush x:Key="ThemeCodeAttribute" Color="White" />
+    <SolidColorBrush x:Key="ThemeCodeName" Color="#d4a552" />
+    <SolidColorBrush x:Key="ThemeCodeQuot" Color="#92caf4" />
+    <SolidColorBrush x:Key="ThemeCodeBracket" Color="#808080" />
+    <SolidColorBrush x:Key="ThemeCodeSource" Color="#bba08c" />
+
 </ResourceDictionary>

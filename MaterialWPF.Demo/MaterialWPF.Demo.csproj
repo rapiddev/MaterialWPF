@@ -9,15 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\banner-dark.png" />
+    <None Remove="Assets\banner-light.png" />
     <None Remove="Assets\banner.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Assets\banner.png" />
+    <ProjectReference Include="..\MaterialWPF\MaterialWPF.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MaterialWPF\MaterialWPF.csproj" />
+    <Resource Include="Assets\banner-dark.png" />
+    <Resource Include="Assets\banner-light.png" />
   </ItemGroup>
 
 </Project>
