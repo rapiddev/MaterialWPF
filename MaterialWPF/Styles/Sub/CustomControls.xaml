@@ -17,6 +17,8 @@
                             Height="20"
                             Padding="2,0,2,0"
                             Background="{DynamicResource ThemeInteractive}"
+                            BorderBrush="{DynamicResource ThemeInteractiveBorder}"
+                            BorderThickness="1"
                             CornerRadius="10">
                             <Ellipse
                                 x:Name="toggleEllipse"

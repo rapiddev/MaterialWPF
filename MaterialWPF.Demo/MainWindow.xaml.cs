@@ -49,7 +49,12 @@ namespace MaterialWPF.Demo
 
         private void ToggleTheme(object sender, RoutedEventArgs e)
         {
-            if((System.Windows.Application.Current as App).CurrentTheme == Theme.Dark)
+            bool isChecked = (bool)(sender as MaterialWPF.Controls.ToggleButton).IsChecked;
+
+            if (rootNavigation.PageNow == "dashboard")
+                (rootNavigation.Items[0].Instance as Pages.Dashboard).ToggleTheme(isChecked);
+
+            if(!isChecked)
                 (System.Windows.Application.Current as App).SwitchTheme(Theme.Light);
             else
                 (System.Windows.Application.Current as App).SwitchTheme(Theme.Dark);

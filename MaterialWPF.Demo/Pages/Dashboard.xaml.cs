@@ -17,6 +17,14 @@ namespace MaterialWPF.Demo.Pages
             buttonControls.Control.Click += Button_Controls;
         }
 
+        public void ToggleTheme(bool isDark)
+        {
+            if (isDark)
+                mainBanner.Source = new System.Windows.Media.Imaging.BitmapImage(new System.Uri("pack://application:,,,/Assets/banner-dark.png"));
+            else
+                mainBanner.Source = new System.Windows.Media.Imaging.BitmapImage(new System.Uri("pack://application:,,,/Assets/banner-light.png"));
+        }
+
         private void Navigate(string tag)
         {
             (App.Current.MainWindow as MainWindow).rootNavigation.Navigate(tag);

@@ -26,8 +26,9 @@ namespace MaterialWPF.Demo
             this.CurrentTheme = theme;
 
             //ATTENTION! This code only works if the resources formula is the same as in App.xaml.
-            if(Resources.MergedDictionaries.Count > 0)
-                Resources.MergedDictionaries[0] = new ResourceDictionary() { Source = new Uri("pack://application:,,,/MaterialWPF;component/Styles/Theme" + (theme == Theme.Light ? "Light" : "Dark") + ".xaml", UriKind.Absolute) };
+            for (int i = 0; i < Resources.MergedDictionaries.Count; i++)
+                if(Resources.MergedDictionaries[i].Source.ToString().Contains("Theme"))
+                    Resources.MergedDictionaries[i] = new ResourceDictionary() { Source = new Uri("pack://application:,,,/MaterialWPF;component/Styles/Theme" + (theme == Theme.Light ? "Light" : "Dark") + ".xaml", UriKind.Absolute) };
         }
     }
 }
