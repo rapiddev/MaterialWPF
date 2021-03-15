@@ -11,7 +11,7 @@
     <Grid
         HorizontalAlignment="Stretch"
         VerticalAlignment="Top"
-        Background="{StaticResource ThemeBackground}"
+        Background="{DynamicResource ThemeBackground}"
         MouseDown="DragWindow"
         MouseLeftButtonDown="DragMaximize">
         <StackPanel

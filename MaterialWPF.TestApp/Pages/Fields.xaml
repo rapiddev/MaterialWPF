@@ -17,11 +17,11 @@
             <Label
                 Padding="0,12,0,4"
                 Content="Fancy folder selector"
-                Foreground="{StaticResource ThemeForeground}" />
+                Foreground="{DynamicResource ThemeForeground}" />
             <TextBlock
                 Margin="0,0,0,4"
                 FontSize="10"
-                Foreground="{StaticResource ThemeForegroundSecondary}"
+                Foreground="{DynamicResource ThemeForegroundSecondary}"
                 Text="%userprofile%\AppData\SamplePathOrSomething\UserSettings.json" />
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -46,7 +46,7 @@
             <Label
                 Padding="0,12,0,4"
                 Content="Woah! Placeholder"
-                Foreground="{StaticResource ThemeForeground}" />
+                Foreground="{DynamicResource ThemeForeground}" />
             <TextBox
                 HorizontalAlignment="Stretch"
                 Tag="eg.: -ignoreGamepads -noHUD -gogRewardsDisabled"
@@ -56,7 +56,7 @@
             <Label
                 Padding="0,12,0,4"
                 Content="I really like..."
-                Foreground="{StaticResource ThemeForeground}" />
+                Foreground="{DynamicResource ThemeForeground}" />
             <ComboBox SelectedIndex="0" Style="{StaticResource MaterialComboBox}">
                 <ComboBoxItem Content="Apples" />
                 <ComboBoxItem Content="Bananas" />
@@ -66,7 +66,7 @@
 
             <Separator
                 Margin="0,24,0,12"
-                Background="{StaticResource ThemeElementSelected}"
+                Background="{DynamicResource ThemeElementSelected}"
                 Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
 
             <CheckBox

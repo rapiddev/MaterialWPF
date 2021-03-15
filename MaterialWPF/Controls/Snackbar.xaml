@@ -13,8 +13,8 @@
         Padding="12"
         HorizontalAlignment="Stretch"
         VerticalAlignment="Bottom"
-        Background="{StaticResource ThemeElement}"
-        BorderBrush="{StaticResource ThemeElementSelected}"
+        Background="{DynamicResource ThemeElement}"
+        BorderBrush="{DynamicResource ThemeElementSelected}"
         BorderThickness="1"
         CornerRadius="4">
         <Border.RenderTransform>
@@ -28,7 +28,7 @@
             <StackPanel Grid.Column="0">
                 <TextBlock FontSize="15" Text="{Binding Header, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=1}, Mode=OneWay}" />
                 <TextBlock
-                    Foreground="{StaticResource ThemeForegroundSecondary}"
+                    Foreground="{DynamicResource ThemeForegroundSecondary}"
                     Text="{Binding Message, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=1}, Mode=OneWay}"
                     TextWrapping="WrapWithOverflow" />
             </StackPanel>

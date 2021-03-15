@@ -15,6 +15,9 @@ namespace MaterialWPF.TestApp.Pages
 
             buttonIcons.Control.Click += Button_Icons;
             buttonControls.Control.Click += Button_Controls;
+
+            buttonLight.Control.Click += Button_ThemeLight;
+            buttonDark.Control.Click += Button_ThemeDark;
         }
 
         private void Navigate(string tag)
@@ -30,6 +33,16 @@ namespace MaterialWPF.TestApp.Pages
         private void Button_Controls(object sender, RoutedEventArgs e)
         {
             this.Navigate("controls");
+        }
+
+        private void Button_ThemeLight(object sender, RoutedEventArgs e)
+        {
+            (System.Windows.Application.Current as App).SwitchTheme(Theme.Light);
+        }
+
+        private void Button_ThemeDark(object sender, RoutedEventArgs e)
+        {
+            (System.Windows.Application.Current as App).SwitchTheme(Theme.Dark);
         }
     }
 }

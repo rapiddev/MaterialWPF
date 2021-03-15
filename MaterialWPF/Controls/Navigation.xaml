@@ -8,7 +8,7 @@
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
-    <Grid Background="{StaticResource ThemeNavigation}">
+    <Grid Background="{DynamicResource ThemeNavigation}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -51,7 +51,7 @@
                                         <Style BasedOn="{StaticResource NavIcon}" TargetType="TextBlock">
                                             <Style.Triggers>
                                                 <DataTrigger Binding="{Binding Path=IsActive, Mode=OneWay}" Value="True">
-                                                    <Setter Property="TextBlock.Foreground" Value="{StaticResource ThemeForeground}" />
+                                                    <Setter Property="TextBlock.Foreground" Value="{DynamicResource ThemeForeground}" />
                                                 </DataTrigger>
                                             </Style.Triggers>
                                         </Style>
@@ -63,7 +63,7 @@
                                     <Style TargetType="{x:Type TextBlock}">
                                         <Style.Triggers>
                                             <DataTrigger Binding="{Binding Path=IsActive, Mode=OneWay}" Value="True">
-                                                <Setter Property="Foreground" Value="{StaticResource ThemeForeground}" />
+                                                <Setter Property="Foreground" Value="{DynamicResource ThemeForeground}" />
                                             </DataTrigger>
                                         </Style.Triggers>
                                     </Style>

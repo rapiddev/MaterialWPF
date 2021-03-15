@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Navigation;
 using MaterialWPF.UI;
 
 namespace MaterialWPF.TestApp.Pages
@@ -20,6 +21,7 @@ namespace MaterialWPF.TestApp.Pages
     /// </summary>
     public partial class Icons : Page
     {
+        private string _activeGlyph = "Accept";
         public Icons()
         {
             InitializeComponent();
@@ -58,6 +60,17 @@ namespace MaterialWPF.TestApp.Pages
                     gridLoading.Visibility = Visibility.Hidden;
                 });
             });
+        }
+
+        private void ChangeGlyps()
+        {
+            textGlyph.Text = this._activeGlyph;
+        }
+
+        private void Border_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            this._activeGlyph = (sender as Border).Tag.ToString();
+            this.ChangeGlyps();
         }
     }
 }

@@ -35,14 +35,14 @@
             <Frame x:Name="rootFrame" />
         </Grid>
 
-        <!--  Buttons for navigating the application window (minimize, maximize, close)  -->
-        <materialwpf:WindowNavigation Grid.Row="0" Grid.Column="1" />
-
         <!--  Splash to make the app look nice on startup. You can use it while loading resources  -->
         <materialwpf:Splash
             x:Name="mainSplash"
             Grid.RowSpan="2"
             Grid.ColumnSpan="2" />
+
+        <!--  Buttons for navigating the application window (minimize, maximize, close)  -->
+        <materialwpf:WindowNavigation Grid.Row="0" Grid.Column="1" />
     </Grid>
 
 </Window>

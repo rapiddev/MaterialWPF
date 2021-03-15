@@ -12,14 +12,14 @@
                         x:Name="LayoutRoot"
                         Width="44"
                         Height="30"
-                        Background="{StaticResource ThemeBackground}">
+                        Background="{DynamicResource ThemeBackground}">
                         <TextBlock
                             x:Name="txt"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             FontFamily="{StaticResource Micon}"
-                            FontSize="{TemplateBinding FontSize}"
-                            Foreground="#999999"
+                            FontSize="10"
+                            Foreground="{DynamicResource ThemeForegroundSecondary}"
                             RenderOptions.ClearTypeHint="Auto"
                             Text="{TemplateBinding Content}"
                             TextOptions.TextFormattingMode="Display"
@@ -27,7 +27,7 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="LayoutRoot" Property="Background" Value="{StaticResource ThemeElementHover}" />
+                            <Setter TargetName="LayoutRoot" Property="Background" Value="{DynamicResource ThemeElementHover}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -40,7 +40,6 @@
         BasedOn="{StaticResource CaptionButton}"
         TargetType="{x:Type Button}">
         <Setter Property="Content" Value="&#xEDBE;" />
-        <Setter Property="FontSize" Value="10" />
     </Style>
 
     <Style
@@ -48,7 +47,6 @@
         BasedOn="{StaticResource CaptionButton}"
         TargetType="{x:Type Button}">
         <Setter Property="Content" Value="&#xEADE;" />
-        <Setter Property="FontSize" Value="10" />
     </Style>
 
     <Style
@@ -56,7 +54,6 @@
         BasedOn="{StaticResource CaptionButton}"
         TargetType="{x:Type Button}">
         <Setter Property="Content" Value="&#xEAE2;" />
-        <Setter Property="FontSize" Value="10" />
     </Style>
 
     <Style
@@ -64,7 +61,6 @@
         BasedOn="{StaticResource CaptionButton}"
         TargetType="{x:Type Button}">
         <Setter Property="Content" Value="&#xEADA;" />
-        <Setter Property="FontSize" Value="10" />
     </Style>
 
     <!--  Navigation  -->
@@ -79,7 +75,7 @@
 
     <Style x:Key="NavButton" TargetType="{x:Type Button}">
         <Setter Property="Cursor" Value="Hand" />
-        <Setter Property="Foreground" Value="#999999" />
+        <Setter Property="Foreground" Value="{DynamicResource ThemeForegroundSecondary}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -88,7 +84,7 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="LayoutRoot" Property="Background" Value="{StaticResource ThemeElementSelected}" />
+                            <Setter TargetName="LayoutRoot" Property="Background" Value="{DynamicResource ThemeNavigationHover}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -114,10 +110,10 @@
                         x:Name="LayoutRoot"
                         Width="44"
                         Height="44"
-                        Background="Transparent">
+                        Background="{DynamicResource ThemeNavigationButton}">
                         <TextBlock
                             HorizontalAlignment="Center"
-                            Foreground="{StaticResource ThemeForeground}"
+                            Foreground="{DynamicResource ThemeForeground}"
                             RenderOptions.ClearTypeHint="Auto"
                             Style="{StaticResource NavIcon}"
                             Text="&#xEBD8;"
@@ -125,7 +121,7 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="LayoutRoot" Property="Background" Value="{StaticResource ThemeElementSelected}" />
+                            <Setter TargetName="LayoutRoot" Property="Background" Value="{DynamicResource ThemeNavigationHover}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -139,7 +135,7 @@
         BasedOn="{StaticResource {x:Type TreeView}}"
         TargetType="{x:Type TreeView}">
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="{StaticResource ThemeForeground}" />
+        <Setter Property="Foreground" Value="{DynamicResource ThemeForeground}" />
         <Setter Property="ItemTemplate">
             <Setter.Value>
                 <HierarchicalDataTemplate ItemsSource="{Binding SubItems}">
@@ -196,7 +192,7 @@
         </Setter>
         <Style.Resources>
             <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
-                <Setter Property="Foreground" Value="{StaticResource ThemeForeground}" />
+                <Setter Property="Foreground" Value="{DynamicResource ThemeForeground}" />
             </Style>
         </Style.Resources>
     </Style>
@@ -205,17 +201,17 @@
         x:Key="MaterialTreeListTreeViewItem"
         BasedOn="{StaticResource {x:Type TreeViewItem}}"
         TargetType="{x:Type TreeViewItem}">
-        <Setter Property="Background" Value="{StaticResource ThemeElement}" />
-        <Setter Property="Foreground" Value="{StaticResource ThemeForeground}" />
+        <Setter Property="Background" Value="{DynamicResource ThemeElement}" />
+        <Setter Property="Foreground" Value="{DynamicResource ThemeForeground}" />
     </Style>
 
     <!--  Text  -->
     <Style x:Key="MaterialTextBox" TargetType="{x:Type TextBox}">
-        <Setter Property="Background" Value="{StaticResource ThemeBackground}" />
-        <Setter Property="Foreground" Value="{StaticResource ThemeForeground}" />
+        <Setter Property="Background" Value="{DynamicResource ThemeBackground}" />
+        <Setter Property="Foreground" Value="{DynamicResource ThemeForeground}" />
         <Setter Property="Margin" Value="0" />
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="BorderBrush" Value="{StaticResource ThemeElementBorder}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeElementBorder}" />
         <Setter Property="Padding" Value="7" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
         <Setter Property="VerticalAlignment" Value="Center" />
@@ -223,8 +219,8 @@
         <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
         <Style.Triggers>
             <Trigger Property="IsFocused" Value="True">
-                <Setter Property="Background" Value="{StaticResource ThemeBackground}" />
-                <Setter Property="BorderBrush" Value="{StaticResource ThemeElementBorder}" />
+                <Setter Property="Background" Value="{DynamicResource ThemeBackground}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource ThemeElementBorder}" />
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -236,7 +232,7 @@
                 Margin="10,0"
                 VerticalAlignment="Center"
                 FontSize="13"
-                Foreground="{StaticResource ThemeForegroundSecondary}"
+                Foreground="{DynamicResource ThemeForegroundSecondary}"
                 Text="{Binding Path=Tag, RelativeSource={RelativeSource TemplatedParent}}" />
             <TextBox Text="{Binding Path=Text, RelativeSource={RelativeSource TemplatedParent}}">
                 <TextBox.Style>

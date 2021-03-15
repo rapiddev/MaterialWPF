@@ -13,32 +13,32 @@
     <!--  https://www.latofonts.com/lato-free-fonts/  -->
     <FontFamily x:Key="DefaultFont">pack://application:,,,/MaterialWPF;component/Fonts/#Lato</FontFamily>
 
-    <SolidColorBrush x:Key="ThemeAccent" Color="#51c066" />
-    <SolidColorBrush x:Key="ThemeBackground" Color="White" />
+    <SolidColorBrush x:Key="ThemeAccent" Color="#2196f3" />
+    <SolidColorBrush x:Key="ThemeBackground" Color="#fafafa" />
     <SolidColorBrush
         x:Key="ThemeBackgroundTransparent"
         Opacity=".8"
-        Color="White" />
-    <SolidColorBrush x:Key="ThemeSplash" Color="White" />
+        Color="#fafafa" />
+    <SolidColorBrush x:Key="ThemeSplash" Color="#fafafa" />
     <SolidColorBrush x:Key="ThemeForeground" Color="#222222" />
-    <SolidColorBrush x:Key="ThemeForegroundSecondary" Color="White" />
+    <SolidColorBrush x:Key="ThemeForegroundSecondary" Color="#707070" />
 
-    <SolidColorBrush x:Key="ThemeInteractive" Color="#51c066" />
-    <SolidColorBrush x:Key="ThemeInteractiveBorder" Color="#51c066" />
-    <SolidColorBrush x:Key="ThemeInteractiveDisabled" Color="#51c066" />
-    <SolidColorBrush x:Key="ThemeInteractiveHover" Color="#51c066" />
-    <SolidColorBrush x:Key="ThemeInteractiveSelected" Color="#51c066" />
+    <SolidColorBrush x:Key="ThemeInteractive" Color="#ffffff" />
+    <SolidColorBrush x:Key="ThemeInteractiveBorder" Color="#cccccc" />
+    <SolidColorBrush x:Key="ThemeInteractiveDisabled" Color="#9e9e9e" />
+    <SolidColorBrush x:Key="ThemeInteractiveHover" Color="#e8e8e8" />
+    <SolidColorBrush x:Key="ThemeInteractiveSelected" Color="#cccccc" />
 
-    <SolidColorBrush x:Key="ThemeElement" Color="#51c066" />
-    <SolidColorBrush x:Key="ThemeElementBorder" Color="#51c066" />
-    <SolidColorBrush x:Key="ThemeElementHover" Color="#51c066" />
-    <SolidColorBrush x:Key="ThemeElementSelected" Color="#51c066" />
+    <SolidColorBrush x:Key="ThemeElement" Color="#ffffff" />
+    <SolidColorBrush x:Key="ThemeElementBorder" Color="#cccccc" />
+    <SolidColorBrush x:Key="ThemeElementHover" Color="#9e9e9e" />
+    <SolidColorBrush x:Key="ThemeElementSelected" Color="#cccccc" />
 
-    <SolidColorBrush x:Key="ThemeHyperlink" Color="#51c066" />
-    <SolidColorBrush x:Key="ThemePlaceholder" Color="#51c066" />
+    <SolidColorBrush x:Key="ThemeHyperlink" Color="#2196f3" />
+    <SolidColorBrush x:Key="ThemePlaceholder" Color="#9e9e9e" />
 
-    <SolidColorBrush x:Key="ThemeNavigation" Color="#51c066" />
-    <SolidColorBrush x:Key="ThemeNavigationButton" Color="#51c066" />
-    <SolidColorBrush x:Key="ThemeNavigationHover" Color="#51c066" />
+    <SolidColorBrush x:Key="ThemeNavigation" Color="#ffffff" />
+    <SolidColorBrush x:Key="ThemeNavigationButton" Color="#ffffff" />
+    <SolidColorBrush x:Key="ThemeNavigationHover" Color="#e8e8e8" />
 
 </ResourceDictionary>

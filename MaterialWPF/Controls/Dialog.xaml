@@ -13,13 +13,13 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type UserControl}">
-                        <Grid Background="{StaticResource ThemeBackgroundTransparent}">
+                        <Grid Background="{DynamicResource ThemeBackgroundTransparent}">
                             <Border
                                 MinWidth="500"
                                 Padding="12"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
-                                Background="{StaticResource ThemeElement}"
+                                Background="{DynamicResource ThemeElement}"
                                 CornerRadius="4">
                                 <Border.RenderTransform>
                                     <TranslateTransform x:Name="slideTransform" />

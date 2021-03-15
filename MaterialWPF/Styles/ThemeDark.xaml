@@ -40,6 +40,6 @@
 
     <SolidColorBrush x:Key="ThemeNavigation" Color="#1d1d1d" />
     <SolidColorBrush x:Key="ThemeNavigationButton" Color="#1d1d1d" />
-    <SolidColorBrush x:Key="ThemeNavigationHover" Color="#999999" />
+    <SolidColorBrush x:Key="ThemeNavigationHover" Color="#292929" />
 
 </ResourceDictionary>

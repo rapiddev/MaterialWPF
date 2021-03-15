@@ -25,24 +25,56 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <materialwpf:MaterialButton
-                    x:Name="buttonShowSnackbar"
-                    Grid.Column="0"
-                    Margin="0,0,4,0"
-                    Glyph="ActionCenter"
-                    Text="Show snackbar" />
-                <materialwpf:MaterialButton
-                    x:Name="buttonShowDialog"
-                    Grid.Column="1"
-                    Margin="4,0,4,0"
-                    Glyph="AspectRatio"
-                    Text="Show dialog" />
-                <materialwpf:MaterialButton
-                    x:Name="buttonSendToast"
-                    Grid.Column="2"
-                    Margin="4,0,0,0"
-                    Glyph="ActionCenterNotification"
-                    Text="Send toast" />
+                <StackPanel Grid.Column="0" Margin="0,0,4,0">
+                    <materialwpf:MaterialButton
+                        x:Name="buttonShowSnackbar"
+                        Glyph="ActionCenter"
+                        Text="Show snackbar" />
+                    <TextBlock
+                        Margin="0,8,0,0"
+                        Padding="12"
+                        Background="#1e1e1e"
+                        FontSize="10">
+                        <TextBlock Foreground="#808080" Text="&lt;" />
+                        <TextBlock Foreground="White" Text="materialwpf:Snackbar" />
+                        <TextBlock Foreground="#808080" Text=" /&gt;" />
+                    </TextBlock>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="4,0,4,0">
+                    <materialwpf:MaterialButton
+                        x:Name="buttonShowDialog"
+                        Glyph="AspectRatio"
+                        Text="Show dialog" />
+                    <TextBlock
+                        Margin="0,8,0,0"
+                        Padding="12"
+                        Background="#1e1e1e"
+                        FontSize="10">
+                        <TextBlock Foreground="#808080" Text="&lt;" />
+                        <TextBlock Foreground="White" Text="materialwpf:Dialog" />
+                        <TextBlock Foreground="#808080" Text=" /&gt;" />
+                    </TextBlock>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Margin="4,0,0,0">
+                    <materialwpf:MaterialButton
+                        x:Name="buttonSendToast"
+                        Glyph="ActionCenterNotification"
+                        Text="Send toast" />
+                    <TextBlock
+                        Margin="0,8,0,0"
+                        Padding="12"
+                        Background="#1e1e1e"
+                        FontSize="10">
+                        <TextBlock Foreground="#2196F3" Text="new" />
+                        <TextBlock Foreground="#9E9E9E" Text="MaterialWPF.UI." />
+                        <TextBlock Foreground="#FFC107" Text="Toast" />
+                        <TextBlock Foreground="White" Text="();" />
+                    </TextBlock>
+                </StackPanel>
+
+
             </Grid>
         </Grid>
 

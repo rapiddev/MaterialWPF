@@ -35,23 +35,25 @@
                             <Border
                                 Padding="6,8"
                                 Background="{Binding Color}"
-                                BorderBrush="{StaticResource ThemeElementBorder}"
+                                BorderBrush="{DynamicResource ThemeElementBorder}"
                                 BorderThickness="1,1,1,1"
                                 CornerRadius="4,4,0,0">
                                 <TextBlock Text="{Binding Name}" />
                             </Border>
                             <Border
                                 Grid.Row="1"
-                                Padding="6"
-                                BorderBrush="{StaticResource ThemeElementBorder}"
+                                BorderBrush="{DynamicResource ThemeElementBorder}"
                                 BorderThickness="1,0,1,1">
-                                <TextBlock Background="#1e1e1e" FontSize="10">
+                                <TextBlock
+                                    Padding="6"
+                                    Background="#1e1e1e"
+                                    FontSize="10">
                                     <TextBlock Foreground="#808080" Text="&lt;" />
                                     <TextBlock Foreground="White" Text="Control" />
                                     <TextBlock Foreground="#92caf4" Text=" Background" />
                                     <TextBlock Foreground="#808080" Text="=" />
                                     <TextBlock Foreground="#92caf4" Text="&quot;" />
-                                    <TextBlock Foreground="#bba08c" Text="{}{StaticResource " />
+                                    <TextBlock Foreground="#bba08c" Text="{}{DynamicResource " />
                                     <TextBlock Foreground="#d4a552" Text="{Binding ID}" />
                                     <TextBlock Foreground="#bba08c" Text="}" />
                                     <TextBlock Foreground="#92caf4" Text="&quot;" />
@@ -77,17 +79,19 @@
                             <Border
                                 Padding="6,8"
                                 Background="{Binding Color}"
-                                BorderBrush="{StaticResource ThemeElementBorder}"
+                                BorderBrush="{DynamicResource ThemeElementBorder}"
                                 BorderThickness="1,1,1,1"
                                 CornerRadius="4,4,0,0">
                                 <TextBlock Text="{Binding Name}" />
                             </Border>
                             <Border
                                 Grid.Row="1"
-                                Padding="6"
-                                BorderBrush="{StaticResource ThemeElementBorder}"
+                                BorderBrush="{DynamicResource ThemeElementBorder}"
                                 BorderThickness="1,0,1,1">
-                                <TextBlock Background="#1e1e1e" FontSize="10">
+                                <TextBlock
+                                    Padding="6"
+                                    Background="#1e1e1e"
+                                    FontSize="10">
                                     <TextBlock Foreground="#808080" Text="&lt;" />
                                     <TextBlock Foreground="White" Text="Control" />
                                     <TextBlock Foreground="#92caf4" Text=" Background" />

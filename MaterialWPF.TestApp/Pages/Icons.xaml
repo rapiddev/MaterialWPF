@@ -13,8 +13,13 @@
     mc:Ignorable="d">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
         <ScrollViewer
-            Margin="6,0,0,8"
+            Grid.Row="0"
+            Margin="6,0,0,0"
             ScrollViewer.HorizontalScrollBarVisibility="Hidden"
             ScrollViewer.VerticalScrollBarVisibility="Visible"
             Style="{StaticResource MaterialScroll}">
@@ -32,8 +37,12 @@
                     <DataTemplate DataType="DisplayableIcon">
                         <Border
                             Margin="2"
-                            BorderBrush="{StaticResource ThemeElementBorder}"
-                            BorderThickness="1">
+                            Background="{DynamicResource ThemeBackground}"
+                            BorderBrush="{DynamicResource ThemeElementBorder}"
+                            BorderThickness="1"
+                            Cursor="Hand"
+                            MouseDown="Border_MouseDown"
+                            Tag="{Binding Path=Name, Mode=OneTime}">
                             <StackPanel Margin="8">
                                 <materialwpf:Icon Glyph="{Binding Path=Icon, Mode=OneTime}" Size="25" />
                                 <TextBlock
@@ -45,7 +54,7 @@
                                     TextWrapping="WrapWithOverflow" />
                                 <TextBlock
                                     FontSize="10"
-                                    Foreground="{StaticResource ThemeForegroundSecondary}"
+                                    Foreground="{DynamicResource ThemeForegroundSecondary}"
                                     Text="{Binding Path=Code, Mode=OneTime}"
                                     TextAlignment="Center" />
                             </StackPanel>
@@ -54,7 +63,29 @@
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
         </ScrollViewer>
-        <Grid x:Name="gridLoading" Background="{StaticResource ThemeBackground}">
+        <Grid Grid.Row="1">
+            <TextBlock
+                Margin="0,8,0,0"
+                Padding="12"
+                Background="#1e1e1e"
+                FontSize="10">
+                <TextBlock Foreground="#808080" Text="&lt;" />
+                <TextBlock Foreground="White" Text="materialwpf:Icon" />
+                <TextBlock Foreground="#92caf4" Text=" Glyph" />
+                <TextBlock Foreground="#808080" Text="=" />
+                <TextBlock Foreground="#92caf4" Text="&quot;" />
+                <TextBlock
+                    x:Name="textGlyph"
+                    Foreground="#d4a552"
+                    Text="Accept" />
+                <TextBlock Foreground="#92caf4" Text="&quot;" />
+                <TextBlock Foreground="#808080" Text=" /&gt;" />
+            </TextBlock>
+        </Grid>
+        <Grid
+            x:Name="gridLoading"
+            Grid.RowSpan="2"
+            Background="{DynamicResource ThemeBackground}">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                 <ProgressBar
                     Width="300"
