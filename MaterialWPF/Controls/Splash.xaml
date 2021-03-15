@@ -8,7 +8,7 @@
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
-    <Grid Background="{StaticResource ThemeColor}" MouseDown="DragWindow">
+    <Grid Background="{StaticResource ThemeBackground}" MouseDown="DragWindow">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <Image
                 Width="200"
@@ -35,7 +35,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
             FontSize="8"
-            Foreground="{StaticResource ThemeDarkForeground}"
+            Foreground="{StaticResource ThemeForegroundSecondary}"
             Text="{Binding Version, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=1}, Mode=OneWay}" />
     </Grid>
 </UserControl>

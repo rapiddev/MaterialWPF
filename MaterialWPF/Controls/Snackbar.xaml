@@ -28,7 +28,7 @@
             <StackPanel Grid.Column="0">
                 <TextBlock FontSize="15" Text="{Binding Header, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=1}, Mode=OneWay}" />
                 <TextBlock
-                    Foreground="{StaticResource ThemeDarkForeground}"
+                    Foreground="{StaticResource ThemeForegroundSecondary}"
                     Text="{Binding Message, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=1}, Mode=OneWay}"
                     TextWrapping="WrapWithOverflow" />
             </StackPanel>

@@ -4,7 +4,7 @@
         <Setter Property="Control.FontFamily" Value="{StaticResource DefaultFont}" />
         <Setter Property="Control.FontSize" Value="13" />
         <Setter Property="Control.Foreground" Value="{StaticResource ThemeForeground}" />
-        <Setter Property="Control.Background" Value="{StaticResource ThemeColor}" />
+        <Setter Property="Control.Background" Value="{StaticResource ThemeBackground}" />
 
         <Setter Property="TextElement.FontWeight" Value="Regular" />
         <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
@@ -56,7 +56,7 @@
     </Style>
 
     <Style x:Key="MaterialSubTitle" TargetType="{x:Type TextBlock}">
-        <Setter Property="Foreground" Value="{StaticResource ThemeDarkForeground}" />
+        <Setter Property="Foreground" Value="{StaticResource ThemeForegroundSecondary}" />
         <Setter Property="FontSize" Value="12" />
         <Setter Property="FontWeight" Value="Bold" />
     </Style>
@@ -64,7 +64,7 @@
     <!--  WPF Default Controls  -->
     <Style x:Key="MaterialProgressBar" TargetType="{x:Type ProgressBar}">
         <Setter Property="Foreground" Value="{StaticResource ThemeElement}" />
-        <Setter Property="Foreground" Value="{StaticResource DefaultAccent}" />
+        <Setter Property="Foreground" Value="{StaticResource ThemeAccent}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="FontWeight" Value="Bold" />
     </Style>
@@ -106,7 +106,7 @@
                 <Setter Property="BorderBrush" Value="#515151" />
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Foreground" Value="{StaticResource ThemeDarkForeground}" />
+                <Setter Property="Foreground" Value="{StaticResource ThemeForegroundSecondary}" />
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -137,7 +137,7 @@
                 <Setter Property="BorderBrush" Value="#515151" />
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Foreground" Value="{StaticResource ThemeDarkForeground}" />
+                <Setter Property="Foreground" Value="{StaticResource ThemeForegroundSecondary}" />
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -152,11 +152,11 @@
     </Style>
 
     <Style x:Key="MaterialTextBox" TargetType="{x:Type TextBox}">
-        <Setter Property="Background" Value="{StaticResource ThemeColor}" />
+        <Setter Property="Background" Value="{StaticResource ThemeAccent}" />
         <Setter Property="Foreground" Value="{StaticResource ThemeForeground}" />
         <Setter Property="Margin" Value="0" />
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="BorderBrush" Value="{StaticResource ThemeBorder}" />
+        <Setter Property="BorderBrush" Value="{StaticResource ThemeElementBorder}" />
         <Setter Property="Padding" Value="7" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
         <Setter Property="VerticalAlignment" Value="Center" />
@@ -164,8 +164,8 @@
         <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
         <Style.Triggers>
             <Trigger Property="IsFocused" Value="True">
-                <Setter Property="Background" Value="{StaticResource ThemeColor}" />
-                <Setter Property="BorderBrush" Value="{StaticResource ThemeBorder}" />
+                <Setter Property="Background" Value="{StaticResource ThemeBackground}" />
+                <Setter Property="BorderBrush" Value="{StaticResource ThemeElementBorder}" />
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -191,7 +191,7 @@
                     <ControlTemplate.Resources>
                         <Style BasedOn="{x:Null}" TargetType="{x:Type TextBox}">
                             <Setter Property="VerticalAlignment" Value="Center" />
-                            <Setter Property="Background" Value="{StaticResource ThemeColor}" />
+                            <Setter Property="Background" Value="{StaticResource ThemeBackground}" />
                             <Setter Property="Focusable" Value="True" />
                             <Setter Property="Foreground" Value="Green" />
                             <Setter Property="Visibility" Value="Hidden" />
@@ -228,7 +228,7 @@
                                                 <Setter TargetName="Border" Property="Background" Value="{StaticResource ThemeElementHover}" />
                                             </Trigger>
                                             <Trigger Property="IsEnabled" Value="false">
-                                                <Setter Property="Foreground" Value="{StaticResource ThemeDarkForeground}" />
+                                                <Setter Property="Foreground" Value="{StaticResource ThemeForegroundSecondary}" />
                                             </Trigger>
                                         </ControlTemplate.Triggers>
                                     </ControlTemplate>
@@ -248,15 +248,15 @@
                                             <Border
                                                 x:Name="Border"
                                                 Grid.ColumnSpan="2"
-                                                Background="{StaticResource ThemeColor}"
-                                                BorderBrush="{StaticResource ThemeBorder}"
+                                                Background="{StaticResource ThemeBackground}"
+                                                BorderBrush="{StaticResource ThemeElementBorder}"
                                                 BorderThickness="1"
                                                 CornerRadius="0" />
                                             <Border
                                                 Grid.Column="0"
                                                 Margin="0"
-                                                Background="{StaticResource ThemeColor}"
-                                                BorderBrush="{StaticResource ThemeBorder}"
+                                                Background="{StaticResource ThemeBackground}"
+                                                BorderBrush="{StaticResource ThemeElementBorder}"
                                                 BorderThickness="1,1,1,1"
                                                 CornerRadius="0" />
                                             <Path
@@ -277,8 +277,8 @@
                                             <Trigger Property="IsEnabled" Value="False">
                                                 <Setter TargetName="Border" Property="Background" Value="#202020" />
                                                 <Setter TargetName="Border" Property="BorderBrush" Value="#303030" />
-                                                <Setter Property="Foreground" Value="{StaticResource ThemeDarkForeground}" />
-                                                <Setter TargetName="Arrow" Property="Fill" Value="{StaticResource ThemeDarkForeground}" />
+                                                <Setter Property="Foreground" Value="{StaticResource ThemeForegroundSecondary}" />
+                                                <Setter TargetName="Arrow" Property="Fill" Value="{StaticResource ThemeForegroundSecondary}" />
                                             </Trigger>
                                         </ControlTemplate.Triggers>
                                     </ControlTemplate>
@@ -320,8 +320,8 @@
                                 SnapsToDevicePixels="True">
                                 <Border
                                     x:Name="DropDownBorder"
-                                    Background="{StaticResource ThemeColor}"
-                                    BorderBrush="{StaticResource ThemeBorder}"
+                                    Background="{StaticResource ThemeBackground}"
+                                    BorderBrush="{StaticResource ThemeElementBorder}"
                                     BorderThickness="1" />
                                 <ScrollViewer Margin="1,3,-16,1" SnapsToDevicePixels="True">
                                     <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
@@ -334,7 +334,7 @@
                             <Setter TargetName="DropDownBorder" Property="MinHeight" Value="95" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Foreground" Value="{StaticResource ThemeDarkForeground}" />
+                            <Setter Property="Foreground" Value="{StaticResource ThemeForegroundSecondary}" />
                         </Trigger>
                         <Trigger Property="IsGrouping" Value="true">
                             <Setter Property="ScrollViewer.CanContentScroll" Value="false" />
@@ -355,7 +355,7 @@
     </Style>
 
     <Style x:Key="MaterialCheckbox" TargetType="{x:Type CheckBox}">
-        <Setter Property="Foreground" Value="{StaticResource ThemeDarkForeground}" />
+        <Setter Property="Foreground" Value="{StaticResource ThemeForegroundSecondary}" />
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Template">
             <Setter.Value>
@@ -386,7 +386,7 @@
                             <Setter TargetName="checkboxIcon" Property="Text" Value="&#xEAB6;" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="checkboxIcon" Property="Foreground" Value="{StaticResource ThemeDarkForeground}" />
+                            <Setter TargetName="checkboxIcon" Property="Foreground" Value="{StaticResource ThemeForegroundSecondary}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -497,7 +497,7 @@
                                 x:Name="GridViewCell"
                                 Height="33"
                                 Margin="2,0,0,0"
-                                Background="{StaticResource ThemeColor}">
+                                Background="{StaticResource ThemeBackground}">
                                 <GridViewRowPresenter VerticalAlignment="Center" />
                             </Grid>
                             <ControlTemplate.Triggers>

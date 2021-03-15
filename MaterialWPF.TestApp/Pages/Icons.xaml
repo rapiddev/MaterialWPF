@@ -32,7 +32,7 @@
                     <DataTemplate DataType="DisplayableIcon">
                         <Border
                             Margin="2"
-                            BorderBrush="{StaticResource ThemeBorder}"
+                            BorderBrush="{StaticResource ThemeElementBorder}"
                             BorderThickness="1">
                             <StackPanel Margin="8">
                                 <materialwpf:Icon Glyph="{Binding Path=Icon, Mode=OneTime}" Size="25" />
@@ -45,7 +45,7 @@
                                     TextWrapping="WrapWithOverflow" />
                                 <TextBlock
                                     FontSize="10"
-                                    Foreground="{StaticResource ThemeDarkForeground}"
+                                    Foreground="{StaticResource ThemeForegroundSecondary}"
                                     Text="{Binding Path=Code, Mode=OneTime}"
                                     TextAlignment="Center" />
                             </StackPanel>
@@ -54,7 +54,7 @@
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
         </ScrollViewer>
-        <Grid x:Name="gridLoading" Background="{StaticResource ThemeColor}">
+        <Grid x:Name="gridLoading" Background="{StaticResource ThemeBackground}">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                 <ProgressBar
                     Width="300"

@@ -21,7 +21,7 @@
             <TextBlock
                 Margin="0,0,0,4"
                 FontSize="10"
-                Foreground="{StaticResource ThemeDarkForeground}"
+                Foreground="{StaticResource ThemeForegroundSecondary}"
                 Text="%userprofile%\AppData\SamplePathOrSomething\UserSettings.json" />
             <Grid>
                 <Grid.ColumnDefinitions>

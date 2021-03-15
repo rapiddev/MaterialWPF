@@ -81,7 +81,7 @@
             <TextBlock
                 HorizontalAlignment="Right"
                 FontSize="10"
-                Foreground="{StaticResource ThemeDarkForeground}"
+                Foreground="{StaticResource ThemeForegroundSecondary}"
                 Text="Created by Leszek Pomianowski under MPL 2.0 License" />
         </Grid>
     </Grid>

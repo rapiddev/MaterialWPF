@@ -9,7 +9,7 @@
     d:DesignWidth="300"
     mc:Ignorable="d">
     <Hyperlink
-        Foreground="{StaticResource DefaultAccent}"
+        Foreground="{StaticResource ThemeHyperlink}"
         NavigateUri="{Binding Url, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=1}, Mode=OneWay}"
         RequestNavigate="Hyperlink_RequestNavigate">
         <TextBlock FontSize="{Binding Size, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=1}, Mode=OneWay}" Text="{Binding Text, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=1}, Mode=OneWay}" />

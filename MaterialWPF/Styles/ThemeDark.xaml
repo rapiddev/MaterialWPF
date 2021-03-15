@@ -9,29 +9,37 @@
 
     <!--  http://xtoolkit.github.io/Micon/icons/  -->
     <FontFamily x:Key="Micon">pack://application:,,,/MaterialWPF;component/Fonts/#micon</FontFamily>
+
+    <!--  https://www.latofonts.com/lato-free-fonts/  -->
     <FontFamily x:Key="DefaultFont">pack://application:,,,/MaterialWPF;component/Fonts/#Lato</FontFamily>
 
+    <SolidColorBrush x:Key="ThemeAccent" Color="#51c066" />
+    <SolidColorBrush x:Key="ThemeHyperlink" Color="#51c066" />
 
-    <SolidColorBrush x:Key="ThemeColor" Color="#222222" />
+    <SolidColorBrush x:Key="ThemeBackground" Color="#222222" />
     <SolidColorBrush
-        x:Key="ThemeTransparentColor"
+        x:Key="ThemeBackgroundTransparent"
         Opacity=".8"
         Color="#222222" />
-    <SolidColorBrush x:Key="ThemeNavigation" Color="#1d1d1d" />
+    <SolidColorBrush x:Key="ThemeSplash" Color="#222222" />
     <SolidColorBrush x:Key="ThemeForeground" Color="White" />
-    <SolidColorBrush x:Key="ThemeDarkForeground" Color="#999999" />
-    <SolidColorBrush x:Key="ThemeBorder" Color="#3f3f41" />
+    <SolidColorBrush x:Key="ThemeForegroundSecondary" Color="#999999" />
+
+    <SolidColorBrush x:Key="ThemeInteractive" Color="#393939" />
+    <SolidColorBrush x:Key="ThemeInteractiveBorder" Color="#3f3f41" />
+    <SolidColorBrush x:Key="ThemeInteractiveDisabled" Color="#999999" />
+    <SolidColorBrush x:Key="ThemeInteractiveHover" Color="#292929" />
+    <SolidColorBrush x:Key="ThemeInteractiveSelected" Color="#3f3f41" />
+
     <SolidColorBrush x:Key="ThemeElement" Color="#393939" />
-    <SolidColorBrush x:Key="ThemeElementSelected" Color="#3f3f41" />
+    <SolidColorBrush x:Key="ThemeElementBorder" Color="#3f3f41" />
     <SolidColorBrush x:Key="ThemeElementHover" Color="#292929" />
+    <SolidColorBrush x:Key="ThemeElementSelected" Color="#3f3f41" />
 
-    <SolidColorBrush x:Key="PaletteBlue" Color="#303f9f" />
-    <SolidColorBrush x:Key="PaletteGray" Color="#bdbdbd" />
-    <SolidColorBrush x:Key="PaletteGreen" Color="#00897b" />
-    <SolidColorBrush x:Key="PaletteAmber" Color="#ffa000" />
-    <SolidColorBrush x:Key="PaletteRed" Color="#c62828" />
-    <SolidColorBrush x:Key="PalettePurple" Color="#673ab7" />
+    <SolidColorBrush x:Key="ThemePlaceholder" Color="#999999" />
 
-    <SolidColorBrush x:Key="DefaultAccent" Color="#51c066" />
+    <SolidColorBrush x:Key="ThemeNavigation" Color="#1d1d1d" />
+    <SolidColorBrush x:Key="ThemeNavigationButton" Color="#1d1d1d" />
+    <SolidColorBrush x:Key="ThemeNavigationHover" Color="#999999" />
 
 </ResourceDictionary>

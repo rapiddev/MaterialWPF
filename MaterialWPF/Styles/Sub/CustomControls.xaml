@@ -12,7 +12,7 @@
                         x:Name="LayoutRoot"
                         Width="44"
                         Height="30"
-                        Background="{StaticResource ThemeColor}">
+                        Background="{StaticResource ThemeBackground}">
                         <TextBlock
                             x:Name="txt"
                             HorizontalAlignment="Center"
@@ -102,90 +102,7 @@
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality" />
-        <!--<Style.Triggers>
-            <MultiDataTrigger>
-                <MultiDataTrigger.Conditions>
-                    <Condition Binding="{Binding IsPressed, ElementName=navigationButton, PresentationTraceSources.TraceLevel=High}" Value="True" />
-                    <Condition Binding="{Binding Width, ElementName=navigationList, PresentationTraceSources.TraceLevel=High, UpdateSourceTrigger=PropertyChanged}" Value="44" />
-                </MultiDataTrigger.Conditions>
-                <MultiDataTrigger.EnterActions>
-                    <StopStoryboard BeginStoryboardName="OUT" />
-                    <BeginStoryboard Name="IN">
-                        <Storyboard>
-                            <ThicknessAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="Margin">
-                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="12,0,0,0" />
-                                <SplineThicknessKeyFrame KeyTime="00:00:0.4" Value="-200,0,0,0" />
-                            </ThicknessAnimationUsingKeyFrames>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </MultiDataTrigger.EnterActions>
-            </MultiDataTrigger>
-            <MultiDataTrigger>
-                <MultiDataTrigger.Conditions>
-                    <Condition Binding="{Binding IsPressed, ElementName=navigationButton}" Value="True" />
-                    <Condition Binding="{Binding ActualWidth, ElementName=navigationList}" Value="250" />
-                </MultiDataTrigger.Conditions>
-                <MultiDataTrigger.EnterActions>
-                    <StopStoryboard BeginStoryboardName="IN" />
-                    <BeginStoryboard Name="OUT">
-                        <Storyboard>
-                            <ThicknessAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="Margin">
-                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="-200,0,0,0" />
-                                <SplineThicknessKeyFrame KeyTime="00:00:0.4" Value="12,0,0,0" />
-                            </ThicknessAnimationUsingKeyFrames>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </MultiDataTrigger.EnterActions>
-            </MultiDataTrigger>
-        </Style.Triggers>-->
     </Style>
-
-    <!--<Style x:Key="NavExpander" TargetType="{x:Type ItemsControl}">
-        <Style.Triggers>
-            <MultiDataTrigger>
-                <MultiDataTrigger.Conditions>
-                    <Condition Binding="{Binding IsPressed, ElementName=navigationButton, PresentationTraceSources.TraceLevel=High}" Value="True" />
-                    <Condition Binding="{Binding Width, ElementName=navigationList, PresentationTraceSources.TraceLevel=High, UpdateSourceTrigger=PropertyChanged}" Value="44" />
-                </MultiDataTrigger.Conditions>
-                <MultiDataTrigger.EnterActions>
-                    <StopStoryboard BeginStoryboardName="OUT" />
-                    <BeginStoryboard Name="IN">
-                        <Storyboard>
-                            <DoubleAnimation
-                                Storyboard.TargetProperty="Width"
-                                To="250"
-                                Duration="0:00:0.4">
-                                <DoubleAnimation.EasingFunction>
-                                    <CubicEase EasingMode="EaseInOut" />
-                                </DoubleAnimation.EasingFunction>
-                            </DoubleAnimation>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </MultiDataTrigger.EnterActions>
-            </MultiDataTrigger>
-            <MultiDataTrigger>
-                <MultiDataTrigger.Conditions>
-                    <Condition Binding="{Binding IsPressed, ElementName=navigationButton}" Value="True" />
-                    <Condition Binding="{Binding ActualWidth, ElementName=navigationList}" Value="250" />
-                </MultiDataTrigger.Conditions>
-                <MultiDataTrigger.EnterActions>
-                    <StopStoryboard BeginStoryboardName="IN" />
-                    <BeginStoryboard Name="OUT">
-                        <Storyboard>
-                            <DoubleAnimation
-                                Storyboard.TargetProperty="Width"
-                                To="44"
-                                Duration="0:00:0.4">
-                                <DoubleAnimation.EasingFunction>
-                                    <CubicEase EasingMode="EaseInOut" />
-                                </DoubleAnimation.EasingFunction>
-                            </DoubleAnimation>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </MultiDataTrigger.EnterActions>
-            </MultiDataTrigger>
-        </Style.Triggers>
-    </Style>-->
 
     <Style x:Key="NavHamburger" TargetType="{x:Type Button}">
         <Setter Property="Cursor" Value="Hand" />
@@ -294,11 +211,11 @@
 
     <!--  Text  -->
     <Style x:Key="MaterialTextBox" TargetType="{x:Type TextBox}">
-        <Setter Property="Background" Value="{StaticResource ThemeColor}" />
+        <Setter Property="Background" Value="{StaticResource ThemeBackground}" />
         <Setter Property="Foreground" Value="{StaticResource ThemeForeground}" />
         <Setter Property="Margin" Value="0" />
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="BorderBrush" Value="{StaticResource ThemeBorder}" />
+        <Setter Property="BorderBrush" Value="{StaticResource ThemeElementBorder}" />
         <Setter Property="Padding" Value="7" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
         <Setter Property="VerticalAlignment" Value="Center" />
@@ -306,8 +223,8 @@
         <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
         <Style.Triggers>
             <Trigger Property="IsFocused" Value="True">
-                <Setter Property="Background" Value="{StaticResource ThemeColor}" />
-                <Setter Property="BorderBrush" Value="{StaticResource ThemeBorder}" />
+                <Setter Property="Background" Value="{StaticResource ThemeBackground}" />
+                <Setter Property="BorderBrush" Value="{StaticResource ThemeElementBorder}" />
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -319,12 +236,12 @@
                 Margin="10,0"
                 VerticalAlignment="Center"
                 FontSize="13"
-                Foreground="{StaticResource ThemeDarkForeground}"
+                Foreground="{StaticResource ThemeForegroundSecondary}"
                 Text="{Binding Path=Tag, RelativeSource={RelativeSource TemplatedParent}}" />
             <TextBox Text="{Binding Path=Text, RelativeSource={RelativeSource TemplatedParent}}">
                 <TextBox.Style>
                     <Style BasedOn="{StaticResource MaterialTextBox}" TargetType="{x:Type TextBox}">
-                        <Setter Property="Background" Value="{StaticResource ThemeColor}" />
+                        <Setter Property="Background" Value="{StaticResource ThemeBackground}" />
                         <Style.Triggers>
                             <DataTrigger Binding="{Binding Path=Text, RelativeSource={RelativeSource Self}}" Value="">
                                 <Setter Property="Background" Value="Transparent" />
