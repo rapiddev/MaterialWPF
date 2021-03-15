@@ -17,16 +17,16 @@ namespace MaterialWPF.TestApp.Pages
         {
             InitializeComponent();
 
-            buttonShowPopup.Control.Click += Button_PopUp;
+            buttonShowSnackbar.Control.Click += Button_Snackbar;
             buttonShowDialog.Control.Click += Button_Dialog;
             buttonSendToast.Control.Click += Button_Toast;
         }
 
-        private void Button_PopUp(object sender, RoutedEventArgs e)
+        private void Button_Snackbar(object sender, RoutedEventArgs e)
         {
-            popupMain.Header = "Wow that's amazing!";
-            popupMain.Message = "This popup contains a message, you can change it or something...";
-            popupMain.Show();
+            snackbarMain.Header = "Wow that's amazing!";
+            snackbarMain.Message = "This snackbar contains a message, you can change it or something...";
+            snackbarMain.Show();
         }
 
         private void Button_Dialog(object sender, RoutedEventArgs e)

@@ -26,11 +26,11 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <materialwpf:MaterialButton
-                    x:Name="buttonShowPopup"
+                    x:Name="buttonShowSnackbar"
                     Grid.Column="0"
                     Margin="0,0,4,0"
                     Glyph="ActionCenter"
-                    Text="Show popup" />
+                    Text="Show snackbar" />
                 <materialwpf:MaterialButton
                     x:Name="buttonShowDialog"
                     Grid.Column="1"
@@ -46,7 +46,7 @@
             </Grid>
         </Grid>
 
-        <materialwpf:Popup x:Name="popupMain" Margin="0,0,0,12" />
+        <materialwpf:Snackbar x:Name="snackbarMain" Margin="0,0,0,12" />
         <materialwpf:Dialog x:Name="dialogMain">
             <StackPanel>
                 <TextBlock FontSize="18" Text="This is dialog!" />

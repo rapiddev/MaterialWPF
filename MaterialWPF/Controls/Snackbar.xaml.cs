@@ -14,14 +14,14 @@ using System.Windows.Media.Animation;
 namespace MaterialWPF.Controls
 {
     /// <summary>
-    /// Interaction logic for Popup.xaml
+    /// Interaction logic for Snackbar.xaml
     /// </summary>
-    public partial class Popup : UserControl
+    public partial class Snackbar : UserControl
     {
         public static readonly DependencyProperty
-            EnabledProperty = DependencyProperty.Register("Enabled", typeof(bool), typeof(Popup), new PropertyMetadata(false)),
-            MessageProperty = DependencyProperty.Register("Message", typeof(string), typeof(Popup), new PropertyMetadata(String.Empty)),
-            HeaderProperty = DependencyProperty.Register("Header", typeof(string), typeof(Popup), new PropertyMetadata(String.Empty));
+            EnabledProperty = DependencyProperty.Register("Enabled", typeof(bool), typeof(Controls.Snackbar), new PropertyMetadata(false)),
+            MessageProperty = DependencyProperty.Register("Message", typeof(string), typeof(Controls.Snackbar), new PropertyMetadata(String.Empty)),
+            HeaderProperty = DependencyProperty.Register("Header", typeof(string), typeof(Controls.Snackbar), new PropertyMetadata(String.Empty));
 
         public string Message
         {
@@ -84,7 +84,7 @@ namespace MaterialWPF.Controls
         }
 
         private bool _status = false;
-        public Popup()
+        public Snackbar()
         {
             InitializeComponent();
 
