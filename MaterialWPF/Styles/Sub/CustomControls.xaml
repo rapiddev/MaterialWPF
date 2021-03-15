@@ -3,6 +3,81 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="clr-namespace:MaterialWPF.Controls">
 
+    <!--  Custom Buttons  -->
+    <Style TargetType="{x:Type controls:ToggleButton}">
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Foreground" Value="{DynamicResource ThemeAccent}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:ToggleButton}">
+                    <StackPanel Orientation="Horizontal">
+                        <Border
+                            x:Name="toggleBorder"
+                            Width="40"
+                            Height="20"
+                            Padding="2,0,2,0"
+                            Background="{DynamicResource ThemeInteractive}"
+                            CornerRadius="10">
+                            <Ellipse
+                                x:Name="toggleEllipse"
+                                Width="16"
+                                Height="16"
+                                Margin="-18,0,0,0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Fill="{TemplateBinding Foreground}"
+                                Opacity=".6" />
+                        </Border>
+
+                        <ContentPresenter
+                            x:Name="toggleContent"
+                            Grid.Row="0"
+                            Margin="8,0,0,0"
+                            VerticalAlignment="Center"
+                            Content="{TemplateBinding Content}"
+                            TextBlock.Foreground="{DynamicResource ThemeForeground}" />
+
+                    </StackPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+
+                            <Setter TargetName="toggleBorder" Property="Background" Value="{DynamicResource ThemeIneractiveSelected}" />
+                            <Setter TargetName="toggleEllipse" Property="Opacity" Value="1" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ThicknessAnimationUsingKeyFrames
+                                            BeginTime="00:00:00"
+                                            Storyboard.TargetName="toggleEllipse"
+                                            Storyboard.TargetProperty="Margin">
+                                            <SplineThicknessKeyFrame KeyTime="00:00:00" Value="-18,0,0,0" />
+                                            <SplineThicknessKeyFrame KeyTime="00:00:.2" Value="18,0,0,0" />
+                                        </ThicknessAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ThicknessAnimationUsingKeyFrames
+                                            BeginTime="00:00:00"
+                                            Storyboard.TargetName="toggleEllipse"
+                                            Storyboard.TargetProperty="Margin">
+                                            <SplineThicknessKeyFrame KeyTime="00:00:00" Value="18,0,0,0" />
+                                            <SplineThicknessKeyFrame KeyTime="00:00:.2" Value="-18,0,0,0" />
+                                        </ThicknessAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="toggleContent" Property="TextBlock.Foreground" Value="{DynamicResource ThemeForegroundSecondary}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
     <!--  Window Navigation  -->
     <Style x:Key="CaptionButton" TargetType="{x:Type Button}">
         <Setter Property="Template">

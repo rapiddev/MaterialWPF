@@ -59,25 +59,6 @@
                     Glyph="AspectRatio"
                     Text="Controls" />
             </Grid>
-
-            <Grid Margin="0,8,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <materialwpf:MaterialButton
-                    x:Name="buttonLight"
-                    Grid.Column="0"
-                    Margin="0,0,4,0"
-                    Glyph="Color"
-                    Text="Light Theme" />
-                <materialwpf:MaterialButton
-                    x:Name="buttonDark"
-                    Grid.Column="1"
-                    Margin="4,0,0,0"
-                    Glyph="Color"
-                    Text="Dark theme" />
-            </Grid>
         </StackPanel>
 
         <StackPanel

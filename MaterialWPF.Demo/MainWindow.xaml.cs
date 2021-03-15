@@ -13,7 +13,6 @@ namespace MaterialWPF.Demo
         public MainWindow()
         {
             InitializeComponent();
-
             this.Splash();
 
             rootNavigation.Frame = rootFrame;
@@ -21,9 +20,9 @@ namespace MaterialWPF.Demo
             {
                 new NavItem { Icon = MaterialIcon.GridView, Name = "Dashboard", Tag = "dashboard", Type = typeof(Pages.Dashboard)},
                 new NavItem { Icon = MaterialIcon.AdjustHologram, Name = "Controls", Tag = "controls", Type = typeof(Pages.Controls)},
-                new NavItem { Icon = MaterialIcon.Calories, Name = "Icons", Tag = "icons", Type = typeof(Pages.Icons)},
                 new NavItem { Icon = MaterialIcon.Input, Name = "Fields", Tag = "fields", Type = typeof(Pages.Fields)},
                 new NavItem { Icon = MaterialIcon.Color, Name = "Colors", Tag = "colors", Type = typeof(Pages.Colors)},
+                new NavItem { Icon = MaterialIcon.Calories, Name = "Icons", Tag = "icons", Type = typeof(Pages.Icons)},
                 new NavItem { Icon = MaterialIcon.AlignLeft, Name = "Tree List", Tag = "treelist", Type = typeof(Pages.TreeList)}
             };
 
@@ -43,8 +42,17 @@ namespace MaterialWPF.Demo
                 App.Current.Dispatcher.Invoke(() =>
                 {
                     mainSplash.Visibility = Visibility.Hidden;
+                    toggleTheme.Visibility = Visibility.Visible;
                 });
             });
+        }
+
+        private void ToggleTheme(object sender, RoutedEventArgs e)
+        {
+            if((System.Windows.Application.Current as App).CurrentTheme == Theme.Dark)
+                (System.Windows.Application.Current as App).SwitchTheme(Theme.Light);
+            else
+                (System.Windows.Application.Current as App).SwitchTheme(Theme.Dark);
         }
     }
 }

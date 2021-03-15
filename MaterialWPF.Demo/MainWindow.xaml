@@ -43,6 +43,21 @@
 
         <!--  Buttons for navigating the application window (minimize, maximize, close)  -->
         <materialwpf:WindowNavigation Grid.Row="0" Grid.Column="1" />
+
+        <!--  Theme switcher  -->
+        <materialwpf:ToggleButton
+            x:Name="toggleTheme"
+            Grid.Row="0"
+            Grid.Column="1"
+            Margin="0,0,140,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Checked="ToggleTheme"
+            Content="Dark theme"
+            Foreground="#76fdff"
+            IsChecked="True"
+            Unchecked="ToggleTheme"
+            Visibility="Hidden" />
     </Grid>
 
 </Window>

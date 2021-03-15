@@ -1,4 +1,4 @@
-![Logo](https://github.com/rapiddev/MaterialWPF/blob/master/MaterialWPF.Demo/Assets/banner.png?raw=true)
+![Logo](https://github.com/rapiddev/MaterialWPF/blob/master/MaterialWPF.Demo/Assets/banner-light.png?raw=true)
 # Material WPF
 [Created with ![heart](http://i.imgur.com/oXJmdtz.gif) in Poland by RapidDev](https://rdev.cc/)  
 A simple and uncomplicated way to make your application written in WPF keep up with modern design trends. Library changes the base elements like Window, Page or Button, and also includes additional controls like Navigation or Popup.

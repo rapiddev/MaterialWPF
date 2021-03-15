@@ -19,12 +19,15 @@ namespace MaterialWPF.Demo
     /// </summary>
     public partial class App : Application
     {
-        public Theme CurrentTheme = Theme.Dark;
+        public Theme CurrentTheme = Theme.Light;
 
         public void SwitchTheme(Theme theme)
         {
+            this.CurrentTheme = theme;
+
             //ATTENTION! This code only works if the resources formula is the same as in App.xaml.
-            Resources.MergedDictionaries[0] = new ResourceDictionary() { Source = new Uri("pack://application:,,,/MaterialWPF;component/Styles/Theme" + (theme == Theme.Light ? "Light" : "Dark") + ".xaml", UriKind.RelativeOrAbsolute) };
+            if(Resources.MergedDictionaries.Count > 0)
+                Resources.MergedDictionaries[0] = new ResourceDictionary() { Source = new Uri("pack://application:,,,/MaterialWPF;component/Styles/Theme" + (theme == Theme.Light ? "Light" : "Dark") + ".xaml", UriKind.Absolute) };
         }
     }
 }
