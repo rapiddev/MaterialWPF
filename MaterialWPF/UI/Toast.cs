@@ -35,11 +35,13 @@ namespace MaterialWPF.UI
             set => this._footer = value;
         }
 
+        /*
         public string Image
         {
             get => this._imagePath;
             set => this._imagePath = value;
         }
+        */
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>")]
         public void Send()
@@ -48,7 +50,7 @@ namespace MaterialWPF.UI
             this.BuildToastTemplate();
 
             //Doesn't work, it needs to be fixed later
-#if NET5_W10_1809
+#if NET5_W10
             Windows.Data.Xml.Dom.XmlDocument toastXmlDocument = new Windows.Data.Xml.Dom.XmlDocument();
             toastXmlDocument.LoadXml(this._xmlTemplate);
 
@@ -71,7 +73,7 @@ namespace MaterialWPF.UI
             this._xmlTemplate = "<toast><visual>";
 
             //Template start
-            this._xmlTemplate += "<binding template=\"ToastText02\">";
+            this._xmlTemplate += "<binding template=\"ToastText02\">"; //ToastGeneric works only with packaged project
             
             if (!string.IsNullOrEmpty(this._header))
                 this._xmlTemplate += "<text id =\"1\">" + this._header + "</text>";

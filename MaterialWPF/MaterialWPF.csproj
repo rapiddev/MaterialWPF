@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <PropertyGroup>
-    <TargetFrameworks>net5.0-windows;net5.0-windows10.0.17763.0</TargetFrameworks>
+    <TargetFrameworks>net5.0-windows10.0.17763.0;net5.0-windows</TargetFrameworks>
     <TargetPlatformVersion>10.0</TargetPlatformVersion>
     <LangVersion>latest</LangVersion>
     <UseWPF>true</UseWPF>
@@ -16,7 +16,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-  	<DefineConstants Condition=" '$(TargetFrameworkVersion)' == 'net5.0-windows10.0.17763.0' ">NET5_W10_1809</DefineConstants>
+    <DefineConstants Condition=" $(TargetPlatformVersion.Contains('10.0.')) ">NET5_W10</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -32,6 +32,7 @@
     <Copyright>© 2021 rapiddev</Copyright>
     <PackageProjectUrl>https://rdev.cc/</PackageProjectUrl>
     <Description>A simple and uncomplicated way to make your application written in WPF keep up with modern design trends. Library changes the base elements like Window, Page or Button, and also includes additional controls like Navigation or Popup.</Description>
+    <ApplicationIcon>material_wpf.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
