@@ -1,0 +1,144 @@
+﻿<Page
+    x:Class="MaterialWPF.TestApp.Pages.Colors"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MaterialWPF.TestApp.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Colors"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    Style="{StaticResource MaterialPage}"
+    mc:Ignorable="d">
+
+    <Grid Margin="30,0,30,30">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Margin="0,0,4,0">
+            <Border
+                Padding="6"
+                Background="{StaticResource ThemeColor}"
+                CornerRadius="4">
+                <TextBlock Text="Theme Color" />
+            </Border>
+            <Border
+                Margin="0,4,0,0"
+                Padding="6"
+                Background="{StaticResource DefaultAccent}"
+                CornerRadius="4">
+                <TextBlock Text="Default Accent" />
+            </Border>
+            <Border
+                Margin="0,4,0,0"
+                Padding="6"
+                Background="{StaticResource ThemeNavigation}"
+                CornerRadius="4">
+                <TextBlock Text="Theme Navigation" />
+            </Border>
+            <Border
+                Margin="0,4,0,0"
+                Padding="6"
+                Background="{StaticResource ThemeNavigation}"
+                CornerRadius="4">
+                <TextBlock Text="Theme Navigation" />
+            </Border>
+            <Border
+                Margin="0,4,0,0"
+                Padding="6"
+                Background="{StaticResource ThemeForeground}"
+                CornerRadius="4">
+                <TextBlock Foreground="{StaticResource ThemeBorder}" Text="Theme Foreground" />
+            </Border>
+            <Border
+                Margin="0,4,0,0"
+                Padding="6"
+                Background="{StaticResource ThemeDarkForeground}"
+                CornerRadius="4">
+                <TextBlock Text="Theme Dark Foreground" />
+            </Border>
+            <Border
+                Margin="0,4,0,0"
+                Padding="6"
+                Background="{StaticResource ThemeBorder}"
+                CornerRadius="4">
+                <TextBlock Text="Theme Border" />
+            </Border>
+            <Border
+                Margin="0,4,0,0"
+                Padding="6"
+                Background="{StaticResource ThemeElement}"
+                CornerRadius="4">
+                <TextBlock Text="Theme Element" />
+            </Border>
+            <Border
+                Margin="0,4,0,0"
+                Padding="6"
+                Background="{StaticResource ThemeElementSelected}"
+                CornerRadius="4">
+                <TextBlock Text="Theme Element Selected" />
+            </Border>
+            <Border
+                Margin="0,4,0,0"
+                Padding="6"
+                Background="{StaticResource ThemeElementHover}"
+                CornerRadius="4">
+                <TextBlock Text="Theme Element Hover" />
+            </Border>
+            <Border
+                Margin="0,4,0,0"
+                Padding="6"
+                Background="{StaticResource ThemeTransparentColor}"
+                CornerRadius="4">
+                <TextBlock Text="Theme Transparent Color" />
+            </Border>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Margin="4,0,0,0">
+            <Border
+                Margin="0,4,0,0"
+                Padding="6"
+                Background="{StaticResource PaletteAmber}"
+                CornerRadius="4">
+                <TextBlock Text="Palette Amber" />
+            </Border>
+            <Border
+                Margin="0,4,0,0"
+                Padding="6"
+                Background="{StaticResource PaletteBlue}"
+                CornerRadius="4">
+                <TextBlock Text="Palette Blue" />
+            </Border>
+            <Border
+                Margin="0,4,0,0"
+                Padding="6"
+                Background="{StaticResource PaletteGray}"
+                CornerRadius="4">
+                <TextBlock Text="Palette Gray" />
+            </Border>
+            <Border
+                Margin="0,4,0,0"
+                Padding="6"
+                Background="{StaticResource PaletteGreen}"
+                CornerRadius="4">
+                <TextBlock Text="Palette Green" />
+            </Border>
+            <Border
+                Margin="0,4,0,0"
+                Padding="6"
+                Background="{StaticResource PaletteRed}"
+                CornerRadius="4">
+                <TextBlock Text="Palette Red" />
+            </Border>
+            <Border
+                Margin="0,4,0,0"
+                Padding="6"
+                Background="{StaticResource PalettePurple}"
+                CornerRadius="4">
+                <TextBlock Text="Palette Purple" />
+            </Border>
+        </StackPanel>
+    </Grid>
+</Page>

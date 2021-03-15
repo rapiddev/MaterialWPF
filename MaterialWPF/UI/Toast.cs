@@ -7,6 +7,9 @@ using System.Reflection;
 
 namespace MaterialWPF.UI
 {
+    /// <summary>
+    /// Overlay for the default UWP Toast function. Tries to let notifications be sent without packaging the app.
+    /// </summary>
     public class Toast
     {
         private string
@@ -17,18 +20,27 @@ namespace MaterialWPF.UI
             _assemblyTitle = string.Empty,
             _xmlTemplate = string.Empty;
 
+        /// <summary>
+        /// Gets or sets the first bold line of text in the notification.
+        /// </summary>
         public string Header
         {
             get => this._header;
             set => this._header = value;
         }
 
+        /// <summary>
+        /// Gets or sets the second regular line of text in the notification.
+        /// </summary>
         public string Message
         {
             get => this._message;
             set => this._message = value;
         }
 
+        /// <summary>
+        /// Gets or sets additional line of text displayed at the bottom of the notification.
+        /// </summary>
         public string Footer
         {
             get => this._footer;
@@ -43,6 +55,10 @@ namespace MaterialWPF.UI
         }
         */
 
+        /// <summary>
+        /// Builds and tries to send a notification to the windows notification center.
+        /// <para>For this feature to work, you need to target your application at least from version <c>net5.0-windows10.0.17763.0</c></para>
+        /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>")]
         public void Send()
         {

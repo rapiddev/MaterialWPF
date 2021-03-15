@@ -209,7 +209,10 @@ namespace MaterialWPF.UI
         CheckboxComposite,
         CheckboxComposite14,
 
-        GridView
+        Color,
+        GridView,
+
+        Input
     }
 
     public static class MiconIcons
@@ -241,7 +244,7 @@ namespace MaterialWPF.UI
             AlignLeft = '\uEA16',
             AlignRight = '\uEA17',
             AllApps = '\uEA18',
-            
+
             AllAppsMirrored = '\uEA19',
             Annotation = '\uEA1A',
             AppIconDefault = '\uEA1B',
@@ -250,7 +253,7 @@ namespace MaterialWPF.UI
             ArrowDown8 = '\uEA1E',
             ArrowLeft8 = '\uEA1F',
             ArrowRight8 = '\uEA20',
-            
+
             ArrowUp8 = '\uEA21',
             AspectRatio = '\uEA22',
             Asterisk = '\uEA23',
@@ -259,7 +262,7 @@ namespace MaterialWPF.UI
             AttachCamera = '\uEA26',
             Audio = '\uEA27',
             Back = '\uEA28',
-            
+
             BackMirrored = '\uEA29',
             BackSpaceQWERTYLg = '\uEA2B',
             BackSpaceQWERTYMd = '\uEA2C',
@@ -268,7 +271,7 @@ namespace MaterialWPF.UI
             BackgroundToggle = '\uEA2F',
             Badge = '\uEA30',
             BandBattery0 = '\uEA31',
-            
+
             BandBattery1 = '\uEA32',
             BandBattery2 = '\uEA33',
             BandBattery3 = '\uEA34',
@@ -286,7 +289,7 @@ namespace MaterialWPF.UI
             Battery4 = '\uEA3F',
             Battery5 = '\uEA40',
             Battery6 = '\uEA41',
-            
+
             Battery7 = '\uEA42',
             Battery8 = '\uEA43',
             Battery9 = '\uEA44',
@@ -295,7 +298,7 @@ namespace MaterialWPF.UI
             BatteryCharging10 = '\uEA47',
             BatteryCharging2 = '\uEA48',
             BatteryCharging3 = '\uEA49',
-            
+
             BatteryCharging4 = '\uEA4A',
             BatteryCharging5 = '\uEA4B',
             BatteryCharging6 = '\uEA4C',
@@ -304,7 +307,7 @@ namespace MaterialWPF.UI
             BatteryCharging9 = '\uEA4F',
             BatterySaver0 = '\uEA50',
             BatterySaver1 = '\uEA51',
-            
+
             BatterySaver10 = '\uEA52',
             BatterySaver2 = '\uEA53',
             BatterySaver3 = '\uEA54',
@@ -313,7 +316,7 @@ namespace MaterialWPF.UI
             BatterySaver6 = '\uEA57',
             BatterySaver7 = '\uEA58',
             BatterySaver8 = '\uEA59',
-            
+
             BatterySaver9 = '\uEA5A',
             BatteryUnknown = '\uEA5B',
             Beta = '\uEA5C',
@@ -322,7 +325,7 @@ namespace MaterialWPF.UI
             BlockContact = '\uEA5F',
             Blocked = '\uEA61',
             BlueLight = '\uEA62',
-            
+
             Bluetooth = '\uEA63',
             BodyCam = '\uEA64',
             Bold = '\uEA65',
@@ -332,7 +335,7 @@ namespace MaterialWPF.UI
             //BoldNN = '\uEA6C',
             BoldN = '\uEA6D',
             BoldRussion = '\uEA6F',
-            
+
             Bookmarks = '\uEA70',
             BookmarksMirrored = '\uEA71',
             Brightness = '\uEA72',
@@ -350,7 +353,7 @@ namespace MaterialWPF.UI
             Bus = '\uEA7D',
             BusSolid = '\uEA7E',
             ButtonA = '\uEA7F',
-            
+
             ButtonB = '\uEA80',
             ButtonMenu = '\uEA81',
             ButtonView2 = '\uEA82',
@@ -414,8 +417,11 @@ namespace MaterialWPF.UI
             CheckboxComposite = '\uEAB8',
             CheckboxComposite14 = '\uEAB9',
 
+            Color = '\uEB03',
 
-            GridView = '\uEBDE';
+            GridView = '\uEBDE',
+
+            Input = '\uEC31';
 
         /// <summary>
         /// Converts <see cref="MaterialIcon"/> to <see langword="char"/> based on the ID, if <see langword="null"/> or error, returns <see cref="MiconIcons.Accept"/>

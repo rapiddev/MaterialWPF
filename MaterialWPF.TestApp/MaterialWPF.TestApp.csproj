@@ -9,6 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\banner.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\banner.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MaterialWPF\MaterialWPF.csproj" />
   </ItemGroup>
 
