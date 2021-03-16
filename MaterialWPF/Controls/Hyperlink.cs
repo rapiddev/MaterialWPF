@@ -31,12 +31,13 @@ namespace MaterialWPF.Controls
 
         private void RequestNavigate(object sender, RoutedEventArgs e)
         {
-            if(NavigateUri != null)
+            if(!string.IsNullOrEmpty(NavigateUri))
             {
                 System.Diagnostics.ProcessStartInfo sInfo = new System.Diagnostics.ProcessStartInfo(new Uri(NavigateUri).AbsoluteUri)
                 {
                     UseShellExecute = true,
                 };
+
                 System.Diagnostics.Process.Start(sInfo);
             }
         }

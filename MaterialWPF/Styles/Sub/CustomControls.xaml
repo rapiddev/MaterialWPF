@@ -12,8 +12,8 @@
 
     <!--  Hyperlink  -->
     <Style TargetType="{x:Type controls:Hyperlink}">
-        <Setter Property="Padding" Value="0" />
-        <Setter Property="Foreground" Value="{DynamicResource ThemeAccent}" />
+        <Setter Property="Padding" Value="0,0,0,0" />
+        <Setter Property="Foreground" Value="{DynamicResource ThemeHyperlink}" />
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Template">
@@ -46,7 +46,7 @@
         </Setter>
     </Style>
 
-    <!--  Custom Buttons  -->
+    <!--  ToggleButton  -->
     <Style TargetType="{x:Type controls:ToggleButton}">
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Foreground" Value="{DynamicResource ThemeAccent}" />
@@ -116,6 +116,77 @@
                             <Setter TargetName="toggleContent" Property="TextBlock.Foreground" Value="{DynamicResource ThemeForegroundSecondary}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  MessageBox  -->
+    <Style TargetType="{x:Type controls:MessageBox}">
+        <Setter Property="Foreground" Value="{DynamicResource ThemeForeground}" />
+        <Setter Property="Background" Value="{DynamicResource ThemeBackground}" />
+        <Setter Property="WindowStyle" Value="None" />
+        <Setter Property="Width" Value="400" />
+        <Setter Property="Height" Value="250" />
+        <Setter Property="MaxWidth" Value="400" />
+        <Setter Property="MaxHeight" Value="250" />
+        <Setter Property="MinWidth" Value="250" />
+        <Setter Property="MinHeight" Value="150" />
+        <Setter Property="ResizeMode" Value="NoResize" />
+        <Setter Property="WindowChrome.WindowChrome">
+            <Setter.Value>
+                <WindowChrome
+                    CaptionHeight="0"
+                    CornerRadius="0"
+                    GlassFrameThickness="0"
+                    ResizeBorderThickness="6"
+                    UseAeroCaptionButtons="False" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:MessageBox}">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{DynamicResource ThemeElementBorder}"
+                        BorderThickness="2">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <controls:WindowNavigation ShowMaximize="False" ShowMinimize="False" />
+                            <TextBlock
+                                Margin="12,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Text="{TemplateBinding Header}" />
+                            <Grid Grid.Row="1" Margin="12">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <ContentPresenter Content="{TemplateBinding Content}" TextBlock.Foreground="{DynamicResource ThemeForeground}" />
+                                <Grid Grid.Row="1" Margin="0,8,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <controls:MaterialButton
+                                        Grid.Column="0"
+                                        Margin="0,0,4,0"
+                                        Glyph="Cancel"
+                                        Text="Cancel" />
+                                    <controls:MaterialButton
+                                        Grid.Column="1"
+                                        Margin="4,0,0,0"
+                                        Glyph="Accept"
+                                        Text="Confirm" />
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

@@ -42,7 +42,10 @@
             Grid.ColumnSpan="2" />
 
         <!--  Buttons for navigating the application window (minimize, maximize, close)  -->
-        <materialwpf:WindowNavigation Grid.Row="0" Grid.Column="1" />
+        <materialwpf:WindowNavigation
+            Grid.Row="0"
+            Grid.Column="1"
+            ApplicationNavigation="True" />
 
         <!--  Theme switcher  -->
         <materialwpf:ToggleButton

@@ -22,10 +22,12 @@
         MouseDown="DragWindow"
         MouseLeftButtonDown="DragMaximize">
         <StackPanel
+            x:Name="TitleBarNavigationStack"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
             Orientation="Horizontal">
             <Button
+                x:Name="MinimizeButton"
                 Click="AppBarButton"
                 KeyboardNavigation.IsTabStop="False"
                 Style="{StaticResource MaterialButtonTitleBarMinimize}"

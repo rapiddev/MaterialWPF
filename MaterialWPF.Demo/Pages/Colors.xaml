@@ -97,7 +97,7 @@
                                     <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text=" Background" />
                                     <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text="=" />
                                     <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text="&quot;" />
-                                    <TextBlock Foreground="{DynamicResource ThemeCodeSource}" Text="{}{DynamicResource " />
+                                    <TextBlock Foreground="{DynamicResource ThemeCodeSource}" Text="{}{StaticResource " />
                                     <TextBlock Foreground="{DynamicResource ThemeCodeName}" Text="{Binding ID}" />
                                     <TextBlock Foreground="{DynamicResource ThemeCodeSource}" />
                                     <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text="&quot;" />

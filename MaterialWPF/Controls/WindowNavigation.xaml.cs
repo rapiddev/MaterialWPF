@@ -14,9 +14,72 @@ namespace MaterialWPF.Controls
     /// </summary>
     public partial class WindowNavigation : UserControl
     {
+        private Window _parent;
+
+        private Window ParentWindow
+        {
+            get
+            {
+                if (this._parent == null)
+                    this._parent = Window.GetWindow(this);
+
+                return this._parent;
+            }
+        }
+
+        public static readonly DependencyProperty IsAppProperty = DependencyProperty.Register("SubTitle", typeof(bool), typeof(Controls.WindowNavigation), new PropertyMetadata(false));
+        public static readonly DependencyProperty ShowMaximizeProperty = DependencyProperty.Register("ShowMaximize", typeof(bool), typeof(Controls.WindowNavigation), new PropertyMetadata(true));
+        public static readonly DependencyProperty ShowMinimizeProperty = DependencyProperty.Register("ShowMinimize", typeof(bool), typeof(Controls.WindowNavigation), new PropertyMetadata(true));
+
+        public bool ApplicationNavigation
+        {
+            get
+            {
+                return (bool)(this.GetValue(IsAppProperty) as bool?);
+            }
+            set
+            {
+                this.SetValue(IsAppProperty, value);
+            }
+        }
+
+        public bool ShowMaximize
+        {
+            get
+            {
+                return (bool)(this.GetValue(ShowMaximizeProperty) as bool?);
+            }
+            set
+            {
+                this.SetValue(ShowMaximizeProperty, value);
+            }
+        }
+
+        public bool ShowMinimize
+        {
+            get
+            {
+                return (bool)(this.GetValue(ShowMinimizeProperty) as bool?);
+            }
+            set
+            {
+                this.SetValue(ShowMinimizeProperty, value);
+            }
+        }
+
         public WindowNavigation()
         {
             InitializeComponent();
+            this.Loaded += OnLoaded;
+        }
+
+        private void OnLoaded(object sender, RoutedEventArgs e)
+        {
+            if (!ShowMaximize)
+                TitleBarNavigationStack.Children.Remove(TitleBarNavigationStack.FindName("MaximizeButton") as UIElement);
+
+            if (!ShowMinimize)
+                TitleBarNavigationStack.Children.Remove(TitleBarNavigationStack.FindName("MinimizeButton") as UIElement);
         }
 
         private void AppBarButton(object sender, RoutedEventArgs e)
@@ -24,13 +87,16 @@ namespace MaterialWPF.Controls
             switch ((sender as System.Windows.Controls.Button).Tag.ToString())
             {
                 case "minimize":
-                    Application.Current.MainWindow.WindowState = WindowState.Minimized;
+                    this.ParentWindow.WindowState = WindowState.Minimized;
                     break;
                 case "maximize":
                     this.Maximize();
                     break;
                 case "close":
-                    Application.Current.Shutdown();
+                    if (ApplicationNavigation)
+                        Application.Current.Shutdown();
+                    else
+                        this.ParentWindow.Close();
                     break;
             }
         }
@@ -38,7 +104,7 @@ namespace MaterialWPF.Controls
         private void DragWindow(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
-                Application.Current.MainWindow.DragMove();
+                this.ParentWindow.DragMove();
         }
 
         private void DragMaximize(object sender, MouseButtonEventArgs e)
@@ -49,17 +115,17 @@ namespace MaterialWPF.Controls
 
         private void Maximize()
         {
-            if (Application.Current.MainWindow.WindowState == WindowState.Normal)
+            if (this.ParentWindow.WindowState == WindowState.Normal)
             {
-                Application.Current.MainWindow.ResizeMode = ResizeMode.NoResize;
+                this.ParentWindow.ResizeMode = ResizeMode.NoResize;
                 MaximizeButton.Style = (Style)Application.Current.Resources["MaterialButtonTitleBarRestore"];
-                Application.Current.MainWindow.WindowState = WindowState.Maximized;
+                this.ParentWindow.WindowState = WindowState.Maximized;
             }
             else
             {
-                Application.Current.MainWindow.ResizeMode = ResizeMode.CanResize;
+                this.ParentWindow.ResizeMode = ResizeMode.CanResize;
                 MaximizeButton.Style = (Style)Application.Current.Resources["MaterialButtonTitleBarMaximize"];
-                Application.Current.MainWindow.WindowState = WindowState.Normal;
+                this.ParentWindow.WindowState = WindowState.Normal;
             }
         }
     }

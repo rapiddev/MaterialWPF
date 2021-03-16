@@ -20,6 +20,7 @@ namespace MaterialWPF.Demo.Pages
             buttonShowSnackbar.Control.Click += Button_Snackbar;
             buttonShowDialog.Control.Click += Button_Dialog;
             buttonSendToast.Control.Click += Button_Toast;
+            buttonMessageBox.Control.Click += Button_MessageBox;
         }
 
         private void Button_Snackbar(object sender, RoutedEventArgs e)
@@ -43,6 +44,17 @@ namespace MaterialWPF.Demo.Pages
             toast.Footer = "Created with Material WPF";
 
             toast.Send();
+        }
+
+        private void Button_MessageBox(object sender, RoutedEventArgs e)
+        {
+            MaterialWPF.Controls.MessageBox mBox = new MaterialWPF.Controls.MessageBox()
+            {
+                Title = "This is window title",
+                Header = "Wow, it's even looks nice"
+            };
+
+            mBox.ShowDialog();
         }
     }
 }
