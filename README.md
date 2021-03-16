@@ -26,6 +26,7 @@ A simple and uncomplicated way to make your application written in WPF keep up w
 | **Splash** | MaterialWPF.Controls | The tab that can be used to cover the main view of the application while loading resources, the equivalent of UWP. |
 | **Navigation** | MaterialWPF.Controls | Simple ListView with a hamburger menu button. After assigning elements and Frame, it allows to navigate through the application. |
 | **WindowNavigation** | MaterialWPF.Controls | A set of buttons that can replace the default window navigation, giving it a new, modern look. |
+| **MessageBox** | MaterialWPF.Controls | A custom MessageBox that can contain selected controls. |
 
 
 ## How to implement?

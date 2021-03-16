@@ -11,6 +11,9 @@ namespace MaterialWPF.Controls
     public partial class MessageBox : System.Windows.Window
     {
         public static readonly DependencyProperty HeaderProperty = DependencyProperty.Register("Header", typeof(string), typeof(Controls.MessageBox), new PropertyMetadata(String.Empty));
+        public static readonly DependencyProperty MessageProperty = DependencyProperty.Register("Message", typeof(string), typeof(Controls.MessageBox), new PropertyMetadata(String.Empty));
+        
+        //public static readonly DependencyProperty HeightProperty = DependencyProperty.Register("Height", typeof(string), typeof(Controls.MessageBox), new PropertyMetadata(String.Empty));
 
         public string Header
         {
@@ -21,6 +24,18 @@ namespace MaterialWPF.Controls
             set
             {
                 this.SetValue(HeaderProperty, value);
+            }
+        }
+
+        public string Message
+        {
+            get
+            {
+                return this.GetValue(MessageProperty) as string;
+            }
+            set
+            {
+                this.SetValue(MessageProperty, value);
             }
         }
 

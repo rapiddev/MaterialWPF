@@ -51,7 +51,8 @@ namespace MaterialWPF.Demo.Pages
             MaterialWPF.Controls.MessageBox mBox = new MaterialWPF.Controls.MessageBox()
             {
                 Title = "This is window title",
-                Header = "Wow, it's even looks nice"
+                //Header = "Wow, it's even looks nice",
+                Message = "You can write a message here. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse"
             };
 
             mBox.ShowDialog();
