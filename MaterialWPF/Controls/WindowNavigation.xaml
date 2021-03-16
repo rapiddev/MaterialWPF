@@ -21,18 +21,18 @@
             <Button
                 Click="AppBarButton"
                 KeyboardNavigation.IsTabStop="False"
-                Style="{StaticResource MinimizeButton}"
+                Style="{StaticResource MaterialButtonTitleBarMinimize}"
                 Tag="minimize" />
             <Button
                 x:Name="MaximizeButton"
                 Click="AppBarButton"
                 KeyboardNavigation.IsTabStop="False"
-                Style="{StaticResource MaximizeButton}"
+                Style="{StaticResource MaterialButtonTitleBarMaximize}"
                 Tag="maximize" />
             <Button
                 Click="AppBarButton"
                 KeyboardNavigation.IsTabStop="False"
-                Style="{StaticResource CloseButton}"
+                Style="{StaticResource MaterialButtonTitleBarClose}"
                 Tag="close" />
         </StackPanel>
     </Grid>

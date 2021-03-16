@@ -1,6 +1,5 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Navigation;
 using MaterialWPF.UI;
 
 namespace MaterialWPF.Demo

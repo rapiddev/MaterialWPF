@@ -1,4 +1,20 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<!--
+    This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+    If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+    Copyright (C) Leszek Pomianowski and MaterialWPF Contributors.
+    All Rights Reserved.
+-->
+
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--
+    <Style BasedOn="{StaticResource {x:Type Page}}" TargetType="{x:Type Page}">
+        <Setter Property="Background" Value="Red" />
+        <Setter Property="TextElement.FontWeight" Value="Regular" />
+        <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
+        <Setter Property="TextOptions.TextRenderingMode" Value="Auto" />
+    </Style>
+    -->
 
     <Style x:Key="MaterialFrameworkElement" TargetType="{x:Type FrameworkElement}">
         <Setter Property="Control.FontFamily" Value="{StaticResource DefaultFont}" />
@@ -11,19 +27,16 @@
         <Setter Property="TextOptions.TextRenderingMode" Value="Auto" />
     </Style>
 
-    <!--
-    <Style BasedOn="{StaticResource MaterialFrameworkElement}" TargetType="{x:Type Window}">
-        <Setter Property="Background" Value="Red" />
-    </Style>-->
+    <!--  Controls  -->
+    <Style
+        x:Key="MaterialWindow"
+        BasedOn="{StaticResource MaterialFrameworkElement}"
+        TargetType="{x:Type Window}" />
 
-    <Style TargetType="{x:Type Hyperlink}">
-        <Setter Property="Foreground" Value="{DynamicResource ThemeHyperlink}" />
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Foreground" Value="{DynamicResource ThemeForegroundSecondary}" />
-            </Trigger>
-        </Style.Triggers>
-    </Style>
+    <Style
+        x:Key="MaterialPage"
+        BasedOn="{StaticResource MaterialFrameworkElement}"
+        TargetType="{x:Type Page}" />
 
     <Style
         x:Key="MaterialNavigationWindow"
@@ -35,7 +48,6 @@
         <Setter Property="MaxWidth" Value="{Binding Source={x:Static SystemParameters.WorkArea}, Path=Width}" />
         <Setter Property="MinHeight" Value="450" />
         <Setter Property="MinWidth" Value="850" />
-
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
                 <WindowChrome
@@ -46,48 +58,16 @@
                     UseAeroCaptionButtons="False" />
             </Setter.Value>
         </Setter>
-
     </Style>
 
-    <Style
-        x:Key="MaterialWindow"
-        BasedOn="{StaticResource MaterialFrameworkElement}"
-        TargetType="{x:Type Window}" />
-
-    <Style
-        x:Key="MaterialPage"
-        BasedOn="{StaticResource MaterialFrameworkElement}"
-        TargetType="{x:Type Page}" />
-
-    <Style x:Key="MaterialTitle" TargetType="{x:Type TextBlock}">
-        <Setter Property="Foreground" Value="{DynamicResource ThemeForeground}" />
-        <Setter Property="FontSize" Value="25" />
-    </Style>
-
-    <Style x:Key="MaterialSubTitle" TargetType="{x:Type TextBlock}">
-        <Setter Property="Foreground" Value="{DynamicResource ThemeForegroundSecondary}" />
-        <Setter Property="FontSize" Value="12" />
-        <Setter Property="FontWeight" Value="Bold" />
-    </Style>
-
-    <!--  WPF Default Controls  -->
-    <Style x:Key="MaterialProgressBar" TargetType="{x:Type ProgressBar}">
-        <Setter Property="Foreground" Value="{DynamicResource ThemeElement}" />
-        <Setter Property="Foreground" Value="{DynamicResource ThemeAccent}" />
-        <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="FontWeight" Value="Bold" />
-    </Style>
-
-    <Style x:Key="MaterialCard" TargetType="{x:Type Grid}">
-        <Style.Resources>
-            <Style TargetType="Border">
-                <Setter Property="Padding" Value="12" />
-                <Setter Property="CornerRadius" Value="4" />
-                <Setter Property="BorderThickness" Value="1" />
-                <Setter Property="BorderBrush" Value="{DynamicResource ThemeElement}" />
-            </Style>
-        </Style.Resources>
-        <Setter Property="Margin" Value="4,0,4,4" />
+    <!--  Interactive  -->
+    <Style x:Key="MaterialIcon" TargetType="{x:Type TextBlock}">
+        <Setter Property="Margin" Value="0,0,5,0" />
+        <Setter Property="FontFamily" Value="{StaticResource Micon}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
     </Style>
 
     <Style x:Key="MaterialButton" TargetType="{x:Type Button}">
@@ -119,6 +99,7 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+
     <Style x:Key="MaterialRoundedButton" TargetType="{x:Type Button}">
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Foreground" Value="{DynamicResource ThemeForeground}" />
@@ -151,17 +132,8 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="MaterialIcon" TargetType="{x:Type TextBlock}">
-        <Setter Property="Margin" Value="0,0,5,0" />
-        <Setter Property="FontFamily" Value="{StaticResource Micon}" />
-        <Setter Property="HorizontalAlignment" Value="Center" />
-        <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="FontSize" Value="15" />
-        <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
-    </Style>
-
     <Style x:Key="MaterialTextBox" TargetType="{x:Type TextBox}">
-        <Setter Property="Background" Value="{DynamicResource ThemeAccent}" />
+        <Setter Property="Background" Value="{DynamicResource ThemeBackground}" />
         <Setter Property="Foreground" Value="{DynamicResource ThemeForeground}" />
         <Setter Property="Margin" Value="0" />
         <Setter Property="BorderThickness" Value="1" />
@@ -178,6 +150,39 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+
+    <ControlTemplate x:Key="MaterialTextBoxPlaceholder" TargetType="{x:Type TextBox}">
+        <Grid>
+            <TextBlock
+                x:Name="wm"
+                Margin="10,0"
+                VerticalAlignment="Center"
+                FontSize="13"
+                Foreground="{DynamicResource ThemeForegroundSecondary}"
+                Text="{Binding Path=Tag, RelativeSource={RelativeSource TemplatedParent}}" />
+            <TextBox Text="{Binding Path=Text, RelativeSource={RelativeSource TemplatedParent}}">
+                <TextBox.Style>
+                    <Style BasedOn="{StaticResource MaterialTextBox}" TargetType="{x:Type TextBox}">
+                        <Setter Property="Background" Value="{StaticResource ThemeBackground}" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=Text, RelativeSource={RelativeSource Self}}" Value="">
+                                <Setter Property="Background" Value="Transparent" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Path=Text, RelativeSource={RelativeSource Self}}" Value="{x:Null}">
+                                <Setter Property="Background" Value="Transparent" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsEnabled" Value="false">
+
+                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
 
     <Style x:Key="MaterialExpander" TargetType="{x:Type Expander}">
         <Setter Property="Foreground" Value="{DynamicResource ThemeForeground}" />
@@ -386,7 +391,6 @@
                             Margin="4,-1,0,0"
                             VerticalAlignment="Center" />
                     </Grid>
-
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
                             <Setter TargetName="checkboxIcon" Property="Text" Value="&#xEAB8;" />
@@ -484,7 +488,7 @@
         </Style.Resources>
     </Style>
 
-    <Style x:Key="MaterialList" TargetType="{x:Type ListView}">
+    <Style x:Key="MaterialListView" TargetType="{x:Type ListView}">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="Foreground" Value="{DynamicResource ThemeForeground}" />
@@ -543,6 +547,20 @@
                 <Setter Property="FontSize" Value="12" />
             </Style>
         </Style.Resources>
+    </Style>
+
+    <Style x:Key="MaterialProgressBar" TargetType="{x:Type ProgressBar}">
+        <Setter Property="Foreground" Value="{DynamicResource ThemeAccent}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+    <Style x:Key="MaterialLoadingBar" TargetType="{x:Type ProgressBar}">
+        <Setter Property="Foreground" Value="{DynamicResource ThemeForeground}" />
+        <Setter Property="Background" Value="{DynamicResource ThemeElement}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Height" Value="3" />
+        <Setter Property="IsIndeterminate" Value="True" />
     </Style>
 
 </ResourceDictionary>

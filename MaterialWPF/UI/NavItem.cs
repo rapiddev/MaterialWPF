@@ -37,6 +37,10 @@ namespace MaterialWPF.UI
         /// </summary>
         public string Tag { get; set; }
 
+        public bool IsDropdown { get { return SubItems != null && SubItems.Length > 0; } }
+
+        public NavItem[] SubItems { get; set; }
+
         /// <summary>
         /// Gets the icon that will be displayed in the menu.
         /// </summary>

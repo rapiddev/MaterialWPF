@@ -18,6 +18,18 @@ namespace MaterialWPF.Controls
     /// </summary>
     public partial class Navigation : UserControl
     {
+        protected DoubleAnimation _navExpander;
+        protected Frame _rootFrame;
+
+        protected string
+            _currentPage = string.Empty,
+            _pagesFolder = string.Empty;
+
+        protected bool
+            _navExpanded = false,
+            _isLoading = false,
+            _licenseAccepted = false;
+
         public static readonly DependencyProperty
             MinBarWidthProperty = DependencyProperty.Register("MinBarWidth", typeof(int?), typeof(Navigation), new PropertyMetadata(44)),
             MaxBarWidthProperty = DependencyProperty.Register("MaxBarWidth", typeof(int?), typeof(Navigation), new PropertyMetadata(220));
@@ -73,18 +85,6 @@ namespace MaterialWPF.Controls
         /// Gets currently active <see cref="System.Windows.Controls.Page"/> tag.
         /// </summary>
         public string PageNow => this._currentPage;
-
-        protected DoubleAnimation _navExpander;
-        protected Frame _rootFrame;
-        
-        protected string 
-            _currentPage = string.Empty,
-            _pagesFolder = string.Empty;
-
-        protected bool
-            _navExpanded = false,
-            _isLoading = false,
-            _licenseAccepted = false;
 
         public Navigation()
         {
@@ -162,10 +162,10 @@ namespace MaterialWPF.Controls
                     Duration = TimeSpan.FromSeconds(0.4)
                 };
 
-            this._navExpander.From = navigationList.ActualWidth;
+            this._navExpander.From = MaterialNavigationItemsList.ActualWidth;
             this._navExpander.To = this._navExpanded ? MinBarWidth : MaxBarWidth;
 
-            navigationList.BeginAnimation(ItemsControl.WidthProperty, this._navExpander);
+            MaterialNavigationItemsList.BeginAnimation(ItemsControl.WidthProperty, this._navExpander);
             this._navExpanded = !this._navExpanded;
         }
 

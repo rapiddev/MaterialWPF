@@ -52,13 +52,13 @@ namespace MaterialWPF.Controls
             if (Application.Current.MainWindow.WindowState == WindowState.Normal)
             {
                 Application.Current.MainWindow.ResizeMode = ResizeMode.NoResize;
-                MaximizeButton.Style = (Style)Application.Current.Resources["RestoreButton"];
+                MaximizeButton.Style = (Style)Application.Current.Resources["MaterialButtonTitleBarRestore"];
                 Application.Current.MainWindow.WindowState = WindowState.Maximized;
             }
             else
             {
                 Application.Current.MainWindow.ResizeMode = ResizeMode.CanResize;
-                MaximizeButton.Style = (Style)Application.Current.Resources["MaximizeButton"];
+                MaximizeButton.Style = (Style)Application.Current.Resources["MaterialButtonTitleBarMaximize"];
                 Application.Current.MainWindow.WindowState = WindowState.Normal;
             }
         }

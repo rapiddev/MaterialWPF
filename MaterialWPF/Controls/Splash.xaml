@@ -16,12 +16,8 @@
                 Source="{Binding Logo, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=1}, Mode=OneWay}" />
             <ProgressBar
                 Width="300"
-                Height="3"
                 Margin="0,15,0,0"
-                Background="#333333"
-                BorderBrush="Transparent"
-                Foreground="White"
-                IsIndeterminate="True" />
+                Style="{StaticResource MaterialLoadingBar}" />
             <TextBlock
                 Margin="0,5,0,0"
                 HorizontalAlignment="Center"

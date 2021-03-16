@@ -89,17 +89,13 @@
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                 <ProgressBar
                     Width="300"
-                    Height="3"
                     Margin="0,15,0,0"
-                    Background="#333333"
-                    BorderBrush="Transparent"
-                    Foreground="White"
-                    IsIndeterminate="True" />
+                    Style="{StaticResource MaterialLoadingBar}" />
                 <TextBlock
                     Margin="0,5,0,0"
                     HorizontalAlignment="Center"
                     FontSize="10"
-                    Foreground="#888888"
+                    Foreground="{DynamicResource ThemeForegroundSecondary}"
                     Text="Loading icons..."
                     TextAlignment="Center" />
             </StackPanel>
