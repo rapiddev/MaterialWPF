@@ -3,6 +3,7 @@
 // Copyright (C) Leszek Pomianowski and MaterialWPF Contributors.
 // All Rights Reserved.
 
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -15,8 +16,8 @@ namespace MaterialWPF.Controls
     /// </summary>
     public partial class Splash : UserControl
     {
-        public static readonly DependencyProperty SubTitleProperty = DependencyProperty.Register("SubTitle", typeof(string), typeof(Splash));
-        public static readonly DependencyProperty VersionProperty = DependencyProperty.Register("Version", typeof(string), typeof(Splash));
+        public static readonly DependencyProperty SubTitleProperty = DependencyProperty.Register("SubTitle", typeof(string), typeof(Splash), new PropertyMetadata(String.Empty));
+        public static readonly DependencyProperty VersionProperty = DependencyProperty.Register("Version", typeof(string), typeof(Splash), new PropertyMetadata(String.Empty));
         public static readonly DependencyProperty LogoProperty = DependencyProperty.Register("Logo", typeof(ImageSource), typeof(Splash));
         public string Version
         {

@@ -16,66 +16,139 @@
         <Grid Margin="30,0,30,30">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-            <Grid Grid.Row="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <StackPanel Grid.Column="0" Margin="0,0,4,0">
-                    <materialwpf:MaterialButton
-                        x:Name="buttonShowSnackbar"
-                        Glyph="ActionCenter"
-                        Text="Show snackbar" />
-                    <TextBlock
-                        Margin="0,8,0,0"
-                        Padding="12"
-                        Background="{DynamicResource ThemeElement}"
-                        FontSize="10">
-                        <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text="&lt;" />
-                        <TextBlock Foreground="{DynamicResource ThemeCodeAttribute}" Text="materialwpf:Snackbar" />
-                        <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text=" /&gt;" />
-                    </TextBlock>
-                </StackPanel>
+            <StackPanel Grid.Column="0" Margin="0,0,4,0">
+                <materialwpf:MaterialButton
+                    x:Name="buttonShowSnackbar"
+                    Glyph="ActionCenter"
+                    Text="Show snackbar" />
+                <TextBlock
+                    Margin="0,8,0,0"
+                    Padding="12"
+                    Background="{DynamicResource ThemeElement}"
+                    FontSize="10">
+                    <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text="&lt;" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeAttribute}" Text="materialwpf:Snackbar" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text=" /&gt;" />
+                </TextBlock>
+            </StackPanel>
 
-                <StackPanel Grid.Column="1" Margin="4,0,4,0">
-                    <materialwpf:MaterialButton
-                        x:Name="buttonShowDialog"
-                        Glyph="AspectRatio"
-                        Text="Show dialog" />
-                    <TextBlock
-                        Margin="0,8,0,0"
-                        Padding="12"
-                        Background="{DynamicResource ThemeElement}"
-                        FontSize="10">
-                        <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text="&lt;" />
-                        <TextBlock Foreground="{DynamicResource ThemeCodeAttribute}" Text="materialwpf:Dialog" />
-                        <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text=" /&gt;" />
-                    </TextBlock>
-                </StackPanel>
+            <StackPanel Grid.Column="1" Margin="4,0,4,0">
+                <materialwpf:MaterialButton
+                    x:Name="buttonShowDialog"
+                    Glyph="AspectRatio"
+                    Text="Show dialog" />
+                <TextBlock
+                    Margin="0,8,0,0"
+                    Padding="12"
+                    Background="{DynamicResource ThemeElement}"
+                    FontSize="10">
+                    <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text="&lt;" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeAttribute}" Text="materialwpf:Dialog" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text=" /&gt;" />
+                </TextBlock>
+            </StackPanel>
 
-                <StackPanel Grid.Column="2" Margin="4,0,0,0">
-                    <materialwpf:MaterialButton
-                        x:Name="buttonSendToast"
-                        Glyph="ActionCenterNotification"
-                        Text="Send toast" />
-                    <TextBlock
-                        Margin="0,8,0,0"
-                        Padding="12"
-                        Background="{DynamicResource ThemeElement}"
-                        FontSize="10">
-                        <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text="new" />
-                        <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text="MaterialWPF.UI." />
-                        <TextBlock Foreground="{DynamicResource ThemeCodeName}" Text="Toast" />
-                        <TextBlock Foreground="{DynamicResource ThemeCodeAttribute}" Text="();" />
-                    </TextBlock>
-                </StackPanel>
+            <StackPanel Grid.Column="2" Margin="4,0,0,0">
+                <materialwpf:MaterialButton
+                    x:Name="buttonSendToast"
+                    Glyph="ActionCenterNotification"
+                    Text="Send toast" />
+                <TextBlock
+                    Margin="0,8,0,0"
+                    Padding="12"
+                    Background="{DynamicResource ThemeElement}"
+                    FontSize="10">
+                    <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text="new" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text="MaterialWPF.UI." />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeName}" Text="Toast" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeAttribute}" Text="();" />
+                </TextBlock>
+            </StackPanel>
 
+            <StackPanel
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="0,12,4,0">
+                <materialwpf:MaterialButton Glyph="Emoji" Text="Incredibly beautiful button" />
+                <TextBlock
+                    Margin="0,8,0,0"
+                    Padding="12"
+                    Background="{DynamicResource ThemeElement}"
+                    FontSize="10">
+                    <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text="&lt;" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeAttribute}" Text="materialwpf:MaterialButton" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text=" Glyph" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text="=" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text="&quot;" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeName}" Text="Emoji" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text="&quot;" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text=" Text" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text="=" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text="&quot;" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeName}" Text="Lorem Ipsum" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text="&quot;" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text=" /&gt;" />
+                </TextBlock>
+            </StackPanel>
 
-            </Grid>
+            <StackPanel
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="4,12,0,0">
+                <materialwpf:Hyperlink
+                    Height="34"
+                    HorizontalAlignment="Center"
+                    Content="Hyperlink text" />
+                <TextBlock
+                    Margin="0,8,0,0"
+                    Padding="12"
+                    Background="{DynamicResource ThemeElement}"
+                    FontSize="10">
+                    <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text="&lt;" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeAttribute}" Text="materialwpf:Hyperlink" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text=" Content" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text="=" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text="&quot;" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeName}" Text="Hyperlink" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text="&quot;" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text=" NavigateUri" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text="=" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text="&quot;" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeName}" Text="#" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text="&quot;" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text=" /&gt;" />
+                </TextBlock>
+            </StackPanel>
+
+            <StackPanel
+                Grid.Row="1"
+                Grid.Column="2"
+                Margin="4,12,0,0">
+                <materialwpf:Icon Height="34" Glyph="Delete" />
+                <TextBlock
+                    Margin="0,8,0,0"
+                    Padding="12"
+                    Background="{DynamicResource ThemeElement}"
+                    FontSize="10">
+                    <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text="&lt;" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeAttribute}" Text="materialwpf:Icon" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text=" Glyph" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text="=" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text="&quot;" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeName}" Text="Delete" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text="&quot;" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text=" /&gt;" />
+                </TextBlock>
+            </StackPanel>
         </Grid>
 
         <materialwpf:Snackbar x:Name="snackbarMain" Margin="0,0,0,12" />

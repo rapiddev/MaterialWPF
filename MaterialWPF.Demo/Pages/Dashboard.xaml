@@ -66,16 +66,17 @@
             Grid.Column="1"
             Margin="4,0,0,0">
             <TextBlock Text="GitHub Page" />
-            <materialwpf:MaterialHyperlink
-                Size="10"
-                Text="https://github.com/rapiddev/MaterialWPF"
-                Url="https://github.com/rapiddev/MaterialWPF" />
+            <materialwpf:Hyperlink
+                Content="https://github.com/rapiddev/MaterialWPF"
+                FontSize="10"
+                NavigateUri="https://github.com/rapiddev/MaterialWPF" />
 
             <TextBlock Margin="0,4,0,0" Text="Nuget Page" />
-            <materialwpf:MaterialHyperlink
-                Size="10"
-                Text="https://www.nuget.org/packages/MaterialWPF/"
-                Url="https://www.nuget.org/packages/MaterialWPF/" />
+
+            <materialwpf:Hyperlink
+                Content="https://www.nuget.org/packages/MaterialWPF/"
+                FontSize="10"
+                NavigateUri="https://www.nuget.org/packages/MaterialWPF/" />
         </StackPanel>
 
         <Grid Grid.Row="3" Grid.Column="1">
