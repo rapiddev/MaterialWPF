@@ -13,6 +13,8 @@ namespace MaterialWPF.Demo.Pages
         {
             InitializeComponent();
 
+            System.Diagnostics.Debug.WriteLine(MaterialWPF.Theme.Current);
+
             buttonIcons.Control.Click += Button_Icons;
             buttonControls.Control.Click += Button_Controls;
         }

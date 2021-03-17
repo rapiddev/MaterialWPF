@@ -54,9 +54,9 @@ namespace MaterialWPF.Demo
                 (rootNavigation.Items[0].Instance as Pages.Dashboard).ToggleTheme(isChecked);
 
             if(!isChecked)
-                (System.Windows.Application.Current as App).SwitchTheme(Theme.Light);
+                MaterialWPF.Theme.Switch(MaterialWPF.MaterialTheme.Light);
             else
-                (System.Windows.Application.Current as App).SwitchTheme(Theme.Dark);
+                MaterialWPF.Theme.Switch(MaterialWPF.MaterialTheme.Dark);
         }
     }
 }

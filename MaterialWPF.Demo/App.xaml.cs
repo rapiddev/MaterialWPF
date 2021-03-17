@@ -3,32 +3,14 @@
 // Copyright (C) Leszek Pomianowski and MaterialWPF Contributors.
 // All Rights Reserved.
 
-using System;
 using System.Windows;
 
 namespace MaterialWPF.Demo
 {
-    public enum Theme
-    {
-        Light,
-        Dark
-    }
-
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application
     {
-        public Theme CurrentTheme = Theme.Light;
-
-        public void SwitchTheme(Theme theme)
-        {
-            this.CurrentTheme = theme;
-
-            //ATTENTION! This code only works if the resources formula is the same as in App.xaml.
-            for (int i = 0; i < Resources.MergedDictionaries.Count; i++)
-                if(Resources.MergedDictionaries[i].Source.ToString().Contains("Theme"))
-                    Resources.MergedDictionaries[i] = new ResourceDictionary() { Source = new Uri("pack://application:,,,/MaterialWPF;component/Styles/Theme" + (theme == Theme.Light ? "Light" : "Dark") + ".xaml", UriKind.Absolute) };
-        }
     }
 }

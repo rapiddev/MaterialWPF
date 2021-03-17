@@ -9,7 +9,7 @@ A simple and uncomplicated way to make your application written in WPF keep up w
 ## What's included?
 | Name| Framework | Build Status |
 | --- | --- | --- | 
-| **MaterialWPF**<br />Library that allows you to use all features in your own application | .NET 5.0 Windows<br/>.NET 5.0 Windows 10 1809 | [![Build status](https://github.com/rapiddev/MaterialWPF/workflows/CI/badge.svg)](https://github.com/rapiddev/MaterialWPF/actions) | 
+| **MaterialWPF**<br />Library that allows you to use all features in your own application | .NET 5.0 Windows,<br/>.NET 5.0 Windows 10 1809 | [![Build status](https://github.com/rapiddev/MaterialWPF/workflows/CI/badge.svg)](https://github.com/rapiddev/MaterialWPF/actions) | 
 | **MaterialWPF.Demo**<br />An application written in WPF .NET 5 where you can test the features. | .NET 5.0 Windows 10 1809 | [![Build status](https://github.com/rapiddev/MaterialWPF/workflows/CI/badge.svg)](https://github.com/rapiddev/MaterialWPF/actions) | 
 
 
