@@ -44,7 +44,7 @@
                             MouseDown="Border_MouseDown"
                             Tag="{Binding Path=Name, Mode=OneTime}">
                             <StackPanel Margin="8">
-                                <materialwpf:Icon Glyph="{Binding Path=Icon, Mode=OneTime}" Size="25" />
+                                <materialwpf:Icon FontSize="25" Glyph="{Binding Path=Icon, Mode=OneTime}" />
                                 <TextBlock
                                     MaxWidth="75"
                                     Margin="0,6,0,0"

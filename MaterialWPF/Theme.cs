@@ -42,7 +42,7 @@ namespace MaterialWPF
 
                 for (int i = 0; i < applicationDictionaries.Count; i++)
                 {
-                    returnTheme = CheckDicionaryContent(applicationDictionaries[i]);
+                    returnTheme = CheckDicionarySource(applicationDictionaries[i]);
 
                     if (returnTheme != MaterialTheme.Unknown)
                         return returnTheme;
@@ -51,7 +51,7 @@ namespace MaterialWPF
                     {
                         for (int j = 0; j < applicationDictionaries[i].MergedDictionaries.Count; j++)
                         {
-                            returnTheme = CheckDicionaryContent(applicationDictionaries[i].MergedDictionaries[j]);
+                            returnTheme = CheckDicionarySource(applicationDictionaries[i].MergedDictionaries[j]);
 
                             if (returnTheme != MaterialTheme.Unknown)
                                 return returnTheme;
@@ -72,13 +72,13 @@ namespace MaterialWPF
             if (applicationDictionaries.Count == 0)
                 return;
 
-            string sourceName;
+            string sourceUri;
 
             for (int i = 0; i < applicationDictionaries.Count; i++)
             {
-                sourceName = applicationDictionaries[i].Source.ToString().ToLower().Trim();
+                sourceUri = applicationDictionaries[i].Source.ToString().ToLower().Trim();
 
-                if (sourceName.Contains("materialwpf;") && sourceName.Contains("theme"))
+                if (sourceUri.Contains("materialwpf;") && sourceUri.Contains("theme"))
                 {
                     applicationDictionaries[i] = new ResourceDictionary() { Source = new Uri(_mwpfUri + (theme == MaterialTheme.Light ? "Light" : "Dark") + ".xaml", UriKind.Absolute) };
                     return;
@@ -88,9 +88,9 @@ namespace MaterialWPF
                 {
                     for (int j = 0; j < applicationDictionaries[i].MergedDictionaries.Count; j++)
                     {
-                        sourceName = applicationDictionaries[i].MergedDictionaries[j].Source.ToString().ToLower().Trim();
+                        sourceUri = applicationDictionaries[i].MergedDictionaries[j].Source.ToString().ToLower().Trim();
 
-                        if (sourceName.Contains("materialwpf;") && sourceName.Contains("theme"))
+                        if (sourceUri.Contains("materialwpf;") && sourceUri.Contains("theme"))
                         {
                             applicationDictionaries[i].MergedDictionaries[j] = new ResourceDictionary() { Source = new Uri(_mwpfUri + (theme == MaterialTheme.Light ? "Light" : "Dark") + ".xaml", UriKind.Absolute) };
                             return;
@@ -100,13 +100,13 @@ namespace MaterialWPF
             }
         }
 
-        private static MaterialTheme CheckDicionaryContent(ResourceDictionary dictionary)
+        private static MaterialTheme CheckDicionarySource(ResourceDictionary dictionary)
         {
-            string sourceName = dictionary.Source.ToString().ToLower().Trim();
+            string sourceUri = dictionary.Source.ToString().ToLower().Trim();
             
-            if(sourceName.Contains("materialwpf;") && sourceName.Contains("theme"))
+            if(sourceUri.Contains("materialwpf;") && sourceUri.Contains("theme"))
             {
-                if (sourceName.Contains("themelight"))
+                if (sourceUri.Contains("themelight"))
                     return MaterialTheme.Light;
                 else
                     return MaterialTheme.Dark;

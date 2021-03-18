@@ -11,6 +11,30 @@
     xmlns:controls="clr-namespace:MaterialWPF.Controls">
 
     <!--  Hyperlink  -->
+    <Style TargetType="{x:Type controls:Icon}">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="{DynamicResource ThemeForeground}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:Icon}">
+                    <TextBlock
+                        Margin="0"
+                        HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                        VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                        FontFamily="{StaticResource Micon}"
+                        FontSize="{TemplateBinding FontSize}"
+                        Foreground="{TemplateBinding Foreground}"
+                        Text="{TemplateBinding RawGlyph}"
+                        TextAlignment="Center"
+                        TextOptions.TextFormattingMode="Ideal" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  Hyperlink  -->
     <Style TargetType="{x:Type controls:Hyperlink}">
         <Setter Property="Padding" Value="0,0,0,0" />
         <Setter Property="Foreground" Value="{DynamicResource ThemeHyperlink}" />

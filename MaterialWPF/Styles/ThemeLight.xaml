@@ -8,10 +8,9 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <!--  http://xtoolkit.github.io/Micon/icons/  -->
-    <FontFamily x:Key="Micon">pack://application:,,,/MaterialWPF;component/Fonts/#micon</FontFamily>
-
+    <FontFamily x:Key="Micon">../Fonts/#micon</FontFamily>
     <!--  https://www.latofonts.com/lato-free-fonts/  -->
-    <FontFamily x:Key="DefaultFont">pack://application:,,,/MaterialWPF;component/Fonts/#Lato</FontFamily>
+    <FontFamily x:Key="DefaultFont">../Fonts/#Lato</FontFamily>
 
     <SolidColorBrush x:Key="ThemeAccent" Color="#2196f3" />
     <SolidColorBrush x:Key="ThemeBackground" Color="#fafafa" />
