@@ -18,15 +18,16 @@ A simple and uncomplicated way to make your application written in WPF keep up w
 | --- | --- | --- |
 | **Toast** | MaterialWPF.UI | Class with which you can send a Toast to the Windows notification center. |
 | **MiconIcons** | MaterialWPF.UI | A collection of all [Micon](https://github.com/xtoolkit/Micon) font glyphs that you can use in an application. |
-| **Icon** | MaterialWPF.Controls | Prepared TextBlock with "Glyph" attribute with which you can select an icon. |
-| **Hyperlink** | MaterialWPF.Controls | A button that navigates to the browser window. |
-| **ToggleButton** | MaterialWPF.Controls | A button like a Checkbox that switches with animation. |
-| **Popup** | MaterialWPF.Controls | A card with a pop-up animation that can act as a notification of an action for the user. |
 | **Dialog** | MaterialWPF.Controls | A control that you can display in the middle of the application, e.g. with a "Save as" information or whatever... |
-| **Splash** | MaterialWPF.Controls | The tab that can be used to cover the main view of the application while loading resources, the equivalent of UWP. |
-| **Navigation** | MaterialWPF.Controls | Simple ListView with a hamburger menu button. After assigning elements and Frame, it allows to navigate through the application. |
-| **WindowNavigation** | MaterialWPF.Controls | A set of buttons that can replace the default window navigation, giving it a new, modern look. |
+| **Hyperlink** | MaterialWPF.Controls | A button that navigates to the browser window. |
+| **Icon** | MaterialWPF.Controls | Prepared TextBlock with "Glyph" attribute with which you can select an icon. |
+| **MaterialButton** | MaterialWPF.Controls | A modern button with all the possibilities of a regular "Button" and an icon on the left. |
 | **MessageBox** | MaterialWPF.Controls | A custom MessageBox that can contain selected controls. |
+| **Navigation** | MaterialWPF.Controls | Simple ListView with a hamburger menu button. After assigning elements and Frame, it allows to navigate through the application. |
+| **Snackbar** | MaterialWPF.Controls | A card with a pop-up animation that can act as a notification of an action for the user. |
+| **Splash** | MaterialWPF.Controls | The tab that can be used to cover the main view of the application while loading resources, the equivalent of UWP. |
+| **ToggleButton** | MaterialWPF.Controls | A button like a Checkbox that switches with animation. |
+| **WindowNavigation** | MaterialWPF.Controls | A set of buttons that can replace the default window navigation, giving it a new, modern look. |
 
 
 ## How to implement?
