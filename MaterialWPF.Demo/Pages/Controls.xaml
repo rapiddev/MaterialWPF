@@ -28,9 +28,9 @@
 
             <StackPanel Grid.Column="0" Margin="0,0,4,0">
                 <materialwpf:MaterialButton
-                    x:Name="buttonShowSnackbar"
-                    Glyph="ActionCenter"
-                    Text="Show snackbar" />
+                    Click="Button_Snackbar"
+                    Content="Show snackbar"
+                    Glyph="ActionCenter" />
                 <TextBlock
                     Margin="0,8,0,0"
                     Padding="12"
@@ -49,9 +49,9 @@
 
             <StackPanel Grid.Column="1" Margin="4,0,4,0">
                 <materialwpf:MaterialButton
-                    x:Name="buttonShowDialog"
-                    Glyph="AspectRatio"
-                    Text="Show dialog" />
+                    Click="Button_Dialog"
+                    Content="Show dialog"
+                    Glyph="AspectRatio" />
                 <TextBlock
                     Margin="0,8,0,0"
                     Padding="12"
@@ -65,9 +65,9 @@
 
             <StackPanel Grid.Column="2" Margin="4,0,0,0">
                 <materialwpf:MaterialButton
-                    x:Name="buttonSendToast"
-                    Glyph="ActionCenterNotification"
-                    Text="Send toast" />
+                    Click="Button_Toast"
+                    Content="Send toast"
+                    Glyph="ActionCenterNotification" />
                 <TextBlock
                     Margin="0,8,0,0"
                     Padding="12"
@@ -158,7 +158,7 @@
                 Grid.Row="2"
                 Grid.Column="0"
                 Margin="0,24,4,0">
-                <materialwpf:MaterialButton Glyph="Emoji" Text="Incredibly beautiful button" />
+                <materialwpf:MaterialButton Content="Incredibly beautiful button" Glyph="Emoji" />
                 <TextBlock
                     Margin="0,8,0,0"
                     Padding="12"
@@ -171,7 +171,7 @@
                     <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text="&quot;" />
                     <TextBlock Foreground="{DynamicResource ThemeCodeName}" Text="Emoji" />
                     <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text="&quot;" />
-                    <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text=" Text" />
+                    <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text=" Content" />
                     <TextBlock Foreground="{DynamicResource ThemeCodeBracket}" Text="=" />
                     <TextBlock Foreground="{DynamicResource ThemeCodeQuot}" Text="&quot;" />
                     <TextBlock Foreground="{DynamicResource ThemeCodeName}" Text="Lorem Ipsum" />
@@ -185,9 +185,9 @@
                 Grid.Column="1"
                 Margin="4,24,4,0">
                 <materialwpf:MaterialButton
-                    x:Name="buttonMessageBox"
-                    Glyph="NewWindow"
-                    Text="Custom MessageBox" />
+                    Click="Button_MessageBox"
+                    Content="Custom MessageBox"
+                    Glyph="NewWindow" />
                 <TextBlock
                     Margin="0,8,0,0"
                     Padding="12"

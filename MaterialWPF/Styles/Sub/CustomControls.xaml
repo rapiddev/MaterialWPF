@@ -10,7 +10,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="clr-namespace:MaterialWPF.Controls">
 
-    <!--  Hyperlink  -->
+    <!--  Icon  -->
     <Style TargetType="{x:Type controls:Icon}">
         <Setter Property="FontSize" Value="12" />
         <Setter Property="HorizontalAlignment" Value="Center" />
@@ -70,7 +70,52 @@
         </Setter>
     </Style>
 
-    <!--  ToggleButton  -->
+    <!--  Material Button  -->
+    <Style TargetType="{x:Type controls:MaterialButton}">
+        <Setter Property="Padding" Value="16,8" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="{DynamicResource ThemeForeground}" />
+        <Setter Property="Background" Value="{DynamicResource ThemeInteractive}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeInteractiveBorder}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:MaterialButton}">
+                    <Border
+                        Padding="{TemplateBinding Padding}"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="1">
+                        <StackPanel HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Orientation="Horizontal">
+                            <TextBlock
+                                Margin="0,0,12,0"
+                                VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                FontFamily="{StaticResource Micon}"
+                                FontSize="{TemplateBinding FontSize}"
+                                Foreground="{TemplateBinding Foreground}"
+                                Text="{TemplateBinding RawGlyph}"
+                                TextAlignment="Center"
+                                TextOptions.TextFormattingMode="Ideal" />
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource ThemeInteractiveHover}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource ThemeInteractiveBorder}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{DynamicResource ThemeInteractiveDisabled}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--  Toggle Button  -->
     <Style TargetType="{x:Type controls:ToggleButton}">
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Foreground" Value="{DynamicResource ThemeAccent}" />
@@ -145,7 +190,7 @@
         </Setter>
     </Style>
 
-    <!--  MessageBox  -->
+    <!--  Message Box  -->
     <Style TargetType="{x:Type controls:MessageBox}">
         <Setter Property="Foreground" Value="{DynamicResource ThemeForeground}" />
         <Setter Property="Background" Value="{DynamicResource ThemeBackground}" />
@@ -204,13 +249,13 @@
                                     <controls:MaterialButton
                                         Grid.Column="0"
                                         Margin="0,0,4,0"
-                                        Glyph="Cancel"
-                                        Text="Cancel" />
+                                        Content="Cancel"
+                                        Glyph="Cancel" />
                                     <controls:MaterialButton
                                         Grid.Column="1"
                                         Margin="4,0,0,0"
-                                        Glyph="Accept"
-                                        Text="Confirm" />
+                                        Content="Confirm"
+                                        Glyph="Accept" />
                                 </Grid>
                             </Grid>
                         </Grid>

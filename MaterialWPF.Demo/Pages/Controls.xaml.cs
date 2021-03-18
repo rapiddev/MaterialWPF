@@ -16,11 +16,6 @@ namespace MaterialWPF.Demo.Pages
         public Controls()
         {
             InitializeComponent();
-
-            buttonShowSnackbar.Control.Click += Button_Snackbar;
-            buttonShowDialog.Control.Click += Button_Dialog;
-            buttonSendToast.Control.Click += Button_Toast;
-            buttonMessageBox.Control.Click += Button_MessageBox;
         }
 
         private void Button_Snackbar(object sender, RoutedEventArgs e)

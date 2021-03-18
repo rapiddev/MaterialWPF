@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Navigation;
 
 namespace MaterialWPF.Demo.Pages
 {
@@ -12,11 +11,6 @@ namespace MaterialWPF.Demo.Pages
         public Dashboard()
         {
             InitializeComponent();
-
-            System.Diagnostics.Debug.WriteLine(MaterialWPF.Theme.Current);
-
-            buttonIcons.Control.Click += Button_Icons;
-            buttonControls.Control.Click += Button_Controls;
         }
 
         public void ToggleTheme(bool isDark)
