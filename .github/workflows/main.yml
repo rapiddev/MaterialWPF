@@ -53,6 +53,7 @@ jobs:
 
       - name: Publish net50 windows
         uses: actions/upload-artifact@v2
+        id: publish_net5
         with:
           name: MaterialWPF-NET5-Windows10
           path: |
@@ -80,3 +81,14 @@ jobs:
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
           INCLUDE_SYMBOLS: false
           TAG_COMMIT: false
+
+      - name: Upload Release Asset
+        id: upload-release-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.publish_net5.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+          asset_path: ./MaterialWPF-NET5-Windows10.zip
+          asset_name: MaterialWPF-NET5-Windows10.zip
+          asset_content_type: application/zip
