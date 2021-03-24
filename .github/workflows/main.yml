@@ -81,17 +81,3 @@ jobs:
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
           INCLUDE_SYMBOLS: false
           TAG_COMMIT: false
-
-  release:
-    runs-on: windows-latest
-    needs: [build]
-    steps:
-    - uses: actions/checkout@master
-    - name: Create release
-      uses: Roang-zero1/github-create-release-action@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Create GitHub release
-      uses: Roang-zero1/github-upload-release-artifacts-action@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

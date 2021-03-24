@@ -1,4 +1,9 @@
-﻿using System;
+﻿// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// Copyright (C) Leszek Pomianowski and MaterialWPF Contributors.
+// All Rights Reserved.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -10,7 +15,7 @@ using System.Threading.Tasks;
 namespace MaterialWPF.UI
 {
     /// <summary>
-    /// Interpreting the system tray icon using <see langword="DllImport"/>, without using WindowsForms. It only contains the basic functionality to display the icon.
+    /// Interpreting the system tray icon using <see langword="shell32.dll"/>, without using WindowsForms. It only contains the basic functionality to display the icon.
     /// </summary>
     public class Tray
     {
