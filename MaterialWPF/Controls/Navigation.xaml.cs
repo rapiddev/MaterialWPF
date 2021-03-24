@@ -31,13 +31,18 @@ namespace MaterialWPF.Controls
             _licenseAccepted = false;
 
         public static readonly DependencyProperty
+            ItemsProperty = DependencyProperty.Register("Items", typeof(ObservableCollection<NavItem>), typeof(Navigation), new PropertyMetadata(new ObservableCollection<NavItem>())),
             MinBarWidthProperty = DependencyProperty.Register("MinBarWidth", typeof(int?), typeof(Navigation), new PropertyMetadata(44)),
             MaxBarWidthProperty = DependencyProperty.Register("MaxBarWidth", typeof(int?), typeof(Navigation), new PropertyMetadata(220));
 
         /// <summary>
         /// Gets or sets the list of <see cref="NavItem"/> that will be displayed on the menu.
         /// </summary>
-        public ObservableCollection<NavItem> Items { get; set; }
+        public ObservableCollection<NavItem> Items
+        {
+            get => this.GetValue(ItemsProperty) as ObservableCollection<NavItem>;
+            set => this.SetValue(ItemsProperty, value);
+        }
 
         /// <summary>
         /// Gets or sets the minimum width of the collapsed menu.
