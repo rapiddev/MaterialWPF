@@ -149,6 +149,9 @@ namespace MaterialWPF.Controls
 
                     this._rootFrame.Navigate(this.Items[i].Instance);
                     this.Items[i].IsActive = true;
+
+                    if (this.Items[i].Type != null && this.Items[i].Type.GetMethod("OnNavigationRequest") != null)
+                        this.Items[i].Type.GetMethod("OnNavigationRequest").Invoke(this.Items[i].Instance, null);
                 }
                 else
                 {

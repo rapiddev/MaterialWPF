@@ -18,6 +18,14 @@ namespace MaterialWPF.Demo.Pages
             InitializeComponent();
         }
 
+        //This method is triggered by MaterialWPF.Controls.Navigation when navigating to this page.
+        public void OnNavigationRequest()
+        {
+            snackbarMain.Header = "This snackbar has been opened by an OnNavigationRequest!";
+            snackbarMain.Message = "Each of your pages may contain such a method and respond to user navigation or whatever...";
+            snackbarMain.Show();
+        }
+
         private void Button_Snackbar(object sender, RoutedEventArgs e)
         {
             snackbarMain.Header = "Wow that's amazing!";

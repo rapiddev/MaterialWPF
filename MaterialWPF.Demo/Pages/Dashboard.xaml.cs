@@ -13,6 +13,12 @@ namespace MaterialWPF.Demo.Pages
             InitializeComponent();
         }
 
+        //This method is triggered by MaterialWPF.Controls.Navigation when navigating to this page.
+        public void OnNavigationRequest()
+        {
+            System.Diagnostics.Debug.WriteLine("You've just been navigated to the Dashboard!");
+        }
+
         public void ToggleTheme(bool isDark)
         {
             if (isDark)
