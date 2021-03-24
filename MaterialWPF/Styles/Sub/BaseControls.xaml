@@ -60,6 +60,18 @@
         </Setter>
     </Style>
 
+    <Style x:Key="MaterialCard" TargetType="{x:Type Grid}">
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="Padding" Value="12" />
+                <Setter Property="CornerRadius" Value="4" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="BorderBrush" Value="{StaticResource ThemeElement}" />
+            </Style>
+        </Style.Resources>
+        <Setter Property="Margin" Value="4,0,4,4" />
+    </Style>
+
     <!--  Interactive  -->
     <Style x:Key="MaterialIcon" TargetType="{x:Type TextBlock}">
         <Setter Property="Margin" Value="0,0,5,0" />

@@ -4,11 +4,6 @@
 // All Rights Reserved.
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 //Based on WPF NotifyIcon created by Philipp Sumi under The Code Project Open License (CPOL)
 

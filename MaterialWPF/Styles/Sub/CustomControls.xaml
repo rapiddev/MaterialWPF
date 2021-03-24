@@ -190,6 +190,26 @@
         </Setter>
     </Style>
 
+    <!--  Card  -->
+    <!--
+    <Style TargetType="{x:Type controls:Card}">
+        <Setter Property="TextElement.Foreground" Value="{DynamicResource ThemeForeground}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:Card}">
+                    <Border
+                        Padding="12"
+                        BorderBrush="{DynamicResource ThemeElement}"
+                        BorderThickness="1"
+                        CornerRadius="4">
+                        <ContentPresenter Content="{TemplateBinding Content}" TextBlock.Foreground="{DynamicResource ThemeForeground}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    -->
+
     <!--  Message Box  -->
     <Style TargetType="{x:Type controls:MessageBox}">
         <Setter Property="Foreground" Value="{DynamicResource ThemeForeground}" />
