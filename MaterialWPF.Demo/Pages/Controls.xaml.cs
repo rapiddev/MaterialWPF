@@ -16,6 +16,17 @@ namespace MaterialWPF.Demo.Pages
         public Controls()
         {
             InitializeComponent();
+
+            dialogMain.ActionButtonGlyph = UI.MiconIcons.ActionCenter;
+            dialogMain.ActionButtonClick = OnDialogClick;
+        }
+
+        public void OnDialogClick()
+        {
+            dialogMain.Hide();
+            snackbarMain.Header = "This snackbar has been opened by an OnDialogClick action!";
+            snackbarMain.Message = textboxDialog.Text;
+            snackbarMain.Show();
         }
 
         //This method is triggered by MaterialWPF.Controls.Navigation when navigating to this page.

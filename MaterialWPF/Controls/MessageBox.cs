@@ -39,7 +39,7 @@ namespace MaterialWPF.Controls
             }
         }
 
-        public MessageBox()
+        public MessageBox() : base()
         {
             this.WindowStartupLocation = WindowStartupLocation.Manual;
             this.Owner = Application.Current.MainWindow;

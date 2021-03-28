@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:MaterialWPF.Demo.Pages"
+    xmlns:materialwpf="clr-namespace:MaterialWPF.Controls;assembly=MaterialWPF"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Fields"
     d:DesignHeight="450"
@@ -47,11 +47,13 @@
                 Padding="0,12,0,4"
                 Content="Woah! Placeholder"
                 Foreground="{DynamicResource ThemeForeground}" />
-            <TextBox
-                HorizontalAlignment="Stretch"
-                Tag="eg.: -ignoreGamepads -noHUD -gogRewardsDisabled"
-                Template="{StaticResource MaterialTextBoxPlaceholder}" />
+            <materialwpf:TextBox Placeholder="eg.: -ignoreGamepads -noHUD -gogRewardsDisabled" />
 
+            <Label
+                Padding="0,12,0,4"
+                Content="Masked"
+                Foreground="{DynamicResource ThemeForeground}" />
+            <materialwpf:TextBox Mask="999-aaa-***" Placeholder="999-aaa-***" />
 
             <Label
                 Padding="0,12,0,4"

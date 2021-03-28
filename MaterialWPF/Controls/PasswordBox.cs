@@ -7,7 +7,7 @@ namespace MaterialWPF.Controls
 {
     public sealed partial class PasswordBox : System.Windows.Controls.TextBox
     {
-        public PasswordBox()
+        public PasswordBox() : base()
         {
             //this.OnKeyUp += OnKeyUpAction;
         }

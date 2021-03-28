@@ -70,6 +70,72 @@
         </Setter>
     </Style>
 
+    <!--  Text Box  -->
+    <Style TargetType="{x:Type controls:TextBox}">
+        <Setter Property="Background" Value="{DynamicResource ThemeBackground}" />
+        <Setter Property="Foreground" Value="{DynamicResource ThemeForeground}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeInteractiveBorder}" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:TextBox}">
+                    <Grid>
+                        <TextBlock
+                            x:Name="wm"
+                            Margin="10,0"
+                            VerticalAlignment="Center"
+                            FontSize="{TemplateBinding FontSize}"
+                            Foreground="{DynamicResource ThemeForegroundSecondary}"
+                            Text="{Binding Path=Placeholder, RelativeSource={RelativeSource TemplatedParent}}" />
+                        <TextBox
+                            x:Name="materialTextBox"
+                            FontSize="{TemplateBinding FontSize}"
+                            Foreground="{TemplateBinding Foreground}"
+                            Text="{Binding Path=Text, RelativeSource={RelativeSource TemplatedParent}}">
+                            <TextBox.Style>
+                                <Style TargetType="{x:Type TextBox}">
+                                    <Setter Property="Margin" Value="0" />
+                                    <Setter Property="BorderBrush" Value="{Binding Path=BorderBrush, RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <Setter Property="Background" Value="{Binding Path=Background, RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <Setter Property="BorderThickness" Value="1" />
+                                    <Setter Property="Padding" Value="7" />
+                                    <Setter Property="HorizontalAlignment" Value="Stretch" />
+                                    <Setter Property="VerticalAlignment" Value="Center" />
+                                    <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Path=Text, RelativeSource={RelativeSource Self}}" Value="">
+                                            <Setter Property="Background" Value="Transparent" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Path=Text, RelativeSource={RelativeSource Self}}" Value="{x:Null}">
+                                            <Setter Property="Background" Value="Transparent" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBox.Style>
+                        </TextBox>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter TargetName="materialTextBox" Property="BorderBrush" Value="{DynamicResource ThemeInteractiveHover}" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="materialTextBox" Property="BorderBrush" Value="{DynamicResource ThemeInteractiveBorder}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsFocused" Value="True">
+                <Setter Property="Background" Value="{DynamicResource ThemeBackground}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource ThemeInteractiveBorder}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
     <!--  Material Button  -->
     <Style TargetType="{x:Type controls:MaterialButton}">
         <Setter Property="Padding" Value="16,8" />
@@ -209,6 +275,136 @@
         </Setter>
     </Style>
     -->
+
+    <!--  Dialog  -->
+    <Style TargetType="{x:Type controls:Dialog}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:Dialog}">
+                    <Grid Background="{DynamicResource ThemeBackgroundTransparent}">
+                        <Border
+                            MinWidth="500"
+                            Padding="12"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Background="{DynamicResource ThemeElement}"
+                            BorderBrush="{DynamicResource ThemeElementBorder}"
+                            BorderThickness="1"
+                            CornerRadius="4">
+                            <Border.RenderTransform>
+                                <TranslateTransform x:Name="slideTransform" />
+                            </Border.RenderTransform>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <ContentPresenter Grid.Row="0" Content="{TemplateBinding Content}" />
+                                <Grid Grid.Row="1" Margin="0,6,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Button
+                                        Grid.Column="0"
+                                        Margin="0,0,4,0"
+                                        Command="{Binding Path=CloseButtonCommand, RelativeSource={RelativeSource TemplatedParent}}">
+                                        <Button.Style>
+                                            <Style TargetType="{x:Type Button}">
+                                                <Setter Property="Padding" Value="16,8" />
+                                                <Setter Property="Cursor" Value="Hand" />
+                                                <Setter Property="Foreground" Value="{DynamicResource ThemeForeground}" />
+                                                <Setter Property="Background" Value="{DynamicResource ThemeInteractive}" />
+                                                <Setter Property="BorderBrush" Value="{DynamicResource ThemeInteractiveBorder}" />
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="{x:Type Button}">
+                                                            <Border
+                                                                Padding="{TemplateBinding Padding}"
+                                                                Background="{TemplateBinding Background}"
+                                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                                BorderThickness="1">
+                                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                            </Border>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="{DynamicResource ThemeInteractiveHover}" />
+                                                        <Setter Property="BorderBrush" Value="{DynamicResource ThemeInteractiveBorder}" />
+                                                    </Trigger>
+                                                    <Trigger Property="IsEnabled" Value="False">
+                                                        <Setter Property="Foreground" Value="{DynamicResource ThemeInteractiveDisabled}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock
+                                                Margin="0,0,12,0"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                FontFamily="{StaticResource Micon}"
+                                                Text="{Binding Path=CloseButtonGlyph, RelativeSource={RelativeSource TemplatedParent}}"
+                                                TextOptions.TextFormattingMode="Ideal" />
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding Path=CloseButtonText, RelativeSource={RelativeSource TemplatedParent}}" />
+                                        </StackPanel>
+                                    </Button>
+                                    <Button
+                                        Grid.Column="1"
+                                        Margin="4,0,0,0"
+                                        Command="{Binding Path=ActionButtonCommand, RelativeSource={RelativeSource TemplatedParent}}">
+                                        <Button.Style>
+                                            <Style TargetType="{x:Type Button}">
+                                                <Setter Property="Padding" Value="16,8" />
+                                                <Setter Property="Cursor" Value="Hand" />
+                                                <Setter Property="Foreground" Value="{DynamicResource ThemeForeground}" />
+                                                <Setter Property="Background" Value="{DynamicResource ThemeInteractive}" />
+                                                <Setter Property="BorderBrush" Value="{DynamicResource ThemeInteractiveBorder}" />
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="{x:Type Button}">
+                                                            <Border
+                                                                Padding="{TemplateBinding Padding}"
+                                                                Background="{TemplateBinding Background}"
+                                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                                BorderThickness="1">
+                                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                            </Border>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="{DynamicResource ThemeInteractiveHover}" />
+                                                        <Setter Property="BorderBrush" Value="{DynamicResource ThemeInteractiveBorder}" />
+                                                    </Trigger>
+                                                    <Trigger Property="IsEnabled" Value="False">
+                                                        <Setter Property="Foreground" Value="{DynamicResource ThemeInteractiveDisabled}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock
+                                                Margin="0,0,12,0"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                FontFamily="{StaticResource Micon}"
+                                                Text="{Binding Path=ActionButtonGlyph, RelativeSource={RelativeSource TemplatedParent}}"
+                                                TextOptions.TextFormattingMode="Ideal" />
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding Path=ActionButtonText, RelativeSource={RelativeSource TemplatedParent}}" />
+                                        </StackPanel>
+                                    </Button>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
     <!--  Message Box  -->
     <Style TargetType="{x:Type controls:MessageBox}">

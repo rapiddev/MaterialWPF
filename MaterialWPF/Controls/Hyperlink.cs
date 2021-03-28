@@ -24,7 +24,7 @@ namespace MaterialWPF.Controls
             }
         }
 
-        public Hyperlink()
+        public Hyperlink() : base()
         {
             this.Click += RequestNavigate;
         }

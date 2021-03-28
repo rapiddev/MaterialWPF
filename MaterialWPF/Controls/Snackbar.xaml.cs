@@ -131,6 +131,9 @@ namespace MaterialWPF.Controls
             {
                 Thread.Sleep((int)this._timeout);
 
+                if (Application.Current == null)
+                    return;
+
                 Application.Current.Dispatcher.Invoke(() =>
                 {
                     this.Hide();

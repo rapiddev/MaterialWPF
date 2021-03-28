@@ -26,12 +26,14 @@
                 Margin="0,15,0,0"
                 Style="{StaticResource MaterialLoadingBar}" />
             <TextBlock
+                MaxWidth="320"
                 Margin="0,5,0,0"
                 HorizontalAlignment="Center"
                 FontSize="10"
                 Foreground="{DynamicResource ThemeForegroundSecondary}"
                 Text="{Binding SubTitle, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=1}, Mode=OneWay}"
-                TextAlignment="Center" />
+                TextAlignment="Center"
+                TextWrapping="WrapWithOverflow" />
         </StackPanel>
         <TextBlock
             Margin="4"

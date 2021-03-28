@@ -212,10 +212,18 @@
         </Grid>
 
         <materialwpf:Snackbar x:Name="snackbarMain" Margin="0,0,0,12" />
-        <materialwpf:Dialog x:Name="dialogMain">
+        <materialwpf:Dialog x:Name="dialogMain" ActionButtonText="Show a snackbar">
             <StackPanel>
                 <TextBlock FontSize="18" Text="This is dialog!" />
                 <TextBlock Text="You can post or write something here. It's a new control, so it's not working great" TextWrapping="WrapWithOverflow" />
+                <Label
+                    Padding="0,12,0,4"
+                    Content="Write something here to view this message in Snackbar"
+                    Foreground="{DynamicResource ThemeForeground}" />
+                <materialwpf:TextBox
+                    x:Name="textboxDialog"
+                    Placeholder="Placeholder, just for fun"
+                    Text="It's amazing how interesting programming is..." />
             </StackPanel>
         </materialwpf:Dialog>
     </Grid>
