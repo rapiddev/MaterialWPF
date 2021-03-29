@@ -24,24 +24,18 @@ namespace MaterialWPF.Demo.Pages
         public void OnDialogClick()
         {
             dialogMain.Hide();
-            snackbarMain.Header = "This snackbar has been opened by an OnDialogClick action!";
-            snackbarMain.Message = textboxDialog.Text;
-            snackbarMain.Show();
+            snackbarMain.Show("This snackbar has been opened by an OnDialogClick action!", textboxDialog.Text);
         }
 
         //This method is triggered by MaterialWPF.Controls.Navigation when navigating to this page.
         public void OnNavigationRequest()
         {
-            snackbarMain.Header = "This snackbar has been opened by an OnNavigationRequest!";
-            snackbarMain.Message = "Each of your pages may contain such a method and respond to user navigation or whatever...";
-            snackbarMain.Show();
+            snackbarMain.Show("This snackbar has been opened by an OnNavigationRequest!", "Each of your pages may contain such a method and respond to user navigation or whatever...");
         }
 
         private void Button_Snackbar(object sender, RoutedEventArgs e)
         {
-            snackbarMain.Header = "Wow that's amazing!";
-            snackbarMain.Message = "This snackbar contains a message, you can change it or something...";
-            snackbarMain.Show();
+            snackbarMain.Show("Wow that's amazing!", "This snackbar contains a message, you can change it or something...");
         }
 
         private void Button_Dialog(object sender, RoutedEventArgs e)

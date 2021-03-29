@@ -18,6 +18,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Button
             Grid.Row="0"
@@ -25,11 +26,73 @@
             Click="Button_Hamburger"
             KeyboardNavigation.IsTabStop="False"
             Style="{StaticResource MaterialNavigationHamburgerButton}" />
-        <ItemsControl
-            x:Name="MaterialNavigationItemsList"
+        <ScrollViewer
             Grid.Row="1"
+            HorizontalScrollBarVisibility="Disabled"
+            Style="{StaticResource MaterialScroll}"
+            VerticalScrollBarVisibility="Hidden">
+            <ItemsControl
+                x:Name="mwpfNavigationItemsList"
+                Width="{Binding MinBarWidth, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=1}, Mode=OneWay}"
+                ItemsSource="{Binding Items, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=1}, Mode=OneWay}"
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                Tag="0">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate DataType="NavItem">
+                        <DataTemplate.Resources>
+                            <Storyboard x:Key="ExpandNavigation">
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="button" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1" Value="2" />
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="button" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1" Value="2" />
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </DataTemplate.Resources>
+                        <Button
+                            HorizontalAlignment="Stretch"
+                            Click="Button_NavItem"
+                            Style="{StaticResource MaterialNavigationItemButton}"
+                            Tag="{Binding Tag, Mode=OneTime}">
+                            <StackPanel Margin="0,12" Orientation="Horizontal">
+                                <Grid Width="{Binding MinBarWidth, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=1}, Mode=OneWay}" Height="18">
+                                    <TextBlock FontFamily="{StaticResource Micon}" Text="{Binding RawIcon, Mode=OneTime}">
+                                        <TextBlock.Style>
+                                            <Style BasedOn="{StaticResource MaterialNavigationHamburgerIcon}" TargetType="TextBlock">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Path=IsActive, Mode=OneWay}" Value="True">
+                                                        <Setter Property="TextBlock.Foreground" Value="{DynamicResource ThemeForeground}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Grid>
+                                <TextBlock Text="{Binding Name, Mode=OneTime}">
+                                    <TextBlock.Style>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Path=IsActive, Mode=OneWay}" Value="True">
+                                                    <Setter Property="Foreground" Value="{DynamicResource ThemeForeground}" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </StackPanel>
+                        </Button>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+        <ItemsControl
+            x:Name="mwpfNavigationFooterList"
+            Grid.Row="2"
             Width="{Binding MinBarWidth, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=1}, Mode=OneWay}"
-            ItemsSource="{Binding Items, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=1}, Mode=OneWay}"
+            ItemsSource="{Binding Footer, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=1}, Mode=OneWay}"
+            ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+            ScrollViewer.VerticalScrollBarVisibility="Disabled"
             Tag="0">
             <ItemsControl.ItemTemplate>
                 <DataTemplate DataType="NavItem">

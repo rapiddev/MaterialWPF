@@ -211,7 +211,10 @@
 
         </Grid>
 
-        <materialwpf:Snackbar x:Name="snackbarMain" Margin="0,0,0,12" />
+        <materialwpf:Snackbar
+            x:Name="snackbarMain"
+            Margin="0,0,0,12"
+            Timeout="5000" />
         <materialwpf:Dialog x:Name="dialogMain" ActionButtonText="Show a snackbar">
             <StackPanel>
                 <TextBlock FontSize="18" Text="This is dialog!" />

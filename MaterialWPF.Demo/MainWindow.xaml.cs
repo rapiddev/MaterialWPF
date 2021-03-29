@@ -25,7 +25,17 @@ namespace MaterialWPF.Demo
                 new NavItem { Icon = MaterialIcon.AlignLeft, Name = "Tree List", Tag = "treelist", Type = typeof(Pages.TreeList)}
             };
 
+            rootNavigation.Footer = new ObservableCollection<NavItem>
+            {
+                new NavItem { Icon = MaterialIcon.Settings, Name = "Settings", Tag = "Settings", Type = typeof(Pages.Settings), Action = OnSettingsNavigate}
+            };
+
             rootNavigation.Navigate("dashboard");
+        }
+
+        public void OnSettingsNavigate()
+        {
+            System.Diagnostics.Debug.WriteLine("User clicked to navigate to settings");
         }
 
         private async void Splash()

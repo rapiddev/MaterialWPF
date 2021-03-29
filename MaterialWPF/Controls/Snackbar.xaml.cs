@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Media.Animation;
+using System.Linq;
 
 namespace MaterialWPF.Controls
 {
@@ -18,6 +19,10 @@ namespace MaterialWPF.Controls
     /// </summary>
     public partial class Snackbar : UserControl
     {
+        private const string randomChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        private string _threadControl = null;
+        private bool _visible = false;
+
         public static readonly DependencyProperty
             EnabledProperty = DependencyProperty.Register("Enabled", typeof(bool), typeof(Controls.Snackbar), new PropertyMetadata(false)),
             MessageProperty = DependencyProperty.Register("Message", typeof(string), typeof(Controls.Snackbar), new PropertyMetadata(String.Empty)),
@@ -105,6 +110,8 @@ namespace MaterialWPF.Controls
             if (this._status)
                 return;
 
+            this.UpdateThread();
+
             DoubleAnimation db = new DoubleAnimation();
             db.EasingFunction = new CubicEase { EasingMode = EasingMode.EaseOut };
             db.To = 0;
@@ -114,19 +121,41 @@ namespace MaterialWPF.Controls
             this.Visibility = Visibility.Visible;
             slideTransform.BeginAnimation(TranslateTransform.YProperty, db);
 
+            this._visible = true;
             this._status = true;
 
-            if (_timeout != null)
+            if (_timeout != null && _timeout > 0)
+                this.HideTimeout();
+        }
+
+        public async void Show(string header, string message = null)
+        {
+            if(this._visible)
+                this.UpdateThread();
+
+            this.Hide();
+            
+            await Task.Run(() =>
             {
-                if (_timeout > 0)
+                Thread.Sleep((int)300);
+
+                if (Application.Current == null)
+                    return;
+
+                Application.Current.Dispatcher.Invoke(() =>
                 {
-                    this.HideTimeout();
-                }
-            }
+                    this.Header = header;
+                    this.Message = message;
+
+                    this.Show();
+                });
+            });
         }
 
         private async void HideTimeout()
         {
+            string masterThread = this._threadControl;
+
             await Task.Run(() =>
             {
                 Thread.Sleep((int)this._timeout);
@@ -136,7 +165,8 @@ namespace MaterialWPF.Controls
 
                 Application.Current.Dispatcher.Invoke(() =>
                 {
-                    this.Hide();
+                    if(this._threadControl == masterThread)
+                        this.Hide();
                 });
             });
         }
@@ -154,7 +184,14 @@ namespace MaterialWPF.Controls
 
             slideTransform.BeginAnimation(TranslateTransform.YProperty, db);
 
+            this._visible = false;
             this._status = false;
+        }
+
+        private void UpdateThread()
+        {
+            Random random = new Random();
+            this._threadControl = new string(Enumerable.Repeat(randomChars, 8).Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
         private void Button_Collapse(object sender, RoutedEventArgs e)

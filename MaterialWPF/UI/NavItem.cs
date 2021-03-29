@@ -37,8 +37,19 @@ namespace MaterialWPF.UI
         /// </summary>
         public string Tag { get; set; }
 
+        /// <summary>
+        /// Gets or sets method that will be run when clicking.
+        /// </summary>
+        public Action Action { get; set; }
+
+        /// <summary>
+        /// Gets information whether an <see cref="NavItem"/> has subelements.
+        /// </summary>
         public bool IsDropdown { get { return SubItems != null && SubItems.Length > 0; } }
 
+        /// <summary>
+        /// Gets or sets subelements for the <see cref="NavItem"/>. If it is established, the main instance is ignored.
+        /// </summary>
         public NavItem[] SubItems { get; set; }
 
         /// <summary>

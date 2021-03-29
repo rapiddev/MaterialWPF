@@ -32,6 +32,7 @@ namespace MaterialWPF.Controls
 
         public static readonly DependencyProperty
             ItemsProperty = DependencyProperty.Register("Items", typeof(ObservableCollection<NavItem>), typeof(Navigation), new PropertyMetadata(new ObservableCollection<NavItem>())),
+            FooterProperty = DependencyProperty.Register("Footer", typeof(ObservableCollection<NavItem>), typeof(Navigation), new PropertyMetadata(new ObservableCollection<NavItem>())),
             MinBarWidthProperty = DependencyProperty.Register("MinBarWidth", typeof(int?), typeof(Navigation), new PropertyMetadata(44)),
             MaxBarWidthProperty = DependencyProperty.Register("MaxBarWidth", typeof(int?), typeof(Navigation), new PropertyMetadata(220));
 
@@ -42,6 +43,15 @@ namespace MaterialWPF.Controls
         {
             get => this.GetValue(ItemsProperty) as ObservableCollection<NavItem>;
             set => this.SetValue(ItemsProperty, value);
+        }
+
+        /// <summary>
+        /// Gets or sets the list of <see cref="NavItem"/> which will be displayed at the bottom of the navigation and will not be scrolled.
+        /// </summary>
+        public ObservableCollection<NavItem> Footer
+        {
+            get => this.GetValue(FooterProperty) as ObservableCollection<NavItem>;
+            set => this.SetValue(FooterProperty, value);
         }
 
         /// <summary>
@@ -115,7 +125,7 @@ namespace MaterialWPF.Controls
         /// </summary>
         public void Navigate(string pageTypeName, bool refresh = false)
         {
-            if (this.Items == null || this._rootFrame == null)
+            if (this.Items == null || this.Items.Count == 0 || this._rootFrame == null)
                 return;
 
             if (pageTypeName == this._currentPage)
@@ -124,6 +134,9 @@ namespace MaterialWPF.Controls
             for (int i = 0; i < this.Items.Count; i++)
                 if (this.Items[i].Tag == pageTypeName)
                 {
+                    if(this.Items[i].Action != null)
+                        this.Items[i].Action();
+
                     if (this.Items[i].Instance == null || refresh)
                     {
                         if(this.Items[i].Type != null)
@@ -158,6 +171,49 @@ namespace MaterialWPF.Controls
                     this.Items[i].IsActive = false;
                 }
 
+            if(this.Footer != null && this.Footer.Count > 0)
+            {
+                for (int i = 0; i < this.Footer.Count; i++)
+                    if (this.Footer[i].Tag == pageTypeName)
+                    {
+                        if (this.Footer[i].Action != null)
+                            this.Footer[i].Action();
+
+                        if (this.Footer[i].Instance == null || refresh)
+                        {
+                            if (this.Footer[i].Type != null)
+                            {
+                                this.Footer[i].Instance = Activator.CreateInstance(this.Footer[i].Type);
+                            }
+                            else if (this.Footer[i].Type == null && !string.IsNullOrEmpty(this._pagesFolder))
+                            {
+                                //We assume that we will always enter the correct name
+                                Type pageType = Type.GetType(this._pagesFolder + pageTypeName);
+
+                                if (!refresh && this._rootFrame.Content != null && this._rootFrame.Content.GetType() == pageType)
+                                    return;
+
+                                this.Footer[i].Instance = Activator.CreateInstance(pageType);
+                            }
+                            else
+                            {
+                                //Brake!
+                                return;
+                            }
+                        }
+
+                        this._rootFrame.Navigate(this.Footer[i].Instance);
+                        this.Footer[i].IsActive = true;
+
+                        if (this.Footer[i].Type != null && this.Footer[i].Type.GetMethod("OnNavigationRequest") != null)
+                            this.Footer[i].Type.GetMethod("OnNavigationRequest").Invoke(this.Footer[i].Instance, null);
+                    }
+                    else
+                    {
+                        this.Footer[i].IsActive = false;
+                    }
+            }
+
             this._currentPage = pageTypeName;
         }
 
@@ -170,10 +226,14 @@ namespace MaterialWPF.Controls
                     Duration = TimeSpan.FromSeconds(0.4)
                 };
 
-            this._navExpander.From = MaterialNavigationItemsList.ActualWidth;
+            this._navExpander.From = mwpfNavigationItemsList.ActualWidth;
             this._navExpander.To = this._navExpanded ? MinBarWidth : MaxBarWidth;
 
-            MaterialNavigationItemsList.BeginAnimation(ItemsControl.WidthProperty, this._navExpander);
+            mwpfNavigationItemsList.BeginAnimation(ItemsControl.WidthProperty, this._navExpander);
+
+            if(this.Footer != null && this.Items.Count > 0)
+                mwpfNavigationFooterList.BeginAnimation(ItemsControl.WidthProperty, this._navExpander);
+
             this._navExpanded = !this._navExpanded;
         }
 
