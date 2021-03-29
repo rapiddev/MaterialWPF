@@ -231,7 +231,7 @@ namespace MaterialWPF.Controls
 
             mwpfNavigationItemsList.BeginAnimation(ItemsControl.WidthProperty, this._navExpander);
 
-            if(this.Footer != null && this.Items.Count > 0)
+            if(this.Footer != null && this.Footer.Count > 0)
                 mwpfNavigationFooterList.BeginAnimation(ItemsControl.WidthProperty, this._navExpander);
 
             this._navExpanded = !this._navExpanded;
