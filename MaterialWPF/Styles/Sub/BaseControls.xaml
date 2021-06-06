@@ -17,7 +17,7 @@
     -->
 
     <Style x:Key="MaterialFrameworkElement" TargetType="{x:Type FrameworkElement}">
-        <Setter Property="Control.FontFamily" Value="{StaticResource DefaultFont}" />
+        <Setter Property="Control.FontFamily" Value="{DynamicResource DefaultFont}" />
         <Setter Property="Control.FontSize" Value="13" />
         <Setter Property="Control.Foreground" Value="{DynamicResource ThemeForeground}" />
         <Setter Property="Control.Background" Value="{DynamicResource ThemeBackground}" />
@@ -75,7 +75,7 @@
     <!--  Interactive  -->
     <Style x:Key="MaterialIcon" TargetType="{x:Type TextBlock}">
         <Setter Property="Margin" Value="0,0,5,0" />
-        <Setter Property="FontFamily" Value="{StaticResource Micon}" />
+        <Setter Property="FontFamily" Value="{DynamicResource Micon}" />
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="FontSize" Value="15" />

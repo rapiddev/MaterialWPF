@@ -21,6 +21,9 @@ namespace MaterialWPF.Controls
         protected DoubleAnimation _navExpander;
         protected Frame _rootFrame;
 
+        protected Action?
+            _onNavigate = null;
+
         protected string
             _currentPage = string.Empty,
             _pagesFolder = string.Empty;
@@ -52,6 +55,15 @@ namespace MaterialWPF.Controls
         {
             get => this.GetValue(FooterProperty) as ObservableCollection<NavItem>;
             set => this.SetValue(FooterProperty, value);
+        }
+
+        /// <summary>
+        /// Gets or sets the action that will be triggered during navigation.
+        /// </summary>
+        public Action? OnNavigate
+        {
+            get => this._onNavigate;
+            set => this._onNavigate = value;
         }
 
         /// <summary>
@@ -127,6 +139,9 @@ namespace MaterialWPF.Controls
         {
             if (this.Items == null || this.Items.Count == 0 || this._rootFrame == null)
                 return;
+
+            if (this._onNavigate != null)
+                this._onNavigate();
 
             if (pageTypeName == this._currentPage)
                 return;

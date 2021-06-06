@@ -7,15 +7,15 @@
 using System.Windows.Controls;
 namespace MaterialWPF.Controls
 {
-    public class ScheduleItem
+    public class TreeListItem
     {
         public string Task { get; set; }
         public double Duration { get; set; }
         public string Notes { get; set; }
-        public ScheduleItem[] SubItems { get; set; }
-        public ScheduleItem()
+        public TreeListItem[] SubItems { get; set; }
+        public TreeListItem()
         {
-            SubItems = new ScheduleItem[0];
+            SubItems = new TreeListItem[0];
         }
     }
     /// <summary>
@@ -27,63 +27,63 @@ namespace MaterialWPF.Controls
         {
             InitializeComponent();
 
-            DataContext = new ScheduleItem
+            DataContext = new TreeListItem
             {
-                SubItems = new ScheduleItem[]
+                SubItems = new TreeListItem[]
                 {
-                    new ScheduleItem
+                    new TreeListItem
                     {
                         Task = "Coding",
                         Duration = 4,
                         Notes = "It pays the bills",
-                        SubItems = new ScheduleItem[]
+                        SubItems = new TreeListItem[]
                         {
-                            new ScheduleItem { Task = "Write", Duration = 2, Notes = "C# or go home" },
-                            new ScheduleItem { Task = "Compile", Duration = 1, Notes = "WTB: SSD" },
-                            new ScheduleItem { Task = "Test", Duration = 1, Notes = "Works on my machine" },
+                            new TreeListItem { Task = "Write", Duration = 2, Notes = "C# or go home" },
+                            new TreeListItem { Task = "Compile", Duration = 1, Notes = "WTB: SSD" },
+                            new TreeListItem { Task = "Test", Duration = 1, Notes = "Works on my machine" },
                         },
                     },
-                    new ScheduleItem
+                    new TreeListItem
                     {
                         Task = "Meetings",
                         Duration = 2,
                         Notes = "A necessary evil",
-                        SubItems = new ScheduleItem[]
+                        SubItems = new TreeListItem[]
                         {
-                            new ScheduleItem { Task = "Boring", Duration = 1, Notes = "Zzzzzz" },
-                            new ScheduleItem { Task = "Gossipy", Duration = 0.75, Notes = "Oh no he didn't!" },
-                            new ScheduleItem { Task = "Useful", Duration = 0.25, Notes = "Right away, boss" },
+                            new TreeListItem { Task = "Boring", Duration = 1, Notes = "Zzzzzz" },
+                            new TreeListItem { Task = "Gossipy", Duration = 0.75, Notes = "Oh no he didn't!" },
+                            new TreeListItem { Task = "Useful", Duration = 0.25, Notes = "Right away, boss" },
                         },
                     },
-                    new ScheduleItem
+                    new TreeListItem
                     {
                         Task = "Communicate",
                         Duration = 1,
                         Notes = "No man is an island",
-                        SubItems = new ScheduleItem[]
+                        SubItems = new TreeListItem[]
                         {
-                            new ScheduleItem { Task = "Email", Duration = 0.5, Notes = "So much junk mail" },
-                            new ScheduleItem { Task = "Blogs", Duration = 0.25, Notes = "blogs.msdn.com/delay" },
-                            new ScheduleItem { Task = "Twitter", Duration = 0.25, Notes = "RT: Nothing to report" },
+                            new TreeListItem { Task = "Email", Duration = 0.5, Notes = "So much junk mail" },
+                            new TreeListItem { Task = "Blogs", Duration = 0.25, Notes = "blogs.msdn.com/delay" },
+                            new TreeListItem { Task = "Twitter", Duration = 0.25, Notes = "RT: Nothing to report" },
                         },
                     },
-                    new ScheduleItem
+                    new TreeListItem
                     {
                         Task = "Eating",
                         Duration = 1.5,
                         Notes = "Fuel for the body",
-                        SubItems = new ScheduleItem[]
+                        SubItems = new TreeListItem[]
                         {
-                            new ScheduleItem { Task = "Lunch", Duration = 1, Notes = "Bag lunch from home" },
-                            new ScheduleItem
+                            new TreeListItem { Task = "Lunch", Duration = 1, Notes = "Bag lunch from home" },
+                            new TreeListItem
                             {
                                 Task = "Snack",
                                 Duration = 0.5,
                                 Notes = "Still hungry",
-                                SubItems = new ScheduleItem[]
+                                SubItems = new TreeListItem[]
                                 {
-                                    new ScheduleItem { Task = "Fruit", Duration = 0.25, Notes = "Good for you" },
-                                    new ScheduleItem { Task = "Candy", Duration = 0.25, Notes = "Yummy!" },
+                                    new TreeListItem { Task = "Fruit", Duration = 0.25, Notes = "Good for you" },
+                                    new TreeListItem { Task = "Candy", Duration = 0.25, Notes = "Yummy!" },
                                 },
                             },
                         },
