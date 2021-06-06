@@ -140,9 +140,6 @@ namespace MaterialWPF.Controls
             if (this.Items == null || this.Items.Count == 0 || this._rootFrame == null)
                 return;
 
-            if (this._onNavigate != null)
-                this._onNavigate();
-
             if (pageTypeName == this._currentPage)
                 return;
 
@@ -230,6 +227,9 @@ namespace MaterialWPF.Controls
             }
 
             this._currentPage = pageTypeName;
+
+            if (this._onNavigate != null)
+                this._onNavigate();
         }
 
         private void ToggleNavigation()

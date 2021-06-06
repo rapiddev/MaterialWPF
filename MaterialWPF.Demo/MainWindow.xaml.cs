@@ -30,7 +30,13 @@ namespace MaterialWPF.Demo
                 new NavItem { Icon = MaterialIcon.Settings, Name = "Settings", Tag = "Settings", Type = typeof(Pages.Settings), Action = OnSettingsNavigate}
             };
 
+            rootNavigation.OnNavigate = OnNavigate;
             rootNavigation.Navigate("dashboard");
+        }
+
+        public void OnNavigate()
+        {
+            System.Diagnostics.Debug.WriteLine($"Navigated to: {rootNavigation.PageNow}");
         }
 
         public void OnSettingsNavigate()
