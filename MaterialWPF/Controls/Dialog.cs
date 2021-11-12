@@ -9,29 +9,33 @@ using System.Windows.Input;
 
 namespace MaterialWPF.Controls
 {
-    public partial class Dialog : System.Windows.Controls.ContentControl
+    public class Dialog : System.Windows.Controls.ContentControl
     {
         private bool _status = false;
-        
+
         private Action
             _closeButtonClickAction = null,
             _actionButtonClickAction = null;
 
         public static readonly DependencyProperty
-            EnabledProperty = DependencyProperty.Register("Enabled", typeof(bool), typeof(Controls.Dialog), new PropertyMetadata(false)),
-            CloseButtonTextProperty = DependencyProperty.Register("CloseButtonText", typeof(string), typeof(Controls.Dialog), new PropertyMetadata("Close")),
-            CloseButtonGlyphProperty = DependencyProperty.Register("CloseButtonGlyph", typeof(char), typeof(Controls.Dialog), new PropertyMetadata(UI.MiconIcons.Cancel)),
-            CloseButtonCommandProperty = DependencyProperty.Register("CloseButtonCommand", typeof(ICommand), typeof(Controls.Dialog), new UIPropertyMetadata(null)),
-            ActionButtonTextProperty = DependencyProperty.Register("ActionButtonText", typeof(string), typeof(Controls.Dialog), new PropertyMetadata("Action Button")),
-            ActionButtonGlyphProperty = DependencyProperty.Register("ActionButtonGlyph", typeof(char), typeof(Controls.Dialog), new PropertyMetadata(UI.MiconIcons.Accept)),
-            ActionButtonCommandProperty = DependencyProperty.Register("ActionButtonCommand", typeof(ICommand), typeof(Controls.Dialog), new UIPropertyMetadata(null));
+            EnabledProperty = DependencyProperty.Register("Enabled", typeof(bool), typeof(Controls.Dialog),
+                new PropertyMetadata(false)),
+            CloseButtonTextProperty = DependencyProperty.Register("CloseButtonText", typeof(string),
+                typeof(Controls.Dialog), new PropertyMetadata("Close")),
+            CloseButtonGlyphProperty = DependencyProperty.Register("CloseButtonGlyph", typeof(char),
+                typeof(Controls.Dialog), new PropertyMetadata(UI.MiconIcons.Cancel)),
+            CloseButtonCommandProperty = DependencyProperty.Register("CloseButtonCommand", typeof(ICommand),
+                typeof(Controls.Dialog), new UIPropertyMetadata(null)),
+            ActionButtonTextProperty = DependencyProperty.Register("ActionButtonText", typeof(string),
+                typeof(Controls.Dialog), new PropertyMetadata("Action Button")),
+            ActionButtonGlyphProperty = DependencyProperty.Register("ActionButtonGlyph", typeof(char),
+                typeof(Controls.Dialog), new PropertyMetadata(UI.MiconIcons.Accept)),
+            ActionButtonCommandProperty = DependencyProperty.Register("ActionButtonCommand", typeof(ICommand),
+                typeof(Controls.Dialog), new UIPropertyMetadata(null));
 
         public bool? Enabled
         {
-            get
-            {
-                return this.GetValue(EnabledProperty) as bool?;
-            }
+            get { return this.GetValue(EnabledProperty) as bool?; }
             set
             {
                 this.SetValue(EnabledProperty, value);
@@ -51,66 +55,36 @@ namespace MaterialWPF.Controls
 
         public string CloseButtonText
         {
-            get
-            {
-                return this.GetValue(CloseButtonTextProperty) as string;
-            }
-            set
-            {
-                this.SetValue(CloseButtonTextProperty, value);
-            }
+            get { return this.GetValue(CloseButtonTextProperty) as string; }
+            set { this.SetValue(CloseButtonTextProperty, value); }
         }
 
         public char CloseButtonGlyph
         {
-            get
-            {
-                return (char)(this.GetValue(CloseButtonGlyphProperty) as char?);
-            }
-            set
-            {
-                this.SetValue(CloseButtonGlyphProperty, value);
-            }
+            get { return (char)(this.GetValue(CloseButtonGlyphProperty) as char?); }
+            set { this.SetValue(CloseButtonGlyphProperty, value); }
         }
 
         public string ActionButtonText
         {
-            get
-            {
-                return this.GetValue(ActionButtonTextProperty) as string;
-            }
-            set
-            {
-                this.SetValue(ActionButtonTextProperty, value);
-            }
+            get { return this.GetValue(ActionButtonTextProperty) as string; }
+            set { this.SetValue(ActionButtonTextProperty, value); }
         }
 
         public char ActionButtonGlyph
         {
-            get
-            {
-                return (char)(this.GetValue(ActionButtonGlyphProperty) as char?);
-            }
-            set
-            {
-                this.SetValue(ActionButtonGlyphProperty, value);
-            }
+            get { return (char)(this.GetValue(ActionButtonGlyphProperty) as char?); }
+            set { this.SetValue(ActionButtonGlyphProperty, value); }
         }
 
         public Action CloseButtonClick
         {
-            set
-            {
-                this._closeButtonClickAction = value;
-            }
+            set { this._closeButtonClickAction = value; }
         }
 
         public Action ActionButtonClick
         {
-            set
-            {
-                this._actionButtonClickAction = value;
-            }
+            set { this._actionButtonClickAction = value; }
         }
 
         public Dialog() : base()
@@ -140,17 +114,6 @@ namespace MaterialWPF.Controls
             if (this._status)
                 return;
 
-            /*
-            DoubleAnimation db = new DoubleAnimation();
-            db.EasingFunction = new CubicEase { EasingMode = EasingMode.EaseOut };
-            db.To = 0;
-            db.From = this.ActualHeight;
-            db.Duration = TimeSpan.FromSeconds(0.5);
-
-            
-            slideTransform.BeginAnimation(TranslateTransform.YProperty, db);
-            */
-            
             this.Visibility = Visibility.Visible;
             this._status = true;
         }

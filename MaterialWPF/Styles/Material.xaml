@@ -8,10 +8,22 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="Fonts.xaml" />
-        <ResourceDictionary Source="Sub/Palette.xaml" />
-        <ResourceDictionary Source="Sub/BaseControls.xaml" />
-        <ResourceDictionary Source="Sub/CustomControls.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialWPF;component/Styles/Assets/Fonts.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialWPF;component/Styles/Assets/Colors.xaml" />
+
+        <ResourceDictionary Source="pack://application:,,,/MaterialWPF;component/Styles/Sub/BaseControls.xaml" />
+
+        <ResourceDictionary Source="pack://application:,,,/MaterialWPF;component/Styles/Controls/Icon.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialWPF;component/Styles/Controls/Hyperlink.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialWPF;component/Styles/Controls/TextBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialWPF;component/Styles/Controls/MaterialButton.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialWPF;component/Styles/Controls/ToggleButton.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialWPF;component/Styles/Controls/Card.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialWPF;component/Styles/Controls/Dialog.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialWPF;component/Styles/Controls/MessageBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialWPF;component/Styles/Controls/MaterialTitleBar.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialWPF;component/Styles/Controls/MaterialNavigation.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialWPF;component/Styles/Controls/MaterialTreeList.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

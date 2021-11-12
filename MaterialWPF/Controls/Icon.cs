@@ -7,10 +7,14 @@ using System.Windows;
 
 namespace MaterialWPF.Controls
 {
-    public partial class Icon : System.Windows.Controls.Label
+    public class Icon : System.Windows.Controls.Label
     {
-        public static readonly DependencyProperty GlyphProperty = DependencyProperty.Register("Glyph", typeof(UI.MaterialIcon), typeof(MaterialWPF.Controls.Icon), new PropertyMetadata(UI.MaterialIcon.Accept, new PropertyChangedCallback(OnGlyphChanged)));
-        public static readonly DependencyProperty RawGlyphProperty = DependencyProperty.Register("RawGlyph", typeof(string), typeof(MaterialWPF.Controls.Icon), new PropertyMetadata("\uEA01"));
+        public static readonly DependencyProperty GlyphProperty = DependencyProperty.Register("Glyph",
+            typeof(UI.MaterialIcon), typeof(MaterialWPF.Controls.Icon),
+            new PropertyMetadata(UI.MaterialIcon.Accept, new PropertyChangedCallback(OnGlyphChanged)));
+
+        public static readonly DependencyProperty RawGlyphProperty = DependencyProperty.Register("RawGlyph",
+            typeof(string), typeof(MaterialWPF.Controls.Icon), new PropertyMetadata("\uEA01"));
 
         private static void OnGlyphChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
@@ -19,14 +23,8 @@ namespace MaterialWPF.Controls
 
         public UI.MaterialIcon Glyph
         {
-            get
-            {
-                return (UI.MaterialIcon)(this.GetValue(GlyphProperty) as UI.MaterialIcon?);
-            }
-            set
-            {
-                this.SetValue(GlyphProperty, value);
-            }
+            get => (UI.MaterialIcon)(this.GetValue(GlyphProperty) as UI.MaterialIcon?);
+            set => SetValue(GlyphProperty, value);
         }
     }
 }

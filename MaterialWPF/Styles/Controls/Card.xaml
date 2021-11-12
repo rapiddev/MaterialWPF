@@ -1,0 +1,25 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:MaterialWPF.Controls">
+
+    <!--
+    <Style TargetType="{x:Type controls:Card}">
+        <Setter Property="TextElement.Foreground" Value="{DynamicResource ThemeForeground}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:Card}">
+                    <Border
+                        Padding="12"
+                        BorderBrush="{DynamicResource ThemeElement}"
+                        BorderThickness="1"
+                        CornerRadius="4">
+                        <ContentPresenter Content="{TemplateBinding Content}" TextBlock.Foreground="{DynamicResource ThemeForeground}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    -->
+
+</ResourceDictionary>

@@ -17,7 +17,6 @@
     -->
 
     <Style x:Key="MaterialFrameworkElement" TargetType="{x:Type FrameworkElement}">
-        <Setter Property="Control.FontFamily" Value="{DynamicResource DefaultFont}" />
         <Setter Property="Control.FontSize" Value="13" />
         <Setter Property="Control.Foreground" Value="{DynamicResource ThemeForeground}" />
         <Setter Property="Control.Background" Value="{DynamicResource ThemeBackground}" />
@@ -44,20 +43,37 @@
         TargetType="{x:Type Window}">
         <Setter Property="WindowStyle" Value="None" />
         <Setter Property="ResizeMode" Value="CanResize" />
-        <Setter Property="MaxHeight" Value="{Binding Source={x:Static SystemParameters.WorkArea}, Path=Height}" />
-        <Setter Property="MaxWidth" Value="{Binding Source={x:Static SystemParameters.WorkArea}, Path=Width}" />
+        <Setter Property="Height" Value="600" />
         <Setter Property="MinHeight" Value="450" />
-        <Setter Property="MinWidth" Value="850" />
+        <Setter Property="Width" Value="1100" />
+        <Setter Property="MinWidth" Value="900" />
+        <Setter Property="WindowStyle" Value="SingleBorderWindow" />
+        <Setter Property="ResizeMode" Value="CanResize" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
+                <!--
+                    CaptionHeight removes the white block at the top of the application window.
+                    GlassFrameThickness must be at least 1, otherwise the default Windows 11 border will not be visible.
+                -->
                 <WindowChrome
                     CaptionHeight="0"
-                    CornerRadius="0"
-                    GlassFrameThickness="0"
-                    ResizeBorderThickness="6"
-                    UseAeroCaptionButtons="False" />
+                    GlassFrameThickness="1"
+                    ResizeBorderThickness="6" />
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <Trigger Property="WindowState" Value="Normal">
+                <Setter Property="ResizeMode" Value="CanResize" />
+            </Trigger>
+            <Trigger Property="WindowState" Value="Maximized">
+                <Setter Property="ResizeMode" Value="NoResize" />
+                <Setter Property="BorderThickness" Value="6,6,6,0" />
+                <Setter Property="Topmost" Value="False" />
+                <!-- <Setter Property="MaxHeight" Value="{Binding Source={x:Static SystemParameters.WorkArea}, Path=PrimaryScreenHeight}" /> -->
+                <!-- <Setter Property="MaxWidth" Value="{Binding Source={x:Static SystemParameters.WorkArea}, Path=Width}" /> -->
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
     <Style x:Key="MaterialCard" TargetType="{x:Type Grid}">

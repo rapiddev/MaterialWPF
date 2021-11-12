@@ -9,34 +9,24 @@ using System.Windows;
 
 namespace MaterialWPF.Controls
 {
-    public partial class TextBox : System.Windows.Controls.TextBox
+    public class TextBox : System.Windows.Controls.TextBox
     {
         public static readonly DependencyProperty
-            MaskProperty = DependencyProperty.Register("Mask", typeof(string), typeof(MaterialWPF.Controls.TextBox), new PropertyMetadata(string.Empty)),
-            PlaceholderProperty = DependencyProperty.Register("Placeholder", typeof(string), typeof(MaterialWPF.Controls.TextBox), new PropertyMetadata(string.Empty));
-        
+            MaskProperty = DependencyProperty.Register("Mask", typeof(string), typeof(MaterialWPF.Controls.TextBox),
+                new PropertyMetadata(string.Empty)),
+            PlaceholderProperty = DependencyProperty.Register("Placeholder", typeof(string),
+                typeof(MaterialWPF.Controls.TextBox), new PropertyMetadata(string.Empty));
+
         public string Mask
         {
-            get
-            {
-                return this.GetValue(MaskProperty) as string;
-            }
-            set
-            {
-                this.SetValue(MaskProperty, value);
-            }
+            get { return this.GetValue(MaskProperty) as string; }
+            set { this.SetValue(MaskProperty, value); }
         }
 
         public string Placeholder
         {
-            get
-            {
-                return this.GetValue(PlaceholderProperty) as string;
-            }
-            set
-            {
-                this.SetValue(PlaceholderProperty, value);
-            }
+            get { return this.GetValue(PlaceholderProperty) as string; }
+            set { this.SetValue(PlaceholderProperty, value); }
         }
 
         public TextBox() : base()
@@ -61,7 +51,7 @@ namespace MaterialWPF.Controls
             {
                 e.Handled = false;
             }
-            else if(mask[e.Text.Length] == '9')
+            else if (mask[e.Text.Length] == '9')
             {
                 Regex regex = new Regex("[^0-9]+");
                 e.Handled = regex.IsMatch(e.Text.Last().ToString());

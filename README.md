@@ -9,8 +9,8 @@ A simple and uncomplicated way to make your application written in WPF keep up w
 ## What's included?
 | Name| Framework | Build Status |
 | --- | --- | --- | 
-| **MaterialWPF**<br />Library that allows you to use all features in your own application | .NET 5.0 Windows,<br/>.NET 5.0 Windows 10 1809 | [![Build status](https://github.com/rapiddev/MaterialWPF/workflows/CI/badge.svg)](https://github.com/rapiddev/MaterialWPF/actions) | 
-| **MaterialWPF.Demo**<br />An application written in WPF .NET 5 where you can test the features. | .NET 5.0 Windows 10 1809 | [![Build status](https://github.com/rapiddev/MaterialWPF/workflows/CI/badge.svg)](https://github.com/rapiddev/MaterialWPF/actions) | 
+| **MaterialWPF**<br />Library that allows you to use all features in your own application | .NET 6.0 Windows,<br/>.NET 5.0 Windows,<br/>.NET Core 3.1<br/>.NET Framework 4.8 | [![Build status](https://github.com/rapiddev/MaterialWPF/workflows/CI/badge.svg)](https://github.com/rapiddev/MaterialWPF/actions) | 
+| **MaterialWPF.Demo**<br />An application written in WPF .NET 5 where you can test the features. | .NET 6.0 Windows 11 | [![Build status](https://github.com/rapiddev/MaterialWPF/workflows/CI/badge.svg)](https://github.com/rapiddev/MaterialWPF/actions) | 
 
 
 ## Custom controls
@@ -31,17 +31,6 @@ A simple and uncomplicated way to make your application written in WPF keep up w
 
 
 ## How to implement?
-**Set the target of your project to a minimum of Windows 10 1809**
-```c#
-<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
-  <PropertyGroup>
-    <TargetFrameworks>net5.0-windows10.0.17763.0</TargetFrameworks>
-    <TargetPlatformVersion>10.0</TargetPlatformVersion>
-    <LangVersion>latest</LangVersion>
-  </PropertyGroup>
-</Project>
-```
-
 **Add resources to App.xaml**
 ```c#
 <Application

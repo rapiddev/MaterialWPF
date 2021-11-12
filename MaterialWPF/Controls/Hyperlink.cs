@@ -8,35 +8,28 @@ using System.Windows;
 
 namespace MaterialWPF.Controls
 {
-    public partial class Hyperlink : System.Windows.Controls.Button
+    public class Hyperlink : System.Windows.Controls.Button
     {
-        public static readonly DependencyProperty NavigateUriProperty = DependencyProperty.Register("NavigateUri", typeof(string), typeof(Controls.Hyperlink), new PropertyMetadata(String.Empty));
+        public static readonly DependencyProperty NavigateUriProperty = DependencyProperty.Register("NavigateUri",
+            typeof(string), typeof(Controls.Hyperlink), new PropertyMetadata(String.Empty));
 
         public string NavigateUri
         {
-            get
-            {
-                return this.GetValue(NavigateUriProperty) as string;
-            }
-            set
-            {
-                this.SetValue(NavigateUriProperty, value);
-            }
+            get => GetValue(NavigateUriProperty) as string;
+            set => SetValue(NavigateUriProperty, value);
         }
 
-        public Hyperlink() : base()
-        {
-            this.Click += RequestNavigate;
-        }
+        public Hyperlink() => Click += RequestNavigate;
 
         private void RequestNavigate(object sender, RoutedEventArgs e)
         {
-            if(!string.IsNullOrEmpty(NavigateUri))
+            if (!string.IsNullOrEmpty(NavigateUri))
             {
-                System.Diagnostics.ProcessStartInfo sInfo = new System.Diagnostics.ProcessStartInfo(new Uri(NavigateUri).AbsoluteUri)
-                {
-                    UseShellExecute = true,
-                };
+                System.Diagnostics.ProcessStartInfo sInfo =
+                    new System.Diagnostics.ProcessStartInfo(new Uri(NavigateUri).AbsoluteUri)
+                    {
+                        UseShellExecute = true,
+                    };
 
                 System.Diagnostics.Process.Start(sInfo);
             }

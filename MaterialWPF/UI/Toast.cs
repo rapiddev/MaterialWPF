@@ -7,6 +7,7 @@ using System.Reflection;
 
 namespace MaterialWPF.UI
 {
+
     /// <summary>
     /// Overlay for the default UWP Toast function. Tries to let notifications be sent without packaging the app.
     /// </summary>

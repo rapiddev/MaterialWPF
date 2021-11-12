@@ -3,11 +3,8 @@
 // Copyright (C) Leszek Pomianowski and MaterialWPF Contributors.
 // All Rights Reserved.
 
-using System;
-using System.Windows;
-
 namespace MaterialWPF.Controls
 {
-    public partial class Card : System.Windows.Controls.Grid
-    {}
+    public class Card : System.Windows.Controls.Grid
+    { }
 }
