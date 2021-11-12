@@ -107,8 +107,6 @@ If you have any suggestions or improvements, don't hesitate to create an issue.
 ## Third party solutions
 - Micon Icons by the Mehdi HosseinZade  
 [https://github.com/xtoolkit/Micon](https://github.com/xtoolkit/Micon)
-- Lato by the Łukasz Dziedzic  
-[https://www.latofonts.com/team/](https://www.latofonts.com/team/)
 - TreeGridUX by the David Anson  
 [https://dlaa.me/blog/post/9898803](https://dlaa.me/blog/post/9898803)
 
