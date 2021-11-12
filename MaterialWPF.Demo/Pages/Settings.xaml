@@ -12,6 +12,6 @@
     mc:Ignorable="d">
 
     <Grid Margin="20">
-        <TextBlock Text="To be implemented..." />
+        <TextBlock Text="Just a navigation element at the bottom." />
     </Grid>
 </Page>

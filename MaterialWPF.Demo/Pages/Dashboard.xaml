@@ -67,9 +67,9 @@
             Margin="4,0,0,0">
             <TextBlock Text="GitHub Page" />
             <materialwpf:Hyperlink
-                Content="https://github.com/rapiddev/MaterialWPF"
+                Content="https://github.com/lepoco/MaterialWPF"
                 FontSize="10"
-                NavigateUri="https://github.com/rapiddev/MaterialWPF" />
+                NavigateUri="https://github.com/lepoco/MaterialWPF" />
 
             <TextBlock Margin="0,4,0,0" Text="Nuget Page" />
 

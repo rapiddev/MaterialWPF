@@ -91,10 +91,10 @@ namespace MaterialWPF.UI
 
             //Template start
             this._xmlTemplate += "<binding template=\"ToastText02\">"; //ToastGeneric works only with packaged project
-            
+
             if (!string.IsNullOrEmpty(this._header))
                 this._xmlTemplate += "<text id =\"1\">" + this._header + "</text>";
-            if(!string.IsNullOrEmpty(this._message))
+            if (!string.IsNullOrEmpty(this._message))
                 this._xmlTemplate += "<text id=\"2\">" + this._message + "</text>";
             if (!string.IsNullOrEmpty(this._footer))
                 this._xmlTemplate += "<text placement=\"attribution\">" + this._footer + "</text>";
