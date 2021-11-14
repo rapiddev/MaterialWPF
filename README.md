@@ -1,5 +1,7 @@
-![Logo](https://github.com/rapiddev/MaterialWPF/blob/master/MaterialWPF.Demo/Assets/banner-light.png?raw=true)
-# Material WPF
+# Archiving
+Due to the release of Windows 11 this library will no longer be maintained. If you want similar functionality but in a newer release see [WPF UI](https://github.com/lepoco/wpfui).
+
+## Material WPF
 [Created with ![heart](http://i.imgur.com/oXJmdtz.gif) in Poland by RapidDev](https://rdev.cc/)  
 A simple and uncomplicated way to make your application written in WPF keep up with modern design trends. Library changes the base elements like Window, Page or Button, and also includes additional controls like Navigation, ToggleButton or Snackbar. It's not really material, but a mixture of Fluent, Material and Cupertino.
 
